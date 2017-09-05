@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TypeSchema xmlns="http://colosoft.com.br/2013/data/schema">
+  <TypeMetadata name="Type1" namespace="Test.Data" assembly="Test" 
+                isCache="false" isVersioned="true">
+    <Properties>
+      <Property name="Property1" column="Column1"
+                        type="System.String"
+                        isCacheIndexed="false"
+                        direction="InputOutput"
+                        parameterType="Field"
+                        isVolatile="false">
+        <ForeignKey typeName="Type1" namespace="Test.Data" assembly="Test"
+                    property="Property2" />
+      </Property>
+    </Properties>
+    <BaseTypes>
+      <ReferenceTypeMetadata name="Type2"/>
+    </BaseTypes>
+  </TypeMetadata>
+
+  <TypeMetadata name="Type2" namespace="Test.Data" assembly="Test"
+                isCache="false" isVersioned="false">
+    <Properties>
+      <Property name="Property2" />
+    </Properties>
+  </TypeMetadata>
+</TypeSchema>

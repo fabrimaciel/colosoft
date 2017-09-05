@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema targetNamespace="http://Colosoft.com.br/2012/searchengine"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:tns="http://Colosoft.com.br/2012/searchengine"
+           elementFormDefault="qualified">
+  <xs:complexType name="SummaryItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Count" type="xs:int"/>
+      <xs:element minOccurs="0" name="Label" nillable="true" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SummaryItem" nillable="true" type="tns:SummaryItem"/>
+
+  <xs:complexType name="ArrayOfSummaryItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SummaryItem" nillable="true" type="tns:SummaryItem"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSummaryItem" nillable="true" type="tns:ArrayOfSummaryItem"/>
+
+  <xs:complexType name="SummaryResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Items" nillable="true" type="tns:ArrayOfSummaryItem"/>
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SummaryResult" nillable="true" type="tns:SummaryResult"/>
+
+  <xs:complexType name="ArrayOfSummaryResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SummaryResult" nillable="true" type="tns:SummaryResult"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSummaryResult" nillable="true" type="tns:ArrayOfSummaryResult"/>
+  
+</xs:schema>

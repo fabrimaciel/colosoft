@@ -1,0 +1,468 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="RoleProviderService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="WSHttpBinding_IRoleProviderService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:12020/RoleProviderService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:12020/RoleProviderService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:12020/RoleProviderService.svc?xsd=xsd2" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IRoleProviderService_CreateRole_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateRole" />
+  </wsdl:message>
+  <wsdl:message name="IRoleProviderService_CreateRole_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateRoleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRoleProviderService_DeleteRole_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteRole" />
+  </wsdl:message>
+  <wsdl:message name="IRoleProviderService_DeleteRole_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteRoleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRoleProviderService_GetRolesForUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRolesForUser" />
+  </wsdl:message>
+  <wsdl:message name="IRoleProviderService_GetRolesForUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRolesForUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRoleProviderService_GetExclusiveRolesForUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetExclusiveRolesForUser" />
+  </wsdl:message>
+  <wsdl:message name="IRoleProviderService_GetExclusiveRolesForUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetExclusiveRolesForUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRoleProviderService_GetUsersInRole_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUsersInRole" />
+  </wsdl:message>
+  <wsdl:message name="IRoleProviderService_GetUsersInRole_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUsersInRoleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRoleProviderService_IsUserInRole_InputMessage">
+    <wsdl:part name="parameters" element="tns:IsUserInRole" />
+  </wsdl:message>
+  <wsdl:message name="IRoleProviderService_IsUserInRole_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IsUserInRoleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRoleProviderService_RoleExists_InputMessage">
+    <wsdl:part name="parameters" element="tns:RoleExists" />
+  </wsdl:message>
+  <wsdl:message name="IRoleProviderService_RoleExists_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RoleExistsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRoleProviderService_AddUsersToRoles_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddUsersToRoles" />
+  </wsdl:message>
+  <wsdl:message name="IRoleProviderService_AddUsersToRoles_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddUsersToRolesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRoleProviderService_FindUsersInRole_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindUsersInRole" />
+  </wsdl:message>
+  <wsdl:message name="IRoleProviderService_FindUsersInRole_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindUsersInRoleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRoleProviderService_RemoveUsersFromRoles_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveUsersFromRoles" />
+  </wsdl:message>
+  <wsdl:message name="IRoleProviderService_RemoveUsersFromRoles_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveUsersFromRolesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRoleProviderService_GetAllRoles_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllRoles" />
+  </wsdl:message>
+  <wsdl:message name="IRoleProviderService_GetAllRoles_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllRolesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRoleProviderService_CreateRoleGroup_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateRoleGroup" />
+  </wsdl:message>
+  <wsdl:message name="IRoleProviderService_CreateRoleGroup_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateRoleGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRoleProviderService_DeleteRoleGroup_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteRoleGroup" />
+  </wsdl:message>
+  <wsdl:message name="IRoleProviderService_DeleteRoleGroup_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteRoleGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRoleProviderService_ExistsRoleGroup_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExistsRoleGroup" />
+  </wsdl:message>
+  <wsdl:message name="IRoleProviderService_ExistsRoleGroup_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExistsRoleGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRoleProviderService_AddRolesToRoleGroup_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddRolesToRoleGroup" />
+  </wsdl:message>
+  <wsdl:message name="IRoleProviderService_AddRolesToRoleGroup_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddRolesToRoleGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRoleProviderService_RemoveRolesFromRoleGroup_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveRolesFromRoleGroup" />
+  </wsdl:message>
+  <wsdl:message name="IRoleProviderService_RemoveRolesFromRoleGroup_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveRolesFromRoleGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRoleProviderService_GetRolesForRoleGroup_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRolesForRoleGroup" />
+  </wsdl:message>
+  <wsdl:message name="IRoleProviderService_GetRolesForRoleGroup_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRolesForRoleGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRoleProviderService_RoleGroupExists_InputMessage">
+    <wsdl:part name="parameters" element="tns:RoleGroupExists" />
+  </wsdl:message>
+  <wsdl:message name="IRoleProviderService_RoleGroupExists_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RoleGroupExistsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRoleProviderService_GetAllRoleGroups_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllRoleGroups" />
+  </wsdl:message>
+  <wsdl:message name="IRoleProviderService_GetAllRoleGroups_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllRoleGroupsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRoleProviderService_AddUsersToRoleGroup_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddUsersToRoleGroup" />
+  </wsdl:message>
+  <wsdl:message name="IRoleProviderService_AddUsersToRoleGroup_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddUsersToRoleGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRoleProviderService_RemoveUsersFromRoleGroup_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveUsersFromRoleGroup" />
+  </wsdl:message>
+  <wsdl:message name="IRoleProviderService_RemoveUsersFromRoleGroup_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveUsersFromRoleGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRoleProviderService_FindUsersInRoleGroup_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindUsersInRoleGroup" />
+  </wsdl:message>
+  <wsdl:message name="IRoleProviderService_FindUsersInRoleGroup_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindUsersInRoleGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRoleProviderService_IsUserInRoleGroup_InputMessage">
+    <wsdl:part name="parameters" element="tns:IsUserInRoleGroup" />
+  </wsdl:message>
+  <wsdl:message name="IRoleProviderService_IsUserInRoleGroup_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IsUserInRoleGroupResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IRoleProviderService">
+    <wsdl:operation name="CreateRole">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRoleProviderService/CreateRole" message="tns:IRoleProviderService_CreateRole_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRoleProviderService/CreateRoleResponse" message="tns:IRoleProviderService_CreateRole_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteRole">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRoleProviderService/DeleteRole" message="tns:IRoleProviderService_DeleteRole_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRoleProviderService/DeleteRoleResponse" message="tns:IRoleProviderService_DeleteRole_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRolesForUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRoleProviderService/GetRolesForUser" message="tns:IRoleProviderService_GetRolesForUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRoleProviderService/GetRolesForUserResponse" message="tns:IRoleProviderService_GetRolesForUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetExclusiveRolesForUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRoleProviderService/GetExclusiveRolesForUser" message="tns:IRoleProviderService_GetExclusiveRolesForUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRoleProviderService/GetExclusiveRolesForUserResponse" message="tns:IRoleProviderService_GetExclusiveRolesForUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUsersInRole">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRoleProviderService/GetUsersInRole" message="tns:IRoleProviderService_GetUsersInRole_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRoleProviderService/GetUsersInRoleResponse" message="tns:IRoleProviderService_GetUsersInRole_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IsUserInRole">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRoleProviderService/IsUserInRole" message="tns:IRoleProviderService_IsUserInRole_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRoleProviderService/IsUserInRoleResponse" message="tns:IRoleProviderService_IsUserInRole_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RoleExists">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRoleProviderService/RoleExists" message="tns:IRoleProviderService_RoleExists_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRoleProviderService/RoleExistsResponse" message="tns:IRoleProviderService_RoleExists_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddUsersToRoles">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRoleProviderService/AddUsersToRoles" message="tns:IRoleProviderService_AddUsersToRoles_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRoleProviderService/AddUsersToRolesResponse" message="tns:IRoleProviderService_AddUsersToRoles_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindUsersInRole">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRoleProviderService/FindUsersInRole" message="tns:IRoleProviderService_FindUsersInRole_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRoleProviderService/FindUsersInRoleResponse" message="tns:IRoleProviderService_FindUsersInRole_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveUsersFromRoles">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRoleProviderService/RemoveUsersFromRoles" message="tns:IRoleProviderService_RemoveUsersFromRoles_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRoleProviderService/RemoveUsersFromRolesResponse" message="tns:IRoleProviderService_RemoveUsersFromRoles_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllRoles">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRoleProviderService/GetAllRoles" message="tns:IRoleProviderService_GetAllRoles_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRoleProviderService/GetAllRolesResponse" message="tns:IRoleProviderService_GetAllRoles_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateRoleGroup">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRoleProviderService/CreateRoleGroup" message="tns:IRoleProviderService_CreateRoleGroup_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRoleProviderService/CreateRoleGroupResponse" message="tns:IRoleProviderService_CreateRoleGroup_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteRoleGroup">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRoleProviderService/DeleteRoleGroup" message="tns:IRoleProviderService_DeleteRoleGroup_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRoleProviderService/DeleteRoleGroupResponse" message="tns:IRoleProviderService_DeleteRoleGroup_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExistsRoleGroup">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRoleProviderService/ExistsRoleGroup" message="tns:IRoleProviderService_ExistsRoleGroup_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRoleProviderService/ExistsRoleGroupResponse" message="tns:IRoleProviderService_ExistsRoleGroup_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddRolesToRoleGroup">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRoleProviderService/AddRolesToRoleGroup" message="tns:IRoleProviderService_AddRolesToRoleGroup_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRoleProviderService/AddRolesToRoleGroupResponse" message="tns:IRoleProviderService_AddRolesToRoleGroup_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveRolesFromRoleGroup">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRoleProviderService/RemoveRolesFromRoleGroup" message="tns:IRoleProviderService_RemoveRolesFromRoleGroup_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRoleProviderService/RemoveRolesFromRoleGroupResponse" message="tns:IRoleProviderService_RemoveRolesFromRoleGroup_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRolesForRoleGroup">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRoleProviderService/GetRolesForRoleGroup" message="tns:IRoleProviderService_GetRolesForRoleGroup_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRoleProviderService/GetRolesForRoleGroupResponse" message="tns:IRoleProviderService_GetRolesForRoleGroup_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RoleGroupExists">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRoleProviderService/RoleGroupExists" message="tns:IRoleProviderService_RoleGroupExists_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRoleProviderService/RoleGroupExistsResponse" message="tns:IRoleProviderService_RoleGroupExists_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllRoleGroups">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRoleProviderService/GetAllRoleGroups" message="tns:IRoleProviderService_GetAllRoleGroups_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRoleProviderService/GetAllRoleGroupsResponse" message="tns:IRoleProviderService_GetAllRoleGroups_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddUsersToRoleGroup">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRoleProviderService/AddUsersToRoleGroup" message="tns:IRoleProviderService_AddUsersToRoleGroup_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRoleProviderService/AddUsersToRoleGroupResponse" message="tns:IRoleProviderService_AddUsersToRoleGroup_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveUsersFromRoleGroup">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRoleProviderService/RemoveUsersFromRoleGroup" message="tns:IRoleProviderService_RemoveUsersFromRoleGroup_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRoleProviderService/RemoveUsersFromRoleGroupResponse" message="tns:IRoleProviderService_RemoveUsersFromRoleGroup_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindUsersInRoleGroup">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRoleProviderService/FindUsersInRoleGroup" message="tns:IRoleProviderService_FindUsersInRoleGroup_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRoleProviderService/FindUsersInRoleGroupResponse" message="tns:IRoleProviderService_FindUsersInRoleGroup_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IsUserInRoleGroup">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRoleProviderService/IsUserInRoleGroup" message="tns:IRoleProviderService_IsUserInRoleGroup_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRoleProviderService/IsUserInRoleGroupResponse" message="tns:IRoleProviderService_IsUserInRoleGroup_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WSHttpBinding_IRoleProviderService" type="tns:IRoleProviderService">
+    <wsp:PolicyReference URI="#WSHttpBinding_IRoleProviderService_policy" />
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CreateRole">
+      <soap12:operation soapAction="http://tempuri.org/IRoleProviderService/CreateRole" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteRole">
+      <soap12:operation soapAction="http://tempuri.org/IRoleProviderService/DeleteRole" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRolesForUser">
+      <soap12:operation soapAction="http://tempuri.org/IRoleProviderService/GetRolesForUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetExclusiveRolesForUser">
+      <soap12:operation soapAction="http://tempuri.org/IRoleProviderService/GetExclusiveRolesForUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUsersInRole">
+      <soap12:operation soapAction="http://tempuri.org/IRoleProviderService/GetUsersInRole" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsUserInRole">
+      <soap12:operation soapAction="http://tempuri.org/IRoleProviderService/IsUserInRole" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RoleExists">
+      <soap12:operation soapAction="http://tempuri.org/IRoleProviderService/RoleExists" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddUsersToRoles">
+      <soap12:operation soapAction="http://tempuri.org/IRoleProviderService/AddUsersToRoles" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindUsersInRole">
+      <soap12:operation soapAction="http://tempuri.org/IRoleProviderService/FindUsersInRole" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveUsersFromRoles">
+      <soap12:operation soapAction="http://tempuri.org/IRoleProviderService/RemoveUsersFromRoles" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllRoles">
+      <soap12:operation soapAction="http://tempuri.org/IRoleProviderService/GetAllRoles" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateRoleGroup">
+      <soap12:operation soapAction="http://tempuri.org/IRoleProviderService/CreateRoleGroup" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteRoleGroup">
+      <soap12:operation soapAction="http://tempuri.org/IRoleProviderService/DeleteRoleGroup" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExistsRoleGroup">
+      <soap12:operation soapAction="http://tempuri.org/IRoleProviderService/ExistsRoleGroup" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddRolesToRoleGroup">
+      <soap12:operation soapAction="http://tempuri.org/IRoleProviderService/AddRolesToRoleGroup" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveRolesFromRoleGroup">
+      <soap12:operation soapAction="http://tempuri.org/IRoleProviderService/RemoveRolesFromRoleGroup" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRolesForRoleGroup">
+      <soap12:operation soapAction="http://tempuri.org/IRoleProviderService/GetRolesForRoleGroup" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RoleGroupExists">
+      <soap12:operation soapAction="http://tempuri.org/IRoleProviderService/RoleGroupExists" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllRoleGroups">
+      <soap12:operation soapAction="http://tempuri.org/IRoleProviderService/GetAllRoleGroups" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddUsersToRoleGroup">
+      <soap12:operation soapAction="http://tempuri.org/IRoleProviderService/AddUsersToRoleGroup" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveUsersFromRoleGroup">
+      <soap12:operation soapAction="http://tempuri.org/IRoleProviderService/RemoveUsersFromRoleGroup" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindUsersInRoleGroup">
+      <soap12:operation soapAction="http://tempuri.org/IRoleProviderService/FindUsersInRoleGroup" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsUserInRoleGroup">
+      <soap12:operation soapAction="http://tempuri.org/IRoleProviderService/IsUserInRoleGroup" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="RoleProviderService">
+    <wsdl:port name="WSHttpBinding_IRoleProviderService" binding="tns:WSHttpBinding_IRoleProviderService">
+      <soap12:address location="http://localhost:12020/RoleProviderService.svc" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>http://localhost:12020/RoleProviderService.svc</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

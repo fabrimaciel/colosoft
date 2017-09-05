@@ -1,0 +1,65 @@
+﻿<?xml version="1.0"?>
+<configuration>
+	<appSettings/>
+	<connectionStrings/>
+	<system.web>
+		<compilation debug="true">
+		</compilation>
+		<!-- >> AUTH -->
+		<authentication mode="Forms">
+			<forms name=".SFAUTH" loginUrl="~/Login.aspx" protection="All" timeout="30" path="/" slidingExpiration="true" cookieless="UseDeviceProfile"/>
+		</authentication>
+		<authorization>
+			<allow users="*"/>
+		</authorization>
+		<!-- << AUTH -->
+        <!-- >> SESSION
+                By experience:  It is always good to keep your session timeout greater than authentication timeout. 
+                                In my case I put 10 minutes more.-->
+        <sessionState timeout="40"></sessionState>
+		<!-- >> ASP.NET XmpProviders -->
+		<roleManager enabled="true" cacheRolesInCookie="true" defaultProvider="XmlRoleProvider">
+			<providers>
+				<clear/>
+				<add applicationName="SampleWebsite" name="XmlRoleProvider" type="Colosoft.WebControls.Security.XmlRoleProvider"/>
+			</providers>
+		</roleManager>
+		<membership defaultProvider="XmlMembershipProvider">
+			<providers>
+				<clear/>
+				<add applicationName="SampleWebsite" 
+                     name="XmlMembershipProvider" 
+                     type="Colosoft.WebControls.Security.XmlMembershipProvider" 
+                     minRequiredPasswordLength="1" 
+                     minRequiredNonAlphanumericCharacters="0" 
+                     requiresQuestionAndAnswer="false" 
+                     requiresUniqueEmail="false" 
+                     passwordFormat="Encrypted"/>
+			</providers>
+		</membership>
+		<profile enabled="true" defaultProvider="XmlProfileProvider">
+			<providers>
+				<clear/>
+				<add applicationName="SampleWebsite" name="XmlProfileProvider" type="Colosoft.WebControls.Security.XmlProfileProvider"/>
+			</providers>
+			<properties>
+				<group name="Person">
+					<add name="FirstName" type="String"/>
+					<add name="LastName" type="String"/>
+					<add name="Years" type="Int32"/>
+				</group>
+				<add name="PageCursor" type="String"/>
+				<add name="Counter" type="Int32" defaultValue="0"/>
+			</properties>
+		</profile>
+		<!-- << ASP.NET XmpProviders -->
+	</system.web>
+	<location path="protected">
+		<system.web>
+			<authorization>
+				<allow roles="Administrators" />
+				<deny users="*" />
+			</authorization>
+		</system.web>
+	</location>
+</configuration>

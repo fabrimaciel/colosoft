@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema targetNamespace="http://colosoft.com.br/2013/webservices/reflection"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:tns="http://colosoft.com.br/2013/webservices/reflection"
+           elementFormDefault="qualified">
+
+  <xs:complexType name="TypeName">
+    <xs:attribute name="AssemblyQualifiedName" type="xs:string" use="required" />
+  </xs:complexType>
+
+  <xs:element name="TypeName" type="tns:TypeName" nillable="true" />
+
+  <xs:complexType name="AssemblyPart">
+    <xs:attribute name="Source" type="xs:string" />
+  </xs:complexType>
+
+  <xs:element name="AssemblyPart" type="tns:AssemblyPart" nillable="true" />
+
+  <xs:complexType name="ArrayOfAssemblyPart">
+    <xs:sequence>
+      <xs:element name="AssemblyPart" type="tns:AssemblyPart" nillable="true" maxOccurs="unbounded" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:element name="ArrayOfAssemblyPart" type="tns:ArrayOfAssemblyPart" nillable="true" />
+
+  <xs:complexType name="AssemblyPackage">
+    <xs:sequence>
+      <xs:element name="AssemblyParts" type="tns:ArrayOfAssemblyPart" nillable="true" minOccurs="0" maxOccurs="1"></xs:element>
+    </xs:sequence>
+    <xs:attribute name="Uid" type="xs:string"></xs:attribute>
+    <xs:attribute name="CreateTime" type="xs:dateTime" />
+  </xs:complexType>
+
+  <xs:element name="AssemblyPackage" type="tns:AssemblyPackage" nillable="true" />
+
+  <xs:complexType name="ArrayOfAssemblyPackage">
+    <xs:sequence>
+      <xs:element name="AssemblyPackage" type="tns:AssemblyPackage" nillable="true" maxOccurs="unbounded" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:element name="ArrayOfAssemblyPackage" type="tns:ArrayOfAssemblyPackage" nillable="true" />
+
+  <xs:complexType name="AssemblyInfo">
+    <xs:sequence>
+      <xs:element name="Reference" type="xs:string" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+    <xs:attribute name="LastWriteTime" type="xs:dateTime" />
+    <xs:attribute name="Name" type="xs:string" />
+  </xs:complexType>
+
+  <xs:element name="AssemblyInfo" type="tns:AssemblyInfo" nillable="true" />
+
+  <xs:complexType name="ArrayOfAssemblyInfo">
+    <xs:sequence>
+      <xs:element name="AssemblyInfo" type="tns:AssemblyInfo" nillable="true" maxOccurs="unbounded" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:element name="ArrayOfAssemblyInfo" type="tns:ArrayOfAssemblyInfo" nillable="true" />
+
+  <xs:complexType name="AssemblyInfoEntry">
+    <xs:sequence>
+      <xs:element name="Info" type="tns:AssemblyInfo" nillable="true" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+    <xs:attribute name="FileName" type="xs:string" />
+  </xs:complexType>
+
+  <xs:element name="AssemblyInfoEntry" type="tns:AssemblyInfoEntry" />
+</xs:schema>

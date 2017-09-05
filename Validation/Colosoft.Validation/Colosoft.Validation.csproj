@@ -1,0 +1,176 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{FAD3C3EC-1297-4075-A2E8-DF39A5DF95CB}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Colosoft.Validation</RootNamespace>
+    <AssemblyName>Colosoft.Validation</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>false</DebugSymbols>
+    <DebugType>none</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\bin\Client\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>0</WarningLevel>
+    <DocumentationFile>..\..\bin\Client\Colosoft.Validation.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>0</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>Key.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Colosoft.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=d3b3c440aed9b980, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\bin\Client\Colosoft.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Libraries\General\CommonServiceLocation\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CharacterCase.cs" />
+    <Compile Include="EntityType.cs" />
+    <Compile Include="EntityTypeVersionEvent.cs" />
+    <Compile Include="EntityTypeVersion.cs" />
+    <Compile Include="EntityTypeVersionProperty.cs" />
+    <Compile Include="GeneralValidationManager.cs" />
+    <Compile Include="InputRules.cs" />
+    <Compile Include="InputRulesGroup.cs" />
+    <Compile Include="InputRulesInputRulesGroup.cs" />
+    <Compile Include="InputValidate.cs" />
+    <Compile Include="InputValidateCheckDigits.cs" />
+    <Compile Include="InputValidateCustomization.cs" />
+    <Compile Include="InputValidateDefault.cs" />
+    <Compile Include="InputValidateGroup.cs" />
+    <Compile Include="InputValidateGroupItem.cs" />
+    <Compile Include="InputValidateIndexedValue.cs" />
+    <Compile Include="InputValidateLength.cs" />
+    <Compile Include="InputValidateMask.cs" />
+    <Compile Include="InputValidateRange.cs" />
+    <Compile Include="InputValidateType.cs" />
+    <Compile Include="InputValidateValidChars.cs" />
+    <Compile Include="InputValidateValue.cs" />
+    <Compile Include="InputValidationInfo.cs" />
+    <Compile Include="Namespaces.cs" />
+    <Compile Include="PropertyDefaultLabel.cs" />
+    <Compile Include="PropertySettings.cs" />
+    <Compile Include="Validation.cs" />
+    <Compile Include="ValidationParameter.cs" />
+    <Compile Include="ValidationSettings.cs" />
+    <Compile Include="ValidationType.cs" />
+    <Compile Include="ValidationTypeParameter.cs" />
+    <Compile Include="ControlTypes.cs" />
+    <Compile Include="CustomerSpecializationFake.cs" />
+    <Compile Include="EventPropertyChanged.cs" />
+    <Compile Include="ICheckDigits.cs" />
+    <Compile Include="IDefaultValue.cs" />
+    <Compile Include="IEntityPropertyInfo.cs" />
+    <Compile Include="IEntitySpecialization.cs" />
+    <Compile Include="IgnoreValidationAttribute.cs" />
+    <Compile Include="IIndexedValue.cs" />
+    <Compile Include="IInputValidateCheck.cs" />
+    <Compile Include="IInputValidateCustomization.cs" />
+    <Compile Include="IInputValidationInfo.cs" />
+    <Compile Include="ILength.cs" />
+    <Compile Include="IMask.cs" />
+    <Compile Include="InputRulesOptions.cs" />
+    <Compile Include="InputValidateCheckResult.cs" />
+    <Compile Include="IParse.cs" />
+    <Compile Include="IPropertyLabel.cs" />
+    <Compile Include="IPropertySettingsInfo.cs" />
+    <Compile Include="IPropertyValue.cs" />
+    <Compile Include="IRange.cs" />
+    <Compile Include="IStateble.cs" />
+    <Compile Include="IStatebleItem.cs" />
+    <Compile Include="IStateControl.cs" />
+    <Compile Include="ISystemListFilter.cs" />
+    <Compile Include="IValidationManager.cs" />
+    <Compile Include="IValidationMessageProvider.cs" />
+    <Compile Include="IValidationTypeFactory.cs" />
+    <Compile Include="IValidator.cs" />
+    <Compile Include="IValidatorCreator.cs" />
+    <Compile Include="IValidChars.cs" />
+    <Compile Include="ParameterValue.cs" />
+    <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="PropertyLabel.cs" />
+    <Compile Include="PropertyLabelInfo.cs" />
+    <Compile Include="PropertyMaskInfo.cs" />
+    <Compile Include="PropertyValidationInfo.cs" />
+    <Compile Include="StatebleParameterCollection.cs" />
+    <Compile Include="StateChangedEvent.cs" />
+    <Compile Include="TypeListResult.cs" />
+    <Compile Include="ValidationExtensions.cs" />
+    <Compile Include="ValidationList.cs" />
+    <Compile Include="ValidationManager.cs" />
+    <Compile Include="ValidationManagerFake.cs" />
+    <Compile Include="ValidationResult.cs" />
+    <Compile Include="ValidationResultItem.cs" />
+    <Compile Include="ValidationResultType.cs" />
+    <Compile Include="ValidationTypeFactory.cs" />
+    <Compile Include="ValidationTypeInfo.cs" />
+    <Compile Include="ValidatorCreator.cs" />
+    <Compile Include="AggregateValidator.cs" />
+    <Compile Include="CheckDigitsValidator.cs" />
+    <Compile Include="CustomizationValidator.cs" />
+    <Compile Include="LengthValidator.cs" />
+    <Compile Include="MaskValidator.cs" />
+    <Compile Include="NecessaryValidator.cs" />
+    <Compile Include="NotNullValidator.cs" />
+    <Compile Include="RangeValidator.cs" />
+    <Compile Include="StringLengthValidation.cs" />
+    <Compile Include="ValidatorsHelper.cs" />
+    <Compile Include="ValidCharsValidator.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Schemas\Validation.xsd">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <None Include="Key.snk" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

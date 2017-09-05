@@ -1,0 +1,213 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1A1FF7E3-D76B-4FBE-B4E0-B94A5A7CE34F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Colosoft.Query</RootNamespace>
+    <AssemblyName>Colosoft.Query</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>false</DebugSymbols>
+    <DebugType>none</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\bin\Client\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>0</WarningLevel>
+    <DocumentationFile>..\..\bin\Client\Colosoft.Query.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>0</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>Key.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Colosoft.Core">
+      <HintPath>..\..\bin\Client\Colosoft.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Colosoft.Text">
+      <HintPath>..\..\bin\Client\Colosoft.Text.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation">
+      <HintPath>..\..\Libraries\General\CommonServiceLocation\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BindableQueryCallBackWrapper.cs" />
+    <Compile Include="CaseConditional.cs" />
+    <Compile Include="CaseWhenExpression.cs" />
+    <Compile Include="QueryParameterCollection.cs" />
+    <Compile Include="Column.cs" />
+    <Compile Include="Conditional.cs" />
+    <Compile Include="ConditionalContainer.cs" />
+    <Compile Include="ConditionalParser.cs" />
+    <Compile Include="ConditionalTerm.cs" />
+    <Compile Include="Constant.cs" />
+    <Compile Include="DataAccessConstants.cs" />
+    <Compile Include="DynamicBindStrategy.cs" />
+    <Compile Include="DynamicBindStrategy2.cs" />
+    <Compile Include="DynamicQueryDataSource.cs" />
+    <Compile Include="DynamicExpression.cs" />
+    <Compile Include="ExpressionParser.cs" />
+    <Compile Include="ParseException.cs" />
+    <Compile Include="Res.cs" />
+    <Compile Include="EntityInfo.cs" />
+    <Compile Include="Formula.cs" />
+    <Compile Include="FormatHelper.cs" />
+    <Compile Include="FunctionCall.cs" />
+    <Compile Include="GlobalSuppressions.cs" />
+    <Compile Include="GroupBy.cs" />
+    <Compile Include="GroupByEntry.cs" />
+    <Compile Include="IProviderLocator.cs" />
+    <Compile Include="IQueryableContainer.cs" />
+    <Compile Include="IQueryCommandContainer.cs" />
+    <Compile Include="IQueryDataSource.cs" />
+    <Compile Include="IQueryExecuteObserver.cs" />
+    <Compile Include="IQueryParameterContainer.cs" />
+    <Compile Include="IQueryResultBindStrategy.cs" />
+    <Compile Include="IQueryResultObjectCreator.cs" />
+    <Compile Include="IQueryResultObserver.cs" />
+    <Compile Include="IQueryTranslator.cs" />
+    <Compile Include="ISourceContext.cs" />
+    <Compile Include="IWhereClause.cs" />
+    <Compile Include="JoinInfo.cs" />
+    <Compile Include="ILinqSourceContext.cs" />
+    <Compile Include="ISourceProvider.cs" />
+    <Compile Include="LinqSourceContext.cs" />
+    <Compile Include="CustomQueryable.cs" />
+    <Compile Include="Queryable2.cs" />
+    <Compile Include="QueryableSourceProvider.cs" />
+    <Compile Include="QueryableSourceProvider2.cs" />
+    <Compile Include="QueryProvider.cs" />
+    <Compile Include="SourceProvider.cs" />
+    <Compile Include="SourceQuery.cs" />
+    <Compile Include="ExpressionVisitor.cs" />
+    <Compile Include="Member.cs" />
+    <Compile Include="OrderByItem.cs" />
+    <Compile Include="OrderByTranslator.cs" />
+    <Compile Include="ProjectionTranslator.cs" />
+    <Compile Include="QueryableTranslator.cs" />
+    <Compile Include="QueryTranslator.cs" />
+    <Compile Include="SkipTranslator.cs" />
+    <Compile Include="TakeTranslator.cs" />
+    <Compile Include="WhereTranslator.cs" />
+    <Compile Include="MinusTerm.cs" />
+    <Compile Include="MultiQueryable.cs" />
+    <Compile Include="Namespaces.cs" />
+    <Compile Include="Operator.cs" />
+    <Compile Include="SqlDefaultLexerConfiguration.cs" />
+    <Compile Include="SqlExpression.cs" />
+    <Compile Include="SqlTokenID.cs" />
+    <Compile Include="SqlTokenParser.cs" />
+    <Compile Include="Projection.cs" />
+    <Compile Include="ProjectionEntry.cs" />
+    <Compile Include="ProjectionProvider.cs" />
+    <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Queryable.cs" />
+    <Compile Include="QueryableExecuterHandler.cs" />
+    <Compile Include="QueryCallBack.cs" />
+    <Compile Include="QueryCallBackWrapper.cs" />
+    <Compile Include="QueryCallBackWrapperOfModel.cs" />
+    <Compile Include="QueryException.cs" />
+    <Compile Include="QueryExecutePredicate.cs" />
+    <Compile Include="QueryInfo.cs" />
+    <Compile Include="QueryParameter.cs" />
+    <Compile Include="QueryTerm.cs" />
+    <Compile Include="BindableQueryResult.cs" />
+    <Compile Include="Field.cs" />
+    <Compile Include="IDataRecord.cs" />
+    <Compile Include="IEditableRecord.cs" />
+    <Compile Include="IExtensiveData.cs" />
+    <Compile Include="InvalidQueryResultException.cs" />
+    <Compile Include="InvalidRecordChecksumException.cs" />
+    <Compile Include="IQueryResult.cs" />
+    <Compile Include="IQueryResult2.cs" />
+    <Compile Include="IQueryResultChangedObserver.cs" />
+    <Compile Include="IRecord.cs" />
+    <Compile Include="IRecordKeyEquatable.cs" />
+    <Compile Include="IRecordKeyFactory.cs" />
+    <Compile Include="IRecordObserver.cs" />
+    <Compile Include="IRecordObserverManager.cs" />
+    <Compile Include="QueryResult.cs" />
+    <Compile Include="QueryResult2.cs" />
+    <Compile Include="QueryResultChangedObserver.cs" />
+    <Compile Include="QueryResultParameters.cs" />
+    <Compile Include="QueryResultProxy.cs" />
+    <Compile Include="QueryResultValidator.cs" />
+    <Compile Include="Record.cs" />
+    <Compile Include="RecordDescriptor.cs" />
+    <Compile Include="RecordFieldNotFoundException.cs" />
+    <Compile Include="RecordKey.cs" />
+    <Compile Include="RecordKeyFactory.cs" />
+    <Compile Include="RecordObserverManager.cs" />
+    <Compile Include="RecordSortComparer.cs" />
+    <Compile Include="RecordValue.cs" />
+    <Compile Include="ValidationQueryResult.cs" />
+    <Compile Include="ReferenceParameter.cs" />
+    <Compile Include="ReferenceParameterValue.cs" />
+    <Compile Include="SchemasHelper.cs" />
+    <Compile Include="XmlHelper.cs" />
+    <Compile Include="Sort.cs" />
+    <Compile Include="SortEntry.cs" />
+    <Compile Include="SourceContext.cs" />
+    <Compile Include="StoredProcedureName.cs" />
+    <Compile Include="SubQueryCallBack.cs" />
+    <Compile Include="TakeParameters.cs" />
+    <Compile Include="TypeBindRecordDescriptorSchema.cs" />
+    <Compile Include="TypeBindStrategy.cs" />
+    <Compile Include="TypeBindStrategyCache.cs" />
+    <Compile Include="TypeBindStrategySession.cs" />
+    <Compile Include="TypeHelper.cs" />
+    <Compile Include="Union.cs" />
+    <Compile Include="UnionInfo.cs" />
+    <Compile Include="ValuesArray.cs" />
+    <Compile Include="Variable.cs" />
+    <Compile Include="WhereClause.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Key.snk" />
+    <EmbeddedResource Include="Schemas\Query.xsd">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

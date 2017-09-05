@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Colosoft.Security.Remote.Server" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Colosoft.Security.Remote.Server" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:3911/UserProviderService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Colosoft.Security" />
+  <xs:complexType name="UserProviderInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="EnablePasswordReset" type="xs:boolean" />
+      <xs:element minOccurs="0" name="EnablePasswordRetrieval" type="xs:boolean" />
+      <xs:element minOccurs="0" name="MaxInvalidPasswordAttempts" type="xs:int" />
+      <xs:element minOccurs="0" name="MinRequiredNonAlphanumericCharacters" type="xs:int" />
+      <xs:element minOccurs="0" name="MinRequiredPasswordLength" type="xs:int" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Colosoft.Security" minOccurs="0" name="PasswordFormat" type="q1:PasswordFormat" />
+      <xs:element minOccurs="0" name="PasswordStrengthRegularExpression" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RequiresQuestionAndAnswer" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UserProviderInfo" nillable="true" type="tns:UserProviderInfo" />
+  <xs:complexType name="CreateUserResult">
+    <xs:sequence>
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Colosoft.Security" minOccurs="0" name="Status" type="q2:UserCreateStatus" />
+      <xs:element minOccurs="0" name="User" nillable="true" type="tns:User" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CreateUserResult" nillable="true" type="tns:CreateUserResult" />
+  <xs:complexType name="User">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CreationDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FullName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IdentityProvider" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IgnoreCaptcha" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsApproved" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsOnline" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LastActivityDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="LastLoginDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="LastPasswordChangedDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="PasswordQuestion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserKey" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="User" nillable="true" type="tns:User" />
+</xs:schema>

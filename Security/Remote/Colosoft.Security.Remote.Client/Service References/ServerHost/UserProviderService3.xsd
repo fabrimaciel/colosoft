@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Colosoft.Security" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Colosoft.Security" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:simpleType name="PasswordFormat">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Clear" />
+      <xs:enumeration value="Hashed" />
+      <xs:enumeration value="Encrypted" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="PasswordFormat" nillable="true" type="tns:PasswordFormat" />
+  <xs:complexType name="ArrayOfSecurityParameter">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SecurityParameter" nillable="true" type="tns:SecurityParameter" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSecurityParameter" nillable="true" type="tns:ArrayOfSecurityParameter" />
+  <xs:complexType name="SecurityParameter">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Value" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SecurityParameter" nillable="true" type="tns:SecurityParameter" />
+  <xs:simpleType name="UserCreateStatus">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Success" />
+      <xs:enumeration value="InvalidUserName" />
+      <xs:enumeration value="InvalidPassword" />
+      <xs:enumeration value="InvalidQuestion" />
+      <xs:enumeration value="InvalidAnswer" />
+      <xs:enumeration value="InvalidEmail" />
+      <xs:enumeration value="DuplicateUserName" />
+      <xs:enumeration value="DuplicateEmail" />
+      <xs:enumeration value="UserRejected" />
+      <xs:enumeration value="InvalidProviderUserKey" />
+      <xs:enumeration value="DuplicateProviderUserKey" />
+      <xs:enumeration value="ProviderError" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="UserCreateStatus" nillable="true" type="tns:UserCreateStatus" />
+</xs:schema>

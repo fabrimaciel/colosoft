@@ -1,0 +1,286 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema targetNamespace="http://colosoft.com.br/2015/validation"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:tns="http://colosoft.com.br/2015/validation"
+           elementFormDefault="qualified">
+
+  <xs:complexType name="InputValidateDefault">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="InputValidateCheckDigits">
+    <xs:attribute name="digits" type="xs:int" />
+    <xs:attribute name="start" type="xs:int" />
+    <xs:attribute name="limit" type="xs:int" />
+    <xs:attribute name="base" type="xs:int" />
+  </xs:complexType>
+
+  <xs:complexType name="InputValidateCustomization">
+    <xs:attribute name="name" />
+  </xs:complexType>
+
+  <xs:complexType name="InputValidateLength">
+    <xs:attribute name="minValue" type="xs:double" />
+    <xs:attribute name="maxValue" type="xs:double" />
+  </xs:complexType>
+
+  <xs:complexType name="InputValidateMask">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="InputValidateRange">
+    <xs:sequence>
+      <xs:element name="FromValue" type="xs:string" />
+      <xs:element name="ToValue" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="InputValidateValidChars">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="InputValidateValue">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="ArrayOfInputValidateValue">
+    <xs:sequence>
+      <xs:element name="InputValidateValue" type="tns:InputValidateIndexedValue" nillable="true" maxOccurs="unbounded" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="InputValidateIndexedValue">
+    <xs:sequence>
+      <xs:element name="Value" type="xs:string" />
+      <xs:element name="Descrition" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="ArrayOfInputValidadeIndexedValue">
+    <xs:sequence>
+      <xs:element name="InputValidateIndexedValue" type="tns:InputValidateIndexedValue" nillable="true" maxOccurs="unbounded" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:simpleType name="InputValidateType">
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="Group">
+        <xs:annotation>
+          <xs:documentation>
+            Grupo de outras validações de entrada
+          </xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="DefaultValue">
+        <xs:annotation>
+          <xs:documentation>
+            Valor inicial
+          </xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="IndexedValues">
+        <xs:annotation>
+          <xs:documentation>
+            Valores indexados.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Values">
+        <xs:annotation>
+          <xs:documentation>
+            Valores
+          </xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Range">
+        <xs:annotation>
+          <xs:documentation>
+            Faixa de valores possíveis
+          </xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Length">
+        <xs:annotation>
+          <xs:documentation>
+            Tamanho do campo
+          </xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ValidChars">
+        <xs:annotation>
+          <xs:documentation>
+            Caracteres válidos
+          </xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Mask">
+        <xs:annotation>
+          <xs:documentation>
+            Máscara.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CheckDigits">
+        <xs:annotation>
+          <xs:documentation>
+            Dígitos verificadores
+          </xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="TypeList">
+        <xs:annotation>
+          <xs:documentation>
+            Lista de valores de algum tipo do sistema.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Customization">
+        <xs:annotation>
+          <xs:documentation>
+            Customização.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CharacterUpperCase">
+        <xs:annotation>
+          <xs:documentation>
+            Conversão para maiúsculo.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CharacterLowerCase">
+        <xs:annotation>
+          <xs:documentation>
+            Conversão para minúsculo.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="InputValidate">
+    <xs:sequence>
+      <xs:element name="CheckDigits" minOccurs="0" maxOccurs="1" nillable="true" 
+                  type="tns:InputValidateCheckDigits" />
+      <xs:element name="Default" minOccurs="0" maxOccurs="1" nillable="true" 
+                  type="tns:InputValidateDefault" />
+      <xs:element name="Customization" minOccurs="0" maxOccurs="1" nillable="true"
+                  type="tns:InputValidateCustomization" />
+      <xs:element name="IndexedValues" minOccurs="0" maxOccurs="1" nillable="true"
+                  type="tns:ArrayOfInputValidadeIndexedValue" />
+      <xs:element name="Length" minOccurs="0" maxOccurs="1" nillable="true"
+                  type="tns:InputValidateLength" />
+      <xs:element name="Mask" minOccurs="0" maxOccurs="1" nillable="true"
+                  type="tns:InputValidateMask" />
+      <xs:element name="Range" minOccurs="0" maxOccurs="1" nillable="true"
+                  type="tns:InputValidateRange" />
+      <xs:element name="ValidChars" minOccurs="0" maxOccurs="1" nillable="true"
+                  type="tns:InputValidateValidChars" />
+      <xs:element name="Values" minOccurs="0" maxOccurs="1" nillable="true"
+                  type="tns:ArrayOfInputValidateValue" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:element name="InputValidate" type="tns:InputValidate" />
+
+  <xs:complexType name="PropertyDefaultLabel">
+    <xs:sequence>
+      <xs:element name="abel" type="xs:string"
+                  maxOccurs="1" minOccurs="1" nillable="false"  />
+      <xs:element name="Description" type="xs:string"
+                  maxOccurs="1" minOccurs="1" nillable="true"  />
+    </xs:sequence>
+    <xs:attribute name="culture" type="xs:string" />
+  </xs:complexType>
+
+  <xs:element name="PropertyDefaultLabel" type="tns:PropertyDefaultLabel" />
+  
+  <xs:simpleType name="EntityEventType">
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="Initialized">
+        <xs:annotation>
+          <xs:documentation>
+            Representa o evento acionado quando a entidade for inicializada
+          </xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PropertyChanging">
+        <xs:annotation>
+          <xs:documentation>
+            Representa o evento acionado quando uma propriedade da entidade estiver sendo
+            //     alterada
+          </xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PropertyChanged">
+        <xs:annotation>
+          <xs:documentation>
+            Representa o evento acionado quando uma propriedade da entidade for alterada
+          </xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Validating">
+        <xs:annotation>
+          <xs:documentation>
+            Representa o evento acionado quando a entidade estiver sendo validada.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Validated">
+        <xs:annotation>
+          <xs:documentation>
+            Representa o evento acionado quando a entidade for validada.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Saving">
+        <xs:annotation>
+          <xs:documentation>
+            Representa o evento acionado quando a entidade estiver sendo salva.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Saved">
+        <xs:annotation>
+          <xs:documentation>
+            Representa o evento acionado quando a entidade for salva.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Deleting">
+        <xs:annotation>
+          <xs:documentation>
+            Representa o evento acionado quando a entidade estiver sendo apagada.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Deleted">
+        <xs:annotation>
+          <xs:documentation>
+            Representa o evento acionado quando a entidade for salva.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="EntityTypeVersionEvent">
+    <xs:attribute name="type" type="tns:EntityEventType" />
+    <xs:attribute name="sequence" type="xs:string" />
+  </xs:complexType>
+
+  <xs:element name="EntityTypeVersionEvent" type="tns:EntityTypeVersionEvent" />
+  
+</xs:schema>

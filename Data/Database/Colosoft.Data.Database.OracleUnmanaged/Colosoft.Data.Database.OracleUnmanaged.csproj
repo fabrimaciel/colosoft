@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7002DE7D-599D-4AA0-8A38-1CB290914D9C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Colosoft.Data.Database.Oracle</RootNamespace>
+    <AssemblyName>Colosoft.Data.Database.OracleUnmanaged</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>false</DebugSymbols>
+    <DebugType>none</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\bin\Server\x64\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;UNMANAGED</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>0</WarningLevel>
+    <PlatformTarget>x64</PlatformTarget>
+    <DocumentationFile>..\..\..\bin\Server\x64\Colosoft.Data.Database.OracleUnmanaged.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>0</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Colosoft.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=d3b3c440aed9b980, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\bin\Client\Colosoft.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Colosoft.Data, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a9a1c7003d571595, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\bin\Client\Colosoft.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Colosoft.Data.Schema, Version=1.0.0.0, Culture=neutral, PublicKeyToken=d550d59fa5ddf895, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\bin\Client\Colosoft.Data.Schema.dll</HintPath>
+    </Reference>
+    <Reference Include="Colosoft.Query, Version=1.0.0.0, Culture=neutral, PublicKeyToken=32cb8a6b967cc05b, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\bin\Client\Colosoft.Query.dll</HintPath>
+    </Reference>
+    <Reference Include="Colosoft.Query.Database, Version=1.0.0.0, Culture=neutral, PublicKeyToken=7dca01bd831b5786, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\bin\Server\Colosoft.Query.Database.dll</HintPath>
+    </Reference>
+    <Reference Include="Colosoft.Query.Database.OracleUnmanaged, Version=1.0.0.0, Culture=neutral, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\bin\Server\x64\Colosoft.Query.Database.OracleUnmanaged.dll</HintPath>
+    </Reference>
+    <Reference Include="GDA, Version=1.4.2.27175, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Libraries\General\GDA\GDA.dll</HintPath>
+    </Reference>
+    <Reference Include="GDA.Provider.OracleUnmanaged, Version=1.0.0.0, Culture=neutral, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Libraries\General\GDA\Providers\Oracle\x64\GDA.Provider.OracleUnmanaged.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Libraries\General\CommonServiceLocation\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="Oracle.DataAccess, Version=4.121.2.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Libraries\General\GDA\Providers\Oracle\x64\Oracle.DataAccess.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\Colosoft.Data.Database.Oracle\IOraclePrimaryKeyRepository.cs">
+      <Link>IOraclePrimaryKeyRepository.cs</Link>
+    </Compile>
+    <Compile Include="..\Colosoft.Data.Database.Oracle\OracleGenericPersistenceExecuter.cs">
+      <Link>OracleGenericPersistenceExecuter.cs</Link>
+    </Compile>
+    <Compile Include="..\Colosoft.Data.Database.Oracle\OraclePersistenceContext.cs">
+      <Link>OraclePersistenceContext.cs</Link>
+    </Compile>
+    <Compile Include="..\Colosoft.Data.Database.Oracle\OraclePersistenceSqlParser.cs">
+      <Link>OraclePersistenceSqlParser.cs</Link>
+    </Compile>
+    <Compile Include="..\Colosoft.Data.Database.Oracle\OraclePrimaryKeyRepository.cs">
+      <Link>OraclePrimaryKeyRepository.cs</Link>
+    </Compile>
+    <Compile Include="..\Colosoft.Data.Database.Oracle\Properties\Resources.Designer.cs">
+      <Link>Resources.Designer.cs</Link>
+    </Compile>
+    <Compile Include="AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Colosoft.Data.Database.Generic\Colosoft.Data.Database.Generic.csproj">
+      <Project>{c6733bff-6b5e-47a1-b4ad-4cae84bf3283}</Project>
+      <Name>Colosoft.Data.Database.Generic</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Colosoft.Data.Database\Colosoft.Data.Database.csproj">
+      <Project>{4b8e832f-e723-44d9-bffa-3d2ab4972040}</Project>
+      <Name>Colosoft.Data.Database</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="..\Colosoft.Data.Database.Oracle\Properties\Resources.resx">
+      <Link>Resources.resx</Link>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

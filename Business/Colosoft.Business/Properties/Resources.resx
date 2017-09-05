@@ -1,0 +1,216 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="BaseEntityList_EntityInstanceExists" xml:space="preserve">
+    <value>O registro da entidade '{0}' com a chave '{1}' já existem na lista pertencente a entidade '{2}'.</value>
+  </data>
+  <data name="BaseEntityList_WithoutOwner" xml:space="preserve">
+    <value>Sem pai</value>
+  </data>
+  <data name="EntityEventManager_GetEntityEventInfosError" xml:space="preserve">
+    <value>Ocorreu um erro ao recuperar as informações de eventos da entidade '{0}'</value>
+  </data>
+  <data name="EntityEventManager_GetEventTypeImplementationError" xml:space="preserve">
+    <value>Ocorreu um erro a recuperar a implementação para o tipo de evento '{0}' para a entidade '{1}' com o export id '{2}'</value>
+  </data>
+  <data name="EntityLinkList_ExpectedEntityOfModel" xml:space="preserve">
+    <value>Expected IEntityOfModel.</value>
+  </data>
+  <data name="EntityLinksList_CouldNotCreateTheEntityLink" xml:space="preserve">
+    <value>Não foi possível criar a entidade do link '{0}' com a entidade '{1}' '{2}'.</value>
+  </data>
+  <data name="EntityLoaderChildContainer_DuplicateChildEntryWithName" xml:space="preserve">
+    <value>Existe uma entrada de filho duplicada para o nome '{0}'.</value>
+  </data>
+  <data name="EntityLoaderLinkInfo_ChildUidPropertyUndefined" xml:space="preserve">
+    <value>(EntityType {0}) A propriedade uid do filho '{1}' associada com o link '{2}' não foi definida.</value>
+  </data>
+  <data name="EntityLoaderLinkInfo_ForeignKeyPropertyUndefined" xml:space="preserve">
+    <value>(EntityType {0}) A propriedade de chave estrangeira do filho '{1}' associada com o link '{2}' não foi definida.</value>
+  </data>
+  <data name="EntityLoaderOfModel_ChildOfLinkNotFound" xml:space="preserve">
+    <value>O filho '{0}' da entidade '{1}' associado com o link '{2}' não foi encontrado</value>
+  </data>
+  <data name="EntityLoaderOfModel_CreatorUndefined" xml:space="preserve">
+    <value>Creator undefined on load of type '{0}'.</value>
+  </data>
+  <data name="EntityLoaderOfModel_FaillOnLoadChildrenFromEntity" xml:space="preserve">
+    <value>Não foi possível carregar os dados dos filhos de '{0}'. {1}</value>
+  </data>
+  <data name="EntityLoaderOfModel_LoadChildFromEntityError" xml:space="preserve">
+    <value>Não foi possível carregar os dados do filho '{0}' da entidade '{1}', pelo motivo: {2}</value>
+  </data>
+  <data name="EntityLoaderOfModel_LoadLinkFromEntityError" xml:space="preserve">
+    <value>Não foi possível carregar os dados da ligação '{0}' da entidade '{1}', pelo motivo: {2}</value>
+  </data>
+  <data name="EntityLoaderOfModel_LoadReferenceFromEntityError" xml:space="preserve">
+    <value>Não foi possível carregar os dados da referência '{0}' da entidade '{1}', pelo motivo: {2}</value>
+  </data>
+  <data name="EntityLoaderReferenceContainer_DuplicateReferebceEntryWithName" xml:space="preserve">
+    <value>Existe uma entrada de referência duplicada para o nome '{0}'.</value>
+  </data>
+  <data name="EntityLoaderReference_ParentPropertyNotFound" xml:space="preserve">
+    <value>Não foi possível carregar a referência, a propriedade '{0}' não foi encontrada no tipo '{1}'.</value>
+  </data>
+  <data name="Entity_PropertyNotFound" xml:space="preserve">
+    <value>Propriedade '{0}' não foi encontrada</value>
+  </data>
+  <data name="Exception_InvalidCustomizationValue" xml:space="preserve">
+    <value>Customização não identificada indica que o valor de '{0}' é inválido.</value>
+  </data>
+  <data name="Exception_InvalidList" xml:space="preserve">
+    <value>A lista da instância não é a {0}.</value>
+  </data>
+  <data name="Exception_ItemMustBuUniqueInList" xml:space="preserve">
+    <value>O Item deve ser único na lista.</value>
+    <comment>Ocorre quando tentamos inserir em uma lista um objeto que já está contido nela.</comment>
+  </data>
+  <data name="Exception_KeyNotFound" xml:space="preserve">
+    <value>Chave {0} não encontrada.</value>
+    <comment>Chave com o estado da propriedade não foi encontrado</comment>
+  </data>
+  <data name="Exception_ValueDidNotCheckDigits" xml:space="preserve">
+    <value>O campo '{0}' não é válido.</value>
+    <comment>Ocorre quando a validação de dígitos do campo invalida o conteúdo do mesmo.</comment>
+  </data>
+  <data name="Exception_ValueHasInvalidChar" xml:space="preserve">
+    <value>O valor do campo '{0}' possui um caractere inválido.</value>
+    <comment>Ocorre quando há caractere fora do conjunto permitido.</comment>
+  </data>
+  <data name="Exception_ValueInvalidByCustomization" xml:space="preserve">
+    <value>O valor do campo '{0}' é inválido.</value>
+    <comment>Ocorre quando uma customização indica que o valor do campo é invalido.</comment>
+  </data>
+  <data name="Exception_ValueInvalidLength" xml:space="preserve">
+    <value>O valor campo '{0}' não tem um comprimento válido.</value>
+    <comment>Ocorre quando o tamanho do campo é inferior ou excede os limites definidos.</comment>
+  </data>
+  <data name="Exception_ValueIsRquiredOrNecessaryToProperty" xml:space="preserve">
+    <value>O campo '{0}' é requerido ou necessário.</value>
+    <comment>Ocorre quando um campo requerido ou necessário não é preenchido.</comment>
+  </data>
+  <data name="Exception_ValueNotInRange" xml:space="preserve">
+    <value>O valor do campo '{0}' não está no intervalo permitido</value>
+    <comment>Ocorre quando o valor está fora do intervalo definido para o campo.</comment>
+  </data>
+  <data name="Exception_ValueNotProperlyFormatted" xml:space="preserve">
+    <value>O valor do campo'{0}' não está no formato correto ou está parcialmente preenchido.</value>
+    <comment>Ocorre quando não é possível identificar o correto preenchimento de um campo com máscara.</comment>
+  </data>
+</root>

@@ -1,0 +1,677 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{29A27C05-CBEC-4FC0-AC82-E161549A4DEF}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Colosoft</RootNamespace>
+    <AssemblyName>Colosoft.Core</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>false</DebugSymbols>
+    <DebugType>none</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\bin\Client\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>0</WarningLevel>
+    <DocumentationFile>..\..\bin\Client\Colosoft.Core.XML</DocumentationFile>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>0</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>Key.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Practices.ServiceLocation">
+      <HintPath>..\..\Libraries\General\CommonServiceLocation\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.IdentityModel" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AggregateObserver.cs" />
+    <Compile Include="BitSet.cs" />
+    <Compile Include="Bootstrapper.cs" />
+    <Compile Include="AggregateObservableCollection.cs" />
+    <Compile Include="AsyncVirtualList.cs" />
+    <Compile Include="BaseObservableCollection.cs" />
+    <Compile Include="CollectionChangedWrapperEventData.cs" />
+    <Compile Include="DataPage.cs" />
+    <Compile Include="DataWrapper.cs" />
+    <Compile Include="DataWrapperPage.cs" />
+    <Compile Include="ExpiringList.cs" />
+    <Compile Include="FilteredObservableCollection.cs" />
+    <Compile Include="IDataPage.cs" />
+    <Compile Include="IFilteredObservableCollection.cs" />
+    <Compile Include="IIndexedObservableCollection.cs" />
+    <Compile Include="ILoadErrorControl.cs" />
+    <Compile Include="IndexNotFoundException.cs" />
+    <Compile Include="INotifyCollectionChangedDispatcher.cs" />
+    <Compile Include="INotifyCollectionChangedObserver.cs" />
+    <Compile Include="INotifyCollectionChangedObserverContainer.cs" />
+    <Compile Include="INotifyCollectionChangedObserverRegister.cs" />
+    <Compile Include="IObservableCollection.cs" />
+    <Compile Include="IObservableCollectionIndex.cs" />
+    <Compile Include="IResetableCollection.cs" />
+    <Compile Include="ISearchParametersDescriptionContainer.cs" />
+    <Compile Include="ISortableCollection.cs" />
+    <Compile Include="ItemCollection.cs" />
+    <Compile Include="IThreadSafeObservableCollection.cs" />
+    <Compile Include="IUniqueItemInList.cs" />
+    <Compile Include="IVirtualList.cs" />
+    <Compile Include="IVirtualListResultProcessor.cs" />
+    <Compile Include="JsonDictionary.cs" />
+    <Compile Include="ListChangedWrapperEventData.cs" />
+    <Compile Include="ObservableCollectionDebugView.cs" />
+    <Compile Include="ObservableCollectionIndex.cs" />
+    <Compile Include="ObservableCollectionProxy.cs" />
+    <Compile Include="ObservableCollectionSortedIndex.cs" />
+    <Compile Include="ObservableCollectionWrapper.cs" />
+    <Compile Include="SelectionCollection.cs" />
+    <Compile Include="SelectionCollectionProxy.cs" />
+    <Compile Include="Set.cs" />
+    <Compile Include="SortableObservableCollection.cs" />
+    <Compile Include="TreeViewSource.cs" />
+    <Compile Include="TreeViewSourceNode.cs" />
+    <Compile Include="VirtualList.cs" />
+    <Compile Include="VirtualListLoader.cs" />
+    <Compile Include="VirtualListLoaderResult.cs" />
+    <Compile Include="ConfigKeyPresence.cs" />
+    <Compile Include="ConfigurationAttribute.cs" />
+    <Compile Include="ElementContentAttribute.cs" />
+    <Compile Include="ConfigurationMap.cs" />
+    <Compile Include="Configurations.cs" />
+    <Compile Include="Configurator.cs" />
+    <Compile Include="ConfigException.cs" />
+    <Compile Include="LoadConfigurationException.cs" />
+    <Compile Include="MissingConfigurationKeyException.cs" />
+    <Compile Include="BaseSectionHandler.cs" />
+    <Compile Include="FileConfigHandler.cs" />
+    <Compile Include="IRegistry2.cs" />
+    <Compile Include="IRegistryEntry.cs" />
+    <Compile Include="IRegistryEntry2.cs" />
+    <Compile Include="IRegistryLoader.cs" />
+    <Compile Include="IRegistryLoader2.cs" />
+    <Compile Include="ISettingsRepository.cs" />
+    <Compile Include="ISystemConfiguration.cs" />
+    <Compile Include="MemberAttributeInfo.cs" />
+    <Compile Include="Registry.cs" />
+    <Compile Include="Registry2.cs" />
+    <Compile Include="RegistryFolder.cs" />
+    <Compile Include="RegistryFolder2.cs" />
+    <Compile Include="SettingsManager.cs" />
+    <Compile Include="SettingsScope.cs" />
+    <Compile Include="ElementTarget.cs" />
+    <Compile Include="FieldTarget.cs" />
+    <Compile Include="MethodTarget.cs" />
+    <Compile Include="PropertyTarget.cs" />
+    <Compile Include="CoreExtensions.cs" />
+    <Compile Include="Decryptor.cs" />
+    <Compile Include="DecryptTransformer.cs" />
+    <Compile Include="EncryptionAlgorithm.cs" />
+    <Compile Include="EncryptionUtil.cs" />
+    <Compile Include="Encryptor.cs" />
+    <Compile Include="EncryptTransformer.cs" />
+    <Compile Include="RSACryptografyKey.cs" />
+    <Compile Include="RSACryptoHelper.cs" />
+    <Compile Include="BinaryPriorityQueue.cs" />
+    <Compile Include="IPriorityQueue.cs" />
+    <Compile Include="IStorageControl.cs" />
+    <Compile Include="DetailsException.cs" />
+    <Compile Include="Error.cs" />
+    <Compile Include="ExceptionFormatter.cs" />
+    <Compile Include="ExceptionNotification.cs" />
+    <Compile Include="IExceptionNotification.cs" />
+    <Compile Include="Trace.cs" />
+    <Compile Include="BackgroundEventSubscription.cs" />
+    <Compile Include="CompositeDomainEvent.cs" />
+    <Compile Include="DelegateReference.cs" />
+    <Compile Include="DispatcherEventSubscription.cs" />
+    <Compile Include="DomainEventBase.cs" />
+    <Compile Include="DomainEventExecutionStrategy.cs" />
+    <Compile Include="DomainEvents.cs" />
+    <Compile Include="DomainEventSubscription.cs" />
+    <Compile Include="DomainEventThreadOption.cs" />
+    <Compile Include="EntityEventType.cs" />
+    <Compile Include="IDelegateReference.cs" />
+    <Compile Include="IDomainEventExecutionStrategy.cs" />
+    <Compile Include="IDomainEvents.cs" />
+    <Compile Include="IDomainEventSubscription.cs" />
+    <Compile Include="IExecuteSubscription.cs" />
+    <Compile Include="SubscriptionToken.cs" />
+    <Compile Include="GraphicsHelper.cs" />
+    <Compile Include="Line.cs" />
+    <Compile Include="EntityDescriptor.cs" />
+    <Compile Include="EnumerableExtentions.cs" />
+    <Compile Include="ActivationStatus.cs" />
+    <Compile Include="BillStatus.cs" />
+    <Compile Include="CardTransType.cs" />
+    <Compile Include="ControlAlignment.cs" />
+    <Compile Include="ExternalSystemType.cs" />
+    <Compile Include="InstallmentStatus.cs" />
+    <Compile Include="ItemStatus.cs" />
+    <Compile Include="LockTransactionType.cs" />
+    <Compile Include="PaymentStatus.cs" />
+    <Compile Include="RateIncreaseOrder.cs" />
+    <Compile Include="RateIncreaseType.cs" />
+    <Compile Include="Sex.cs" />
+    <Compile Include="WeekDay.cs" />
+    <Compile Include="ExceptionPropertyCollection.cs" />
+    <Compile Include="ExportAttribute.cs" />
+    <Compile Include="ExportMetadataAttribute.cs" />
+    <Compile Include="ExtensionServiceLocator.cs" />
+    <Compile Include="IExportMetadataAttribute.cs" />
+    <Compile Include="FileSystemUtil.cs" />
+    <Compile Include="FunctionComparer.cs" />
+    <Compile Include="Culture.cs" />
+    <Compile Include="ITranslateProvider.cs" />
+    <Compile Include="SystemComparer.cs" />
+    <Compile Include="SystemStringComparer.cs" />
+    <Compile Include="IClipboard.cs" />
+    <Compile Include="IDisposableState.cs" />
+    <Compile Include="IEntityDescriptor.cs" />
+    <Compile Include="IFindNameConverter.cs" />
+    <Compile Include="ILoadable.cs" />
+    <Compile Include="INamedType.cs" />
+    <Compile Include="ByteBuffer.cs" />
+    <Compile Include="CompressionUtil.cs" />
+    <Compile Include="Crc32.cs" />
+    <Compile Include="RepairedMemoryStream.cs" />
+    <Compile Include="ZipArchive.cs" />
+    <Compile Include="ZipArchiveFile.cs" />
+    <Compile Include="FileChecker.cs" />
+    <Compile Include="IFileRepository.cs" />
+    <Compile Include="IItem.cs" />
+    <Compile Include="ItemType.cs" />
+    <Compile Include="LocalItem.cs" />
+    <Compile Include="LocalRepository.cs" />
+    <Compile Include="SearchOption.cs" />
+    <Compile Include="IItemDownloader.cs" />
+    <Compile Include="InvalidPathException.cs" />
+    <Compile Include="IsolatedStorage.cs" />
+    <Compile Include="StreamUtil.cs" />
+    <Compile Include="StreamWrapper.cs" />
+    <Compile Include="TracingStream.cs" />
+    <Compile Include="IStorageSync.cs" />
+    <Compile Include="LocalStorage.cs" />
+    <Compile Include="Storage.cs" />
+    <Compile Include="AppManifestTemplate.cs" />
+    <Compile Include="ConfigAppManifestTemplate.cs" />
+    <Compile Include="IAppManifestTemplate.cs" />
+    <Compile Include="IXapConfiguration.cs" />
+    <Compile Include="LanguageInfo.cs" />
+    <Compile Include="LoadXapPackageAssembliesException.cs" />
+    <Compile Include="StreamResourceInfo.cs" />
+    <Compile Include="XapBuilder.cs" />
+    <Compile Include="XapConfiguration.cs" />
+    <Compile Include="XapPackage.cs" />
+    <Compile Include="XapPackageException.cs" />
+    <Compile Include="IPropertiesContainer.cs" />
+    <Compile Include="IRegisterPropertyChanged.cs" />
+    <Compile Include="IServerData.cs" />
+    <Compile Include="IStatusControl.cs" />
+    <Compile Include="ITypeDefinition.cs" />
+    <Compile Include="IUriManager.cs" />
+    <Compile Include="IWarningNotification.cs" />
+    <Compile Include="LambdaComparer.cs" />
+    <Compile Include="Base36.cs" />
+    <Compile Include="HardwareInfo.cs" />
+    <Compile Include="LicenseEntity.cs" />
+    <Compile Include="LicenseHandler.cs" />
+    <Compile Include="ShowInLicenseInfoAttribute.cs" />
+    <Compile Include="ILockable.cs" />
+    <Compile Include="ILockProcess.cs" />
+    <Compile Include="IRegisterLockProcess.cs" />
+    <Compile Include="KillLockProcessResult.cs" />
+    <Compile Include="Lock.cs" />
+    <Compile Include="Lockable.cs" />
+    <Compile Include="LockProcessManager.cs" />
+    <Compile Include="LockProcessResult.cs" />
+    <Compile Include="LockSession.cs" />
+    <Compile Include="AggregateLogger.cs" />
+    <Compile Include="ConsoleLogger.cs" />
+    <Compile Include="MaskElements.cs" />
+    <Compile Include="MaskExtensions.cs" />
+    <Compile Include="IImage.cs" />
+    <Compile Include="IImageConverter.cs" />
+    <Compile Include="ImageHeader.cs" />
+    <Compile Include="ImageProvider.cs" />
+    <Compile Include="ImageFormat.cs" />
+    <Compile Include="Resizer.cs" />
+    <Compile Include="Size.cs" />
+    <Compile Include="MessageFormattable.cs" />
+    <Compile Include="AggregateDownloaderObserver.cs" />
+    <Compile Include="AggregateUploaderObserver.cs" />
+    <Compile Include="CommunicationExceptionDetails.cs" />
+    <Compile Include="DownloadCompletedEventArgs.cs" />
+    <Compile Include="DownloaderException.cs" />
+    <Compile Include="DownloadProgressChangedEventArgs.cs" />
+    <Compile Include="ICommunicationException.cs" />
+    <Compile Include="IDownloader.cs" />
+    <Compile Include="IDownloaderObserver.cs" />
+    <Compile Include="ImpersonationLevel.cs" />
+    <Compile Include="Impersonator.cs" />
+    <Compile Include="IUploader.cs" />
+    <Compile Include="IUploaderItem.cs" />
+    <Compile Include="IUploaderObserver.cs" />
+    <Compile Include="LogonProvider.cs" />
+    <Compile Include="LogonType.cs" />
+    <Compile Include="NetNamespace.cs" />
+    <Compile Include="DirectoryShare.cs" />
+    <Compile Include="NetworkShareConfiguration.cs" />
+    <Compile Include="NetworkShareIdentity.cs" />
+    <Compile Include="NetworkShareManager.cs" />
+    <Compile Include="UpDownAsyncResult.cs" />
+    <Compile Include="UploadCompletedEventArgs.cs" />
+    <Compile Include="UploaderFileItem.cs" />
+    <Compile Include="UploaderItemAttribute.cs" />
+    <Compile Include="UploaderItemAttributeSet.cs" />
+    <Compile Include="UploaderItemInfo.cs" />
+    <Compile Include="UploaderStreamItem.cs" />
+    <Compile Include="UploadProgressChangedEventArgs.cs" />
+    <Compile Include="Win32NativeMethods.cs" />
+    <Compile Include="NotificationObject.cs" />
+    <Compile Include="ObjectExtensions.cs" />
+    <Compile Include="AggregateProgressObserver.cs" />
+    <Compile Include="IProgressObserver.cs" />
+    <Compile Include="ProgressChangedEventArgs.cs" />
+    <Compile Include="ProgressCompletedEventArgs.cs" />
+    <Compile Include="ProgressMessageChangedEventArgs.cs" />
+    <Compile Include="PropertiesComparer.cs" />
+    <Compile Include="PropertySelector.cs" />
+    <Compile Include="AppDomainAssemblyRepository.cs" />
+    <Compile Include="AsmData.cs" />
+    <Compile Include="AssemblyAnalyzer.cs" />
+    <Compile Include="AssemblyExtensions.cs" />
+    <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="AssemblyInfoRepositoryAggregate.cs" />
+    <Compile Include="AssemblyLoader.cs" />
+    <Compile Include="AssemblyPackage.cs" />
+    <Compile Include="AssemblyPackageCollection.cs" />
+    <Compile Include="AssemblyPackageContainer.cs" />
+    <Compile Include="AssemblyPackageDownloadCompletedEventArgs.cs" />
+    <Compile Include="AssemblyPackageDownloaderResult.cs" />
+    <Compile Include="AssemblyPart.cs" />
+    <Compile Include="AssemblyPartsResolver.cs" />
+    <Compile Include="AssemblyRepositoryValidateResult.cs" />
+    <Compile Include="AssemblyResolverException.cs" />
+    <Compile Include="AssemblyResolverManager.cs" />
+    <Compile Include="BindingRedirect.cs" />
+    <Compile Include="CreationPolicy.cs" />
+    <Compile Include="DefaultExportManager.cs" />
+    <Compile Include="Export.cs" />
+    <Compile Include="ExportCollection.cs" />
+    <Compile Include="ExportComparer.cs" />
+    <Compile Include="IExport.cs" />
+    <Compile Include="IExportManager.cs" />
+    <Compile Include="ClassFactory.cs" />
+    <Compile Include="DynamicClass.cs" />
+    <Compile Include="DynamicProperty.cs" />
+    <Compile Include="Signature.cs" />
+    <Compile Include="FrameworkRedirectionsScanner.cs" />
+    <Compile Include="IAssemblyAnalyzerObserver.cs" />
+    <Compile Include="IAssemblyInfoRepository.cs" />
+    <Compile Include="IAssemblyInfoRepositoryObserver.cs" />
+    <Compile Include="IAssemblyLoader.cs" />
+    <Compile Include="IAssemblyLoaderContext.cs" />
+    <Compile Include="IAssemblyPackage.cs" />
+    <Compile Include="IAssemblyPackageDownloader.cs" />
+    <Compile Include="IAssemblyPackageResult.cs" />
+    <Compile Include="IAssemblyPackageValidator.cs" />
+    <Compile Include="IAssemblyRepository.cs" />
+    <Compile Include="IAssemblyRepositoryMaintenance.cs" />
+    <Compile Include="IAssemblyResolver.cs" />
+    <Compile Include="LibraryImport.cs" />
+    <Compile Include="AssemblyInfoRepository.cs" />
+    <Compile Include="AssemblyPackageResult.cs" />
+    <Compile Include="AssemblyPackageValidator.cs" />
+    <Compile Include="AssemblyRepository.cs" />
+    <Compile Include="DirectoryAssemblyPackage.cs" />
+    <Compile Include="MethodDispacher.cs" />
+    <Compile Include="MethodInfoExtensions.cs" />
+    <Compile Include="MethodInvokable.cs" />
+    <Compile Include="MethodInvoker.cs" />
+    <Compile Include="PathRedirection.cs" />
+    <Compile Include="Redirection.cs" />
+    <Compile Include="ReflectionFlags.cs" />
+    <Compile Include="ReflectionNamespace.cs" />
+    <Compile Include="SxsComponent.cs" />
+    <Compile Include="TypeConverter.cs" />
+    <Compile Include="IMessageFormattable.cs" />
+    <Compile Include="Log.cs" />
+    <Compile Include="Category.cs" />
+    <Compile Include="DebugLogger.cs" />
+    <Compile Include="ExceptionMessageFormattable.cs" />
+    <Compile Include="FileLogger.cs" />
+    <Compile Include="ILogger.cs" />
+    <Compile Include="LoggerBase.cs" />
+    <Compile Include="LogNotificationDispatcher.cs" />
+    <Compile Include="Priority.cs" />
+    <Compile Include="TextLogger.cs" />
+    <Compile Include="Trace1.cs" />
+    <Compile Include="TraceLogger.cs" />
+    <Compile Include="INotificationDispatcher.cs" />
+    <Compile Include="MessageResult.cs" />
+    <Compile Include="MessageResultOption.cs" />
+    <Compile Include="Notification.cs" />
+    <Compile Include="NotificationInfo.cs" />
+    <Compile Include="NotificationType.cs" />
+    <Compile Include="AssemblyInfo1.cs" />
+    <Compile Include="Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="TypeConverterScheme.cs" />
+    <Compile Include="TypeName.cs" />
+    <Compile Include="TypeResolver.cs" />
+    <Compile Include="ResourceMessageFormatter.cs" />
+    <Compile Include="Cache.cs" />
+    <Compile Include="IRentableObject.cs" />
+    <Compile Include="IRuntimeValueStorage.cs" />
+    <Compile Include="MemoryManager.cs" />
+    <Compile Include="ObjectProvider.cs" />
+    <Compile Include="PlatformHelper.cs" />
+    <Compile Include="CommunicationErrorEventArgs.cs" />
+    <Compile Include="CommunicationProtocol.cs" />
+    <Compile Include="CommunicationReader.cs" />
+    <Compile Include="CommunicationResult.cs" />
+    <Compile Include="ICommunication.cs" />
+    <Compile Include="Log1.cs" />
+    <Compile Include="LogAccessor.cs" />
+    <Compile Include="NetworkCommunication.cs" />
+    <Compile Include="TcpCommunication.cs" />
+    <Compile Include="UdpCommunication.cs" />
+    <Compile Include="RuntimeValueStorage.cs" />
+    <Compile Include="AuthenticationStatus.cs" />
+    <Compile Include="Authentication.cs" />
+    <Compile Include="AuthenticationService.cs" />
+    <Compile Include="IAutheticableUser.cs" />
+    <Compile Include="IdentityProvider.cs" />
+    <Compile Include="IIdentityProviderManager.cs" />
+    <Compile Include="ILog.cs" />
+    <Compile Include="Captcha.cs" />
+    <Compile Include="CaptchaSettings.cs" />
+    <Compile Include="ICaptcha.cs" />
+    <Compile Include="ICaptchaGenerator.cs" />
+    <Compile Include="IRandomTextGenerator.cs" />
+    <Compile Include="RandomTextGenerator.cs" />
+    <Compile Include="RandomTextGeneratorSettings.cs" />
+    <Compile Include="ChangePasswordResult.cs" />
+    <Compile Include="ChangePasswordStatus.cs" />
+    <Compile Include="CreateUserResult.cs" />
+    <Compile Include="IAuthenticate.cs" />
+    <Compile Include="IAuthenticationSource.cs" />
+    <Compile Include="DefaultUserNameValidator.cs" />
+    <Compile Include="ILoadPingMessages.cs" />
+    <Compile Include="IPasswordValidate.cs" />
+    <Compile Include="IPingMessage.cs" />
+    <Compile Include="IRoleProvider.cs" />
+    <Compile Include="ITokenApplicationProvider.cs" />
+    <Compile Include="ITokenGetter.cs" />
+    <Compile Include="ITokenProvider.cs" />
+    <Compile Include="ITokenProviderExtension.cs" />
+    <Compile Include="IUser.cs" />
+    <Compile Include="IUserContextConfigurator.cs" />
+    <Compile Include="IUserProvider.cs" />
+    <Compile Include="IValidateUserResult.cs" />
+    <Compile Include="Membership.cs" />
+    <Compile Include="PasswordHash.cs" />
+    <Compile Include="PasswordStrength.cs" />
+    <Compile Include="PasswordValidateResult.cs" />
+    <Compile Include="CheckPermissionResult.cs" />
+    <Compile Include="SystemAccess.cs" />
+    <Compile Include="SystemPermission.cs" />
+    <Compile Include="SystemPermissionAttribute.cs" />
+    <Compile Include="AuthorizationPolicy.cs" />
+    <Compile Include="DefaultIdentity.cs" />
+    <Compile Include="DefaultPrincipal.cs" />
+    <Compile Include="IProfile.cs" />
+    <Compile Include="ICurrentProfileInfoProvider.cs" />
+    <Compile Include="IProfileProvider.cs" />
+    <Compile Include="ProfileContext.cs" />
+    <Compile Include="ProfileGroup.cs" />
+    <Compile Include="ProfileInfo.cs" />
+    <Compile Include="ProfileManager.cs" />
+    <Compile Include="ProfileProperty.cs" />
+    <Compile Include="ProfilePropertyDefinition.cs" />
+    <Compile Include="ProfileProviderException.cs" />
+    <Compile Include="ProfileRoleSet.cs" />
+    <Compile Include="ProfileSearchMode.cs" />
+    <Compile Include="ResetPasswordProcessResult.cs" />
+    <Compile Include="RolePermissionNamespace.cs" />
+    <Compile Include="RolePermissionSet.cs" />
+    <Compile Include="Roles.cs" />
+    <Compile Include="SecurityExtensions.cs" />
+    <Compile Include="SecurityNamespaces.cs" />
+    <Compile Include="SecurityParameter.cs" />
+    <Compile Include="SecurityUtility.cs" />
+    <Compile Include="TokenConsultResult.cs" />
+    <Compile Include="TokenPingResult.cs" />
+    <Compile Include="Tokens.cs" />
+    <Compile Include="TokenSetProfileResult.cs" />
+    <Compile Include="UserContext.cs" />
+    <Compile Include="UserIdentity.cs" />
+    <Compile Include="StringExpressionSet.cs" />
+    <Compile Include="XMLUtil.cs" />
+    <Compile Include="ValidateUserResult.cs" />
+    <Compile Include="BinaryTransformer.cs" />
+    <Compile Include="CompactFormatterServices.cs" />
+    <Compile Include="CompactBinaryFormatter.cs" />
+    <Compile Include="ICompactSerialization.cs" />
+    <Compile Include="ICustomSerialization.cs" />
+    <Compile Include="CompactBinaryReader.cs" />
+    <Compile Include="CompactBinaryWriter.cs" />
+    <Compile Include="CompactReader.cs" />
+    <Compile Include="CompactSerializationException.cs" />
+    <Compile Include="CompactWriter.cs" />
+    <Compile Include="SerializationContext.cs" />
+    <Compile Include="IStreamItem.cs" />
+    <Compile Include="ArraySerializationSurrogate.cs" />
+    <Compile Include="BooleanArraySerializationSurrogate.cs" />
+    <Compile Include="BooleanSerializationSurrogate.cs" />
+    <Compile Include="ByteArraySerializationSurrogate.cs" />
+    <Compile Include="ByteSerializationSurrogate.cs" />
+    <Compile Include="CharArraySerializationSurrogate.cs" />
+    <Compile Include="CharSerializationSurrogate.cs" />
+    <Compile Include="ContextSensitiveSerializationSurrogate.cs" />
+    <Compile Include="CustomArraySerializationSurrogate.cs" />
+    <Compile Include="DateTimeArraySerializationSurrogate.cs" />
+    <Compile Include="DateTimeOffsetSerializationSurrogate.cs" />
+    <Compile Include="DateTimeSerializationSurrogate.cs" />
+    <Compile Include="DecimalArraySerializationSurrogate.cs" />
+    <Compile Include="DecimalSerializationSurrogate.cs" />
+    <Compile Include="DoubleArraySerializationSurrogate.cs" />
+    <Compile Include="DoubleSerializationSurrogate.cs" />
+    <Compile Include="DynamicRefTypeSurrogate.cs" />
+    <Compile Include="DynamicSurrogateBuilder.cs" />
+    <Compile Include="DynamicValueTypeSurrogate.cs" />
+    <Compile Include="EnumSerializationSurrogate.cs" />
+    <Compile Include="EOFSerializationSurrogate.cs" />
+    <Compile Include="GenericIDictionarySerializationSurrogate.cs" />
+    <Compile Include="GenericIListSerializationSurrogate.cs" />
+    <Compile Include="GuidArraySerializationSurrogate.cs" />
+    <Compile Include="GuidSerializationSurrogate.cs" />
+    <Compile Include="ICompactSerializableSerializationSurrogate.cs" />
+    <Compile Include="IDictionarySerializationSurrogate.cs" />
+    <Compile Include="IListSerializationSurrogate.cs" />
+    <Compile Include="Int16ArraySerializationSurrogate.cs" />
+    <Compile Include="Int16SerializationSurrogate.cs" />
+    <Compile Include="Int32ArraySerializationSurrogate.cs" />
+    <Compile Include="Int32SerializationSurrogate.cs" />
+    <Compile Include="Int64ArraySerializationSurrogate.cs" />
+    <Compile Include="Int64SerializationSurrogate.cs" />
+    <Compile Include="ISerializationSurrogate.cs" />
+    <Compile Include="KeyValuePairSerializationSurrogate.cs" />
+    <Compile Include="NullableArraySerializationSurrogate.cs" />
+    <Compile Include="NullSerializationSurrogate.cs" />
+    <Compile Include="ObjectArraySerializationSurrogate.cs" />
+    <Compile Include="ObjectSerializationSurrogate.cs" />
+    <Compile Include="SByteArraySerializationSurrogate.cs" />
+    <Compile Include="SByteSerializationSurrogate.cs" />
+    <Compile Include="SerializationSurrogate.cs" />
+    <Compile Include="SingleArraySerializationSurrogate.cs" />
+    <Compile Include="SingleSerializationSurrogate.cs" />
+    <Compile Include="SkipSerializationSurrogate.cs" />
+    <Compile Include="StringArraySerializationSurrogate.cs" />
+    <Compile Include="StringSerializationSurrogate.cs" />
+    <Compile Include="SurrogateHelper.cs" />
+    <Compile Include="TimeSpanSerializationSurrogate.cs" />
+    <Compile Include="UInt16ArraySerializationSurrogate.cs" />
+    <Compile Include="UInt16SerializationSurrogate.cs" />
+    <Compile Include="UInt32ArraySerializationSurrogate.cs" />
+    <Compile Include="UInt32SerializationSurrogate.cs" />
+    <Compile Include="UInt64ArraySerializationSurrogate.cs" />
+    <Compile Include="UInt64SerializationSurrogate.cs" />
+    <Compile Include="TypeSurrogateSelector.cs" />
+    <Compile Include="VirtualArray.cs" />
+    <Compile Include="VirtualIndex.cs" />
+    <Compile Include="XmlHelper.cs" />
+    <Compile Include="XmlNoNamespaceWriter.cs" />
+    <Compile Include="ServerData.cs" />
+    <Compile Include="ServiceLocatorValidator.cs" />
+    <Compile Include="SystemConfigurationExtensions.cs" />
+    <Compile Include="CultureAwareComparer.cs" />
+    <Compile Include="Encoding.cs" />
+    <Compile Include="JoinMessageFormattable.cs" />
+    <Compile Include="MessageFormattableComparer.cs" />
+    <Compile Include="OrdinalComparer.cs" />
+    <Compile Include="StringEqualityComparer.cs" />
+    <Compile Include="StringExtensions.cs" />
+    <Compile Include="TextDataFormat.cs" />
+    <Compile Include="TextMessageFormattable.cs" />
+    <Compile Include="AsyncOperation.cs" />
+    <Compile Include="AsyncProcessor.cs" />
+    <Compile Include="AsyncResult.cs" />
+    <Compile Include="AsyncTask.cs" />
+    <Compile Include="DefaultDispatcher.cs" />
+    <Compile Include="Dispatcher.cs" />
+    <Compile Include="DispatcherManager.cs" />
+    <Compile Include="DispatcherOperationStatus.cs" />
+    <Compile Include="DispatcherPriority.cs" />
+    <Compile Include="EventQueue.cs" />
+    <Compile Include="IAsyncProcessor.cs" />
+    <Compile Include="IAsyncTask.cs" />
+    <Compile Include="IDispatcher.cs" />
+    <Compile Include="IDispatcherManager.cs" />
+    <Compile Include="IDispatcherOperation.cs" />
+    <Compile Include="IReentrancyController.cs" />
+    <Compile Include="ITask.cs" />
+    <Compile Include="IThreadRunnable.cs" />
+    <Compile Include="QueuedEvent.cs" />
+    <Compile Include="SimpleMonitor.cs" />
+    <Compile Include="Task.cs" />
+    <Compile Include="ThreadClass.cs" />
+    <Compile Include="ThreadSafeServiceContainer.cs" />
+    <Compile Include="TimeScheduler.cs" />
+    <Compile Include="TranslateAttribute.cs" />
+    <Compile Include="Translator.cs" />
+    <Compile Include="TypeDefinition.cs" />
+    <Compile Include="TypeExtensions.cs" />
+    <Compile Include="UriExtensions.cs" />
+    <Compile Include="ArrayUtil.cs" />
+    <Compile Include="BadChecksumException.cs" />
+    <Compile Include="Checksum.cs" />
+    <Compile Include="DelphiFunctions.cs" />
+    <Compile Include="ISequence.cs" />
+    <Compile Include="ObservableList.cs" />
+    <Compile Include="PathUtil.cs" />
+    <Compile Include="Sequence.cs" />
+    <Compile Include="NativeValidator.cs" />
+    <Compile Include="NativeValidatorExtension.cs" />
+    <Compile Include="RequireExtension.cs" />
+    <Compile Include="WarningMessage.cs" />
+    <Compile Include="BinaryStreamStack.cs" />
+    <Compile Include="ByteArrayContentParameter.cs" />
+    <Compile Include="CompressionType.cs" />
+    <Compile Include="FileContentParameter.cs" />
+    <Compile Include="FilePart.cs" />
+    <Compile Include="FileStreamContentParameter.cs" />
+    <Compile Include="HttpMultipartParser.cs" />
+    <Compile Include="HttpUtility.cs" />
+    <Compile Include="IRequestParameter.cs" />
+    <Compile Include="MultipartFormDataContent.cs" />
+    <Compile Include="MultipartFormDataParameter.cs" />
+    <Compile Include="MultipartFormDataParser.cs" />
+    <Compile Include="MultipartParseException.cs" />
+    <Compile Include="ParameterPart.cs" />
+    <Compile Include="PayloadParameter.cs" />
+    <Compile Include="PostParameter.cs" />
+    <Compile Include="PostParameterCollection.cs" />
+    <Compile Include="RebufferableBinaryReader.cs" />
+    <Compile Include="RequestResult.cs" />
+    <Compile Include="StreamingMultipartFormDataParser.cs" />
+    <Compile Include="StreamContentParameter.cs" />
+    <Compile Include="StringContentParameter.cs" />
+    <Compile Include="SubsequenceFinder.cs" />
+    <Compile Include="UrlDecoder.cs" />
+    <Compile Include="WebClient.cs" />
+    <Compile Include="XMLHttpRequest.cs" />
+    <Compile Include="XMLHttpRequestInvalidStateException.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Key.snk" />
+    <None Include="Net\Share\PrivateKey.kez" />
+    <None Include="Net\Share\PublicKey.pke" />
+    <EmbeddedResource Include="Xsd\Reflection.xsd">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Xsd\RolePermissionSet.xsd">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Xsd\Security.xsd">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="IO\Xap\AppManifest.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

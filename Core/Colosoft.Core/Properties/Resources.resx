@@ -1,0 +1,419 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Argument_AbsolutePathRequired" xml:space="preserve">
+    <value>Absolute path information is required.</value>
+  </data>
+  <data name="Argument_EmptyPath" xml:space="preserve">
+    <value>Empty path name is not legal.</value>
+  </data>
+  <data name="Argument_InvalidDelegateRerefenceType" xml:space="preserve">
+    <value>Invalid DelegateRerefence type '{0}'.</value>
+  </data>
+  <data name="Argument_InvalidPathChars" xml:space="preserve">
+    <value>Illegal characters in path.</value>
+  </data>
+  <data name="Argument_InvalidPermissionState" xml:space="preserve">
+    <value>Invalid permission state.</value>
+  </data>
+  <data name="Argument_InvalidXMLBadVersion" xml:space="preserve">
+    <value>Invalid Xml - can only parse elements of version one.</value>
+  </data>
+  <data name="Argument_NoAppropriateSurrogateFound" xml:space="preserve">
+    <value>No appropriate surrogate found for type '{0}'</value>
+  </data>
+  <data name="Argument_NoAppropriateSurrogateFoundForType" xml:space="preserve">
+    <value>No appropriate surrogate found for type '{0}'</value>
+  </data>
+  <data name="Argument_NotAPermissionElement" xml:space="preserve">
+    <value>'elem' was not a permission element.</value>
+  </data>
+  <data name="Argument_PathFormatNotSupported" xml:space="preserve">
+    <value>The given path's format is not supported.</value>
+  </data>
+  <data name="Argument_SubtypeAlreadyRegistered" xml:space="preserve">
+    <value>Specified sub-type handle is already registered.</value>
+  </data>
+  <data name="Argument_TypeAlreadyRegistered" xml:space="preserve">
+    <value>Specified type handle is already registered.</value>
+  </data>
+  <data name="Argument_TypeAlreadyRegistered2" xml:space="preserve">
+    <value>Type '{0}' is already registered</value>
+  </data>
+  <data name="Argument_TypeAlreadyRegisteredWithDifferentHandle" xml:space="preserve">
+    <value>Type '{0}' is already registered with different handle</value>
+  </data>
+  <data name="Argument_WrongType" xml:space="preserve">
+    <value>Operation on type '{0}' attempted with target of incorrect type.</value>
+  </data>
+  <data name="Arg_EnumIllegalVal" xml:space="preserve">
+    <value>Illegal enum value: {0}.</value>
+  </data>
+  <data name="Arg_EnumNotSingleFlag" xml:space="preserve">
+    <value>Must set exactly one flag.</value>
+  </data>
+  <data name="AssemblyLoader_GetContextError" xml:space="preserve">
+    <value>A erro ocurred on get AssemblyLoader context. Details: {0}</value>
+  </data>
+  <data name="AssemblyRepository_AssemblyPartNotFound" xml:space="preserve">
+    <value>Assembly part '{0}' not found.</value>
+  </data>
+  <data name="Captcha_Necessary" xml:space="preserve">
+    <value>Usuário necessita de captcha para autenticar</value>
+    <comment>Captcha necessário</comment>
+  </data>
+  <data name="CompactSerialization_TypeHandleNotRegistered" xml:space="preserve">
+    <value>Type handle '{0}' is not registered with Compact Serialization Framework</value>
+  </data>
+  <data name="DefaultLoggerNotFound" xml:space="preserve">
+    <value>Default logger not found.</value>
+  </data>
+  <data name="DefaultTextLoggerPattern" xml:space="preserve">
+    <value>{1}: {2}. Priority: {3}. Timestamp:{0:u}.</value>
+  </data>
+  <data name="Error_IdentityProviderNotFound" xml:space="preserve">
+    <value>IdentityProvider not found for user '{0}'.</value>
+  </data>
+  <data name="Error_TokenCreate" xml:space="preserve">
+    <value>Erro ao inserir controle de token</value>
+    <comment>Erro ao inserir controle de token</comment>
+  </data>
+  <data name="Error_TokenDuplicate" xml:space="preserve">
+    <value>Token já existe para o usuário</value>
+    <comment>Token já existe para o usuário</comment>
+  </data>
+  <data name="Error_UserCantResetPassword" xml:space="preserve">
+    <value>Usuário não pode redefinir senha</value>
+    <comment>Usuário não pode redefinir senha</comment>
+  </data>
+  <data name="ExceptionDataDictionaryReport" xml:space="preserve">
+    <value>{0} = {1}</value>
+  </data>
+  <data name="ExceptionStackTrace" xml:space="preserve">
+    <value>Exception Stack Trace: {0}</value>
+  </data>
+  <data name="Exception_FailOnValidateUser" xml:space="preserve">
+    <value>Fail on validate user.</value>
+  </data>
+  <data name="FileLoggerPattern" xml:space="preserve">
+    <value>{1}-{0:u}: {2}. Priority: {3}</value>
+  </data>
+  <data name="InnerException" xml:space="preserve">
+    <value>Inner Exception Details:</value>
+  </data>
+  <data name="InvalidOperation_DefaultProfileProviderNotFound" xml:space="preserve">
+    <value>Default profile provider not found.</value>
+  </data>
+  <data name="InvalidOperation_DefaultRolesProviderNotFound" xml:space="preserve">
+    <value>Default roles provider not found.</value>
+  </data>
+  <data name="InvalidOperation_DefaultTokenProviderNotFound" xml:space="preserve">
+    <value>Default token provider not found.</value>
+  </data>
+  <data name="InvalidOperation_DefaultUserProviderNotFound" xml:space="preserve">
+    <value>Default user provider not found.</value>
+  </data>
+  <data name="InvalidOperation_FailOnLoadNotificationDispatcher" xml:space="preserve">
+    <value>Fail on load notification dispatcher.</value>
+  </data>
+  <data name="InvalidOperation_NotFoundProfileForCurrentUser" xml:space="preserve">
+    <value>Not found profile for current user</value>
+  </data>
+  <data name="InvalidOperation_ServiceLocatorCurrentNotConfigured" xml:space="preserve">
+    <value>ServiceLocator.Current not configured.</value>
+  </data>
+  <data name="InvalidOperation_SettingsManager_RepositoryNotFound" xml:space="preserve">
+    <value>Repository {0} not found.</value>
+  </data>
+  <data name="Invalid_Captcha" xml:space="preserve">
+    <value>Captcha incorreto</value>
+    <comment>Captcha incorreto</comment>
+  </data>
+  <data name="Invalid_UsernameOrPassword" xml:space="preserve">
+    <value>Nome de usuário ou senha inválidos</value>
+    <comment>Nome de usuário ou senha inválidos</comment>
+  </data>
+  <data name="LogExceptionDataDictionary" xml:space="preserve">
+    <value>Exception Data Dictionary:
+{0}
+</value>
+  </data>
+  <data name="LogExceptionHeader" xml:space="preserve">
+    <value>
+Exception Message: {0} (type {1})</value>
+  </data>
+  <data name="MalformedUri" xml:space="preserve">
+    <value>Malformed Artifact URI: {0}</value>
+  </data>
+  <data name="PropertySelector_ExpressionNotProperty_Exception" xml:space="preserve">
+    <value>Expression not is property</value>
+  </data>
+  <data name="PropertySelector_NotMemberAccessExpression_Exception" xml:space="preserve">
+    <value>Not member access expression</value>
+  </data>
+  <data name="PropertySelector_StaticExpression_Exception" xml:space="preserve">
+    <value>Invalida for static expression</value>
+  </data>
+  <data name="Security_SystemPermission" xml:space="preserve">
+    <value>System Permission</value>
+  </data>
+  <data name="SetProfileError" xml:space="preserve">
+    <value>A error ocurred on set profile '{0}' for token '{1}'. Details: '{2}'</value>
+  </data>
+  <data name="SoapExceptionReport" xml:space="preserve">
+    <value>SoapException Details: {0}</value>
+  </data>
+  <data name="ValidationErrors_IsOfType" xml:space="preserve">
+    <value>The type of the parameter '{0}' was not of the type '{1}'.</value>
+  </data>
+  <data name="ValidationErrors_NotEmpty" xml:space="preserve">
+    <value>The length of the parameter '{0}' cannot be zero.</value>
+  </data>
+  <data name="ValidationErrors_NotEmptyCollection" xml:space="preserve">
+    <value>'{0}' array must have atleast one item.</value>
+  </data>
+  <data name="ValidationErrors_NotNull" xml:space="preserve">
+    <value>The specified value for parameter '{0}' cannot be null.</value>
+  </data>
+  <data name="ValidationErrors_OutOfRange" xml:space="preserve">
+    <value>Argument {0} out of range</value>
+  </data>
+  <data name="Warning_Password" xml:space="preserve">
+    <value>Sua senha expirará em {0} dia(s)</value>
+    <comment>Alerta de dias para a senha expirar</comment>
+  </data>
+  <data name="WebExceptionReport" xml:space="preserve">
+    <value>Status: {0}
+Response Status Code: {1}
+Response Status Message: {2}
+</value>
+  </data>
+  <data name="WebExceptionReport_ResponseDisposed" xml:space="preserve">
+    <value>
+Status : {0}
+Response already disposed, no additional information available.</value>
+  </data>
+  <data name="AssemblyRepository_AnalyzeAssemblyError" xml:space="preserve">
+    <value>Ocorreu um erro ao analisar o assembly '{0}'.</value>
+  </data>
+  <data name="AssemblyRepository_AssemblyPartNotFound1" xml:space="preserve">
+    <value>Assembly part '{0}' not found.</value>
+  </data>
+  <data name="AssemblyRepository_GetFilesFromRepositoryDirectoryError" xml:space="preserve">
+    <value>Ocorreu um erro ao recuperar os arquivos para o repositório apartir do diretório '{0}'.</value>
+  </data>
+  <data name="AssemblyRepository_MaintenanceError" xml:space="preserve">
+    <value>Ocorreu um ao executar a manuteção do repositório pelo módulo '{0}'.
+Detalhes:
+{1}</value>
+  </data>
+  <data name="AssemblyRepository_ValidateAssemblyPackageCacheEntryError" xml:space="preserve">
+    <value>Ocorreu um erro e não foi possível validar a entrada do cache do pacote.</value>
+  </data>
+  <data name="AssemblyRepository_ValidateAssemblyPackageError" xml:space="preserve">
+    <value>Ocorreu um erro e não foi possível validar o pacote de assemblies.</value>
+  </data>
+  <data name="AssemblyRepository_ValidateMaintenanceError" xml:space="preserve">
+    <value>Existem erros na execução da manutenção do repositório usando '{0}'.</value>
+  </data>
+  <data name="IndexNotFoundException_Message" xml:space="preserve">
+    <value>Index '{0}' not found</value>
+  </data>
+  <data name="InvalidOperation_ItemIsNotMatchingWithFilter" xml:space="preserve">
+    <value>Item is not matching with filter.</value>
+  </data>
+  <data name="ProfileSearchMode_Agency" xml:space="preserve">
+    <value>Somente registros criados pela agência associada com o usuário.</value>
+  </data>
+  <data name="ProfileSearchMode_All" xml:space="preserve">
+    <value>Todos os registros</value>
+  </data>
+  <data name="ProfileSearchMode_Intermediate" xml:space="preserve">
+    <value>Somente registros associados com o intermediador</value>
+  </data>
+  <data name="ProfileSearchMode_Self" xml:space="preserve">
+    <value>Somente registros criados pelo perfil</value>
+  </data>
+  <data name="ProfileSearchMode_Seller" xml:space="preserve">
+    <value>Somente registros associados com o vendedor</value>
+  </data>
+  <data name="ProfileSearchMode_Source" xml:space="preserve">
+    <value>Somente registros associados com a origem</value>
+  </data>
+  <data name="WeekDay_Friday" xml:space="preserve">
+    <value>Sexta-feira</value>
+  </data>
+  <data name="WeekDay_Monday" xml:space="preserve">
+    <value>Segunda-feira</value>
+  </data>
+  <data name="WeekDay_Saturday" xml:space="preserve">
+    <value>Sábado</value>
+  </data>
+  <data name="WeekDay_Sunday" xml:space="preserve">
+    <value>Domingo</value>
+  </data>
+  <data name="WeekDay_Thursday" xml:space="preserve">
+    <value>Quinta-feira</value>
+  </data>
+  <data name="WeekDay_Tuesday" xml:space="preserve">
+    <value>Terça-feira</value>
+  </data>
+  <data name="WeekDay_Wednesday" xml:space="preserve">
+    <value>Quarta-feira</value>
+  </data>
+  <data name="Argument_AddingDuplicate" xml:space="preserve">
+    <value>Adicionando item duplicado</value>
+  </data>
+  <data name="Error_IdentityProviderTypeUndefined" xml:space="preserve">
+    <value>Identity provider type undefined.</value>
+  </data>
+  <data name="WrongFirstSegment" xml:space="preserve">
+    <value>O padrão exigido para URI contendo ';' é 'AssemblyName;Vxxxx;PublicKey;', onde Vxxxx é a versão do assembly e PublicKey é a seqüência de 16 caracteres que representa o token de chave pública do assembly. Vxxxx e PublicKey são opcionais.</value>
+  </data>
+  <data name="AssemblyResolver_GetAssemblyDownloaderException" xml:space="preserve">
+    <value>An error ocurred when download assemblies from server. Detalis: {0}</value>
+  </data>
+  <data name="CommunicationReader_FormatErrorCode" xml:space="preserve">
+    <value>Error Code {0}</value>
+  </data>
+  <data name="CommunicationReader_FormatErrorCommunication" xml:space="preserve">
+    <value>Communication error: {0}</value>
+  </data>
+  <data name="CommunicationReader_FormatErrorFtp" xml:space="preserve">
+    <value>FTP error: {0}</value>
+  </data>
+  <data name="CommunicationReader_FormatErrorFtpDiskFull" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CommunicationReader_FormatErrorFtpIO" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CommunicationReader_FormatErrorNoOpFailed" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CommunicationReader_FormatErrorSocket" xml:space="preserve">
+    <value>Socket error</value>
+  </data>
+  <data name="CommunicationReader_FormatErrorTimeout" xml:space="preserve">
+    <value>Timeout</value>
+  </data>
+  <data name="CommunicationReader_FormatStackFrame" xml:space="preserve">
+    <value>{0}({1}:{2})</value>
+  </data>
+</root>

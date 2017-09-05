@@ -1,0 +1,117 @@
+#nav{
+	width: 328px;
+	height: 30px;
+	background: #eee;
+	padding: 0px;
+}
+#nav ul{
+
+	padding: 0px;
+	margin: 3px 0px 0px 0px;
+}
+#nav ul li{
+	display: inline;
+	float: left;
+	list-style-type: none;
+	
+	margin: 0px;
+	padding: 5px;
+}
+#nav ul li a{
+	padding: 0px 0px 0px 0px;
+	
+	font-size:  24px;
+	color:gray;
+	text-decoration:none;
+}
+
+#nav ul li a:hover{
+	color:black;
+	text-decoration:none;
+}
+
+#pic{
+	width: 320px;
+	padding: 10px;
+	margin: 0px;
+}
+#pic .img{
+	border: 1px solid #999;
+	padding: 3px;
+	background: #eee;
+}
+#titleSlide{
+	width: 320px;
+	font: bold 18px 'Arial';
+	padding: 3px;
+	margin: 0px;
+	background: #fff;
+	border: 1px solid #ddd;
+	border-width: 0px 1px 0px 1px;
+}
+#titleSlide a{
+	text-decoration: none;
+	color: #555;
+}
+#titleSlide a:hover{
+	border-bottom: 1px dashed #555;
+}
+#textSlide{
+	width: 320px;
+	padding: 3px;
+	margin: 0px;
+	font: normal 12px 'Trebuchet MS';
+	background: #fff;
+	border: 1px solid #ddd;
+	border-width: 0px 1px 1px 1px;
+}
+#settings{
+	width: 100px;
+}
+#settings span, #settings img{
+	float: left;
+}
+#settings span{
+	font: bold 11px 'Arial';
+	width: 20px;
+	text-align: center;
+	line-height: 19px;
+	border: 1px dashed #ccc;
+	background: #eee;
+	height: 16px;
+	margin: 0px 2px;
+}
+
+#manual{
+	font: normal 12px Trebuchet MS;
+	background: #fff;
+	padding: 10px;
+	text-align: justify;
+}
+#manual h3{
+	font: bold 18px Arial;
+	padding: 3px;
+	border-top: 1px dashed #ccc;
+	border-bottom: 1px dashed #ccc;
+	background: #f5f5f5;
+}
+#manual a.link{
+	font: italic 12px Trebuchet MS;
+	color: #666;
+	text-decoration: underline;
+}
+#manual a.link:hover{
+	text-decoration: none;
+}
+#manual h5{
+	font: bold 14px Arial;
+	padding: 0px;
+	margin: 50px 0px 0px 0px;
+}
+#manual pre{
+	border-top: 1px dashed #777;
+	border-bottom: 1px dashed #777;
+	background: #efefef;
+	padding: 10px;
+	color: #555;
+}

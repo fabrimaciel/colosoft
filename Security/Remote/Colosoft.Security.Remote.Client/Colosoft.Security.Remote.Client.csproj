@@ -1,0 +1,257 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B1667242-696E-4FC4-8B70-F241716C9790}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Colosoft.Security.Remote.Client</RootNamespace>
+    <AssemblyName>Colosoft.Security.Remote.Client</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>none</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\bin\Client\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>..\..\..\bin\Client\Colosoft.Security.Remote.Client.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>Key.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Colosoft.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=d3b3c440aed9b980, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\bin\Client\Colosoft.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Colosoft.Net, Version=1.0.0.0, Culture=neutral, PublicKeyToken=6b4df30fccf43e6b, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\bin\Client\Colosoft.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Caching">
+      <HintPath>..\..\..\Libraries\General\EntLib\Microsoft.Practices.EnterpriseLibrary.Caching.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Libraries\General\EntLib\Microsoft.Practices.EnterpriseLibrary.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Libraries\General\CommonServiceLocation\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Cache.cs" />
+    <Compile Include="ConfigureRemoteClientEventArgs.cs" />
+    <Compile Include="Namespaces.cs" />
+    <Compile Include="ProfileProviderServiceReference\AuthenticationSource.cs" />
+    <Compile Include="ProfileProviderServiceReference\Helpers.cs" />
+    <Compile Include="ProfileProviderServiceReference\Profile.cs" />
+    <Compile Include="ProfileProviderServiceReference\ProfileInfo.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="RemoteProfileProvider.cs" />
+    <Compile Include="RemoteRoleProvider.cs" />
+    <Compile Include="RemoteTokenProvider.cs" />
+    <Compile Include="RemoteUserProvider.cs" />
+    <Compile Include="Service References\AuthenticationHost\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ProfileProviderServiceReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\RoleProviderServiceReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ServerHost\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\TokenProviderServiceReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="AuthenticationSourceWrapper.cs" />
+    <Compile Include="ProfileWrapper.cs" />
+    <Compile Include="UserWrapper.cs" />
+    <Compile Include="ValidateUserResultWrapper.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Key.snk" />
+    <None Include="Service References\AuthenticationHost\AuthenticateService5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AuthenticationHost\AuthenticateService51.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AuthenticationHost\TecMS.Security.Remote.Client.AuthenticationHost.ChangePasswordResult.datasource" />
+    <None Include="Service References\AuthenticationHost\TecMS.Security.Remote.Client.AuthenticationHost.ResetPasswordProcessResult.datasource" />
+    <None Include="Service References\AuthenticationHost\TecMS.Security.Remote.Client.AuthenticationHost.TokenConsultResult.datasource" />
+    <None Include="Service References\AuthenticationHost\TecMS.Security.Remote.Client.AuthenticationHost.ValidateUserResult.datasource" />
+    <None Include="Service References\ProfileProviderServiceReference\ProfileProviderService.wsdl" />
+    <None Include="Service References\ProfileProviderServiceReference\ProfileProviderService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ProfileProviderServiceReference\ProfileProviderService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ProfileProviderServiceReference\ProfileProviderService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ProfileProviderServiceReference\ProfileProviderService4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ProfileProviderServiceReference\ProfileProviderService5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ProfileProviderServiceReference\ProfileProviderService6.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ProfileProviderServiceReference\TecMS.Security.Remote.Client.ProfileProviderServiceReference.AuthenticationSource.datasource" />
+    <None Include="Service References\ProfileProviderServiceReference\TecMS.Security.Remote.Client.ProfileProviderServiceReference.Profile.datasource" />
+    <None Include="Service References\ProfileProviderServiceReference\TecMS.Security.Remote.Client.ProfileProviderServiceReference.ProfileInfo.datasource" />
+    <None Include="Service References\RoleProviderServiceReference\RoleProviderService.wsdl" />
+    <None Include="Service References\RoleProviderServiceReference\RoleProviderService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\RoleProviderServiceReference\RoleProviderService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\RoleProviderServiceReference\RoleProviderService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServerHost\TecMS.Security.Remote.Client.ServerHost.CreateUserResult.datasource" />
+    <None Include="Service References\ServerHost\TecMS.Security.Remote.Client.ServerHost.User.datasource" />
+    <None Include="Service References\ServerHost\TecMS.Security.Remote.Client.ServerHost.UserProviderInfo.datasource" />
+    <None Include="Service References\ServerHost\UserProviderService.wsdl" />
+    <None Include="Service References\ServerHost\UserProviderService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServerHost\UserProviderService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServerHost\UserProviderService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServerHost\UserProviderService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServerHost\UserProviderService4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TokenProviderServiceReference\TokenProviderService.wsdl" />
+    <None Include="Service References\TokenProviderServiceReference\TokenProviderService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TokenProviderServiceReference\TokenProviderService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TokenProviderServiceReference\TokenProviderService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TokenProviderServiceReference\TokenProviderService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TokenProviderServiceReference\TokenProviderService34.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TokenProviderServiceReference\TokenProviderService35.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Xsd\Profile.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Service References\AuthenticationHost\configuration.svcinfo" />
+    <Content Include="Service References\AuthenticationHost\configuration91.svcinfo" />
+    <Content Include="Service References\AuthenticationHost\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </Content>
+    <Content Include="Service References\ProfileProviderServiceReference\configuration.svcinfo" />
+    <Content Include="Service References\ProfileProviderServiceReference\configuration91.svcinfo" />
+    <Content Include="Service References\ProfileProviderServiceReference\ProfileProviderService.disco" />
+    <Content Include="Service References\ProfileProviderServiceReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </Content>
+    <Content Include="Service References\RoleProviderServiceReference\configuration.svcinfo" />
+    <Content Include="Service References\RoleProviderServiceReference\configuration91.svcinfo" />
+    <Content Include="Service References\RoleProviderServiceReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </Content>
+    <Content Include="Service References\RoleProviderServiceReference\RoleProviderService.disco" />
+    <Content Include="Service References\ServerHost\configuration.svcinfo" />
+    <Content Include="Service References\ServerHost\configuration91.svcinfo" />
+    <Content Include="Service References\ServerHost\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </Content>
+    <Content Include="Service References\ServerHost\UserProviderService.disco" />
+    <Content Include="Service References\TokenProviderServiceReference\configuration.svcinfo" />
+    <Content Include="Service References\TokenProviderServiceReference\configuration91.svcinfo" />
+    <Content Include="Service References\TokenProviderServiceReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

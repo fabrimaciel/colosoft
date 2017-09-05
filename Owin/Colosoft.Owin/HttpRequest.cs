@@ -1,0 +1,685 @@
+﻿/* 
+ * Colosoft Framework - generic framework to assist in development on the .NET platform
+ * Copyright (C) 2013  <http://www.colosoft.com.br/framework> - support@colosoft.com.br
+ * 
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ * 
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
+using System;
+using System.Collections.Generic;
+using System.Collections.Specialized;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Colosoft.Owin.Server
+{
+	/// <summary>
+	/// Implementação da requisição HTTP.
+	/// </summary>
+	class HttpRequest : System.Web.HttpRequestBase, IDisposable
+	{
+		private static System.Web.Configuration.HttpCapabilitiesProvider _httpCapabilitiesProvider = new System.Web.Configuration.HttpCapabilitiesDefaultProvider();
+
+		private HttpContext _context;
+
+		private Microsoft.Owin.IOwinRequest _request;
+
+		private NameValueCollection _headers;
+
+		private NameValueCollection _form;
+
+		private NameValueCollection _queryString;
+
+		private HttpFileCollection _files;
+
+		private System.Web.HttpCookieCollection _cookies;
+
+		private string _rawUrl;
+
+		private NameValueCollection _serverVariables = new NameValueCollection();
+
+		private HttpClient _httpClient;
+
+		/// <summary>
+		/// Raw url.
+		/// </summary>
+		public override string RawUrl
+		{
+			get
+			{
+				EnsureRawUrl();
+				return _rawUrl;
+			}
+		}
+
+		/// <summary>
+		/// Caminho da aplicação.
+		/// </summary>
+		public override string ApplicationPath
+		{
+			get
+			{
+				return "/";
+			}
+		}
+
+		public override string AppRelativeCurrentExecutionFilePath
+		{
+			get
+			{
+				return UrlPath.MakeVirtualPathAppRelative(CurrentExecutionFilePath);
+			}
+		}
+
+		public string CurrentExecutionFilePath
+		{
+			get
+			{
+				return "/";
+			}
+		}
+
+		/// <summary>
+		/// Tipo do conteúdo.
+		/// </summary>
+		public override string ContentType
+		{
+			get
+			{
+				return _request.ContentType ?? "";
+			}
+			set
+			{
+				_request.ContentType = value;
+			}
+		}
+
+		/// <summary>
+		/// Caminho da requisição.
+		/// </summary>
+		public override string Path
+		{
+			get
+			{
+				return _request.Path.Value;
+			}
+		}
+
+		/// <summary>
+		/// Informações do caminho.
+		/// </summary>
+		public override string PathInfo
+		{
+			get
+			{
+				var path = _request.Path.Value;
+				if(!string.IsNullOrEmpty(path) && path.Length > 0 && path[0] == '/')
+					return path.Substring(1);
+				return path;
+			}
+		}
+
+		/// <summary>
+		/// Identifica se é uma conexão segura.
+		/// </summary>
+		public override bool IsSecureConnection
+		{
+			get
+			{
+				return _request.IsSecure;
+			}
+		}
+
+		/// <summary>
+		/// Agente do usuário.
+		/// </summary>
+		public override string UserAgent
+		{
+			get
+			{
+				return "Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/47.0.2526.106 Safari/537.36";
+			}
+		}
+
+		/// <summary>
+		/// Cabeçalhos.
+		/// </summary>
+		public override NameValueCollection Headers
+		{
+			get
+			{
+				return _headers;
+			}
+		}
+
+		/// <summary>
+		/// Tipos aceitos.
+		/// </summary>
+		public override string[] AcceptTypes
+		{
+			get
+			{
+				return _request.Accept.Split(',');
+			}
+		}
+
+		/// <summary>
+		/// Encodigin do conteúdo.
+		/// </summary>
+		public override Encoding ContentEncoding
+		{
+			get
+			{
+				return Encoding.UTF8;
+			}
+			set
+			{
+			}
+		}
+
+		/// <summary>
+		/// Identifica se é uma requisição autenticada.
+		/// </summary>
+		public override bool IsAuthenticated
+		{
+			get
+			{
+				return (((_context.User != null) && (_context.User.Identity != null)) && _context.User.Identity.IsAuthenticated);
+			}
+		}
+
+		/// <summary>
+		/// Browser.
+		/// </summary>
+		public override System.Web.HttpBrowserCapabilitiesBase Browser
+		{
+			get
+			{
+				var result = new System.Web.HttpBrowserCapabilities();
+				result.Capabilities = new System.Collections.Hashtable();
+				var v = result["isMobileDevice"];
+				return new System.Web.HttpBrowserCapabilitiesWrapper(result);
+			}
+		}
+
+		/// <summary>
+		/// Stream de entrada.
+		/// </summary>
+		public override System.IO.Stream InputStream
+		{
+			get
+			{
+				return _httpClient.InputStream;
+			}
+		}
+
+		/// <summary>
+		/// Form.
+		/// </summary>
+		public override NameValueCollection Form
+		{
+			get
+			{
+				return _form;
+			}
+		}
+
+		/// <summary>
+		/// Arquivos
+		/// </summary>
+		public override System.Web.HttpFileCollectionBase Files
+		{
+			get
+			{
+				return _files;
+			}
+		}
+
+		/// <summary>
+		/// String de consulta.
+		/// </summary>
+		public override NameValueCollection QueryString
+		{
+			get
+			{
+				return _queryString;
+			}
+		}
+
+		/// <summary>
+		/// Cookies.
+		/// </summary>
+		public override System.Web.HttpCookieCollection Cookies
+		{
+			get
+			{
+				return _cookies;
+			}
+		}
+
+		/// <summary>
+		/// Valores invalidados.
+		/// </summary>
+		public override System.Web.UnvalidatedRequestValuesBase Unvalidated
+		{
+			get
+			{
+				return new UnvalidatedRequestValues(this);
+			}
+		}
+
+		/// <summary>
+		/// Url da requisição.
+		/// </summary>
+		public override Uri Url
+		{
+			get
+			{
+				return _request.Uri;
+			}
+		}
+
+		/// <summary>
+		/// Método HTTP.
+		/// </summary>
+		public override string HttpMethod
+		{
+			get
+			{
+				return _request.Method;
+			}
+		}
+
+		/// <summary>
+		/// Variáveis do servidor.
+		/// </summary>
+		public override NameValueCollection ServerVariables
+		{
+			get
+			{
+				return _serverVariables;
+			}
+		}
+
+		/// <summary>
+		/// Recupera o valor da item associado com a chave informada.
+		/// </summary>
+		/// <param name="key"></param>
+		/// <returns></returns>
+		public override string this[string key]
+		{
+			get
+			{
+				var result = QueryString[key];
+				if(string.IsNullOrEmpty(result))
+					return Form[key];
+				return result;
+			}
+		}
+
+		/// <summary>
+		/// Construtor padrão.
+		/// </summary>
+		/// <param name="context"></param>
+		/// <param name="request"></param>
+		public HttpRequest(HttpContext context, Microsoft.Owin.IOwinRequest request)
+		{
+			_context = context;
+			_request = request;
+			_headers = request.Headers.GetNameValueCollection();
+			_files = new HttpFileCollection();
+			var allDone = new System.Threading.ManualResetEvent(false);
+			_httpClient = new HttpClient(request);
+			_httpClient.RequestExecuting += (sender, e) =>  {
+				allDone.Set();
+			};
+			_httpClient.Disposing += (sender, e) =>  {
+				allDone.Set();
+			};
+			_httpClient.Reset();
+			foreach (KeyValuePair<string, string[]> i in request.Headers)
+				_httpClient.Headers.Add(i.Key, i.Value.FirstOrDefault());
+			_httpClient.State = HttpClient.ClientState.ReadingContent;
+			_httpClient.BeginRequest();
+			allDone.WaitOne();
+			if(_httpClient.PostParameters != null)
+				_form = _httpClient.PostParameters;
+			if(_httpClient.MultiPartItems != null)
+				ParseMultiPartItems(_httpClient);
+			_queryString = request.Query.GetNameValueCollection();
+			_cookies = request.Cookies.GetCookieCollection();
+		}
+
+		/// <summary>
+		/// Destrutor.
+		/// </summary>
+		~HttpRequest()
+		{
+			Dispose();
+		}
+
+		/// <summary>
+		/// Recupera os itens do MultiPart para a instancia.
+		/// </summary>
+		/// <param name="client"></param>
+		private void ParseMultiPartItems(HttpClient client)
+		{
+			if(client.MultiPartItems == null)
+				return;
+			foreach (var item in client.MultiPartItems)
+			{
+				string contentType = null;
+				string name = null;
+				string fileName = null;
+				string header;
+				if(item.Headers.TryGetValue("Content-Disposition", out header))
+				{
+					string[] parts = header.Split(';');
+					for(int i = 0; i < parts.Length; i++)
+					{
+						string part = parts[i].Trim();
+						if(part.StartsWith("name="))
+							name = ParseContentDispositionItem(part.Substring(5));
+						else if(part.StartsWith("filename="))
+							fileName = ParseContentDispositionItem(part.Substring(9));
+					}
+				}
+				if(item.Headers.TryGetValue("Content-Type", out header))
+					contentType = header;
+				if(name == null)
+				{
+					continue;
+				}
+				if(item.Value != null)
+				{
+					Form[name] = item.Value;
+				}
+				else
+				{
+					_files.AddFile(name, new HttpPostedFile(fileName, contentType, item.Stream));
+				}
+			}
+		}
+
+		/// <summary>
+		/// Executa o parse do item da disposição do conteúdo.
+		/// </summary>
+		/// <param name="value"></param>
+		/// <returns></returns>
+		private string ParseContentDispositionItem(string value)
+		{
+			if(value.Length == 0)
+				return value;
+			if(value.Length >= 2 && value[0] == '"' && value[value.Length - 1] == '"')
+				value = value.Substring(1, value.Length - 2);
+			return HttpUtil.UriDecode(value);
+		}
+
+		/// <summary>
+		/// Recupera o caminho invalidado.
+		/// </summary>
+		/// <returns></returns>
+		internal string GetUnvalidatedPath()
+		{
+			return _request.Path.Value;
+		}
+
+		/// <summary>
+		/// Assegura a RawUrl.
+		/// </summary>
+		/// <returns></returns>
+		private string EnsureRawUrl()
+		{
+			if(_rawUrl == null)
+			{
+				string rawUrl;
+				string unvalidatedPath = GetUnvalidatedPath();
+				string queryStringText = _request.QueryString.Value;
+				if(!string.IsNullOrEmpty(queryStringText))
+					rawUrl = unvalidatedPath + "?" + queryStringText;
+				else
+					rawUrl = unvalidatedPath;
+				_rawUrl = rawUrl;
+			}
+			return _rawUrl;
+		}
+
+		/// <summary>
+		/// Libera a instancia.
+		/// </summary>
+		public void Dispose()
+		{
+			_httpClient.Dispose();
+		}
+
+		/// <summary>
+		/// Valida os dados de entrada.
+		/// </summary>
+		public override void ValidateInput()
+		{
+		}
+
+		/// <summary>
+		/// Implementação da coleção de arquivos enviados pelo HTTP.
+		/// </summary>
+		class HttpFileCollection : System.Web.HttpFileCollectionBase
+		{
+			/// <summary>
+			/// Construtor padrão.
+			/// </summary>
+			public HttpFileCollection()
+			{
+			}
+
+			/// <summary>
+			/// Recupera o arquivo pelo indice informado.
+			/// </summary>
+			/// <param name="index"></param>
+			/// <returns></returns>
+			public override System.Web.HttpPostedFileBase this[int index]
+			{
+				get
+				{
+					return (System.Web.HttpPostedFileBase)BaseGet(index);
+				}
+			}
+
+			/// <summary>
+			/// Todas as chaves.
+			/// </summary>
+			public override string[] AllKeys
+			{
+				get
+				{
+					return base.BaseGetAllKeys();
+				}
+			}
+
+			/// <summary>
+			/// Quantidade de arquivos na instancia.
+			/// </summary>
+			public override int Count
+			{
+				get
+				{
+					return base.BaseGetAllKeys().Length;
+				}
+			}
+
+			/// <summary>
+			/// Recupera o arquivo pelo nome informado.
+			/// </summary>
+			/// <param name="name"></param>
+			/// <returns></returns>
+			public override System.Web.HttpPostedFileBase this[string name]
+			{
+				get
+				{
+					return (System.Web.HttpPostedFileBase)BaseGet(name);
+				}
+			}
+
+			/// <summary>
+			/// Recupera o arquivo pelo indice informado.
+			/// </summary>
+			/// <param name="index"></param>
+			/// <returns></returns>
+			public override System.Web.HttpPostedFileBase Get(int index)
+			{
+				return base.Get(index);
+			}
+
+			/// <summary>
+			/// Recupera o arquivo pelo nome informado.
+			/// </summary>
+			/// <param name="name"></param>
+			/// <returns></returns>
+			public override System.Web.HttpPostedFileBase Get(string name)
+			{
+				return base.Get(name);
+			}
+
+			/// <summary>
+			/// Adiciona o arquivo para a coleção.
+			/// </summary>
+			/// <param name="name"></param>
+			/// <param name="httpPostedFile"></param>
+			internal void AddFile(string name, HttpPostedFile httpPostedFile)
+			{
+				BaseAdd(name, httpPostedFile);
+			}
+		}
+
+		/// <summary>
+		/// Implementação de um arquivo postado pelo protocolo HTTP.
+		/// </summary>
+		sealed class HttpPostedFile : System.Web.HttpPostedFileBase
+		{
+			private string _contentType;
+
+			private string _filename;
+
+			private System.IO.Stream _stream;
+
+			/// <summary>
+			/// Tamanho do conteúdo.
+			/// </summary>
+			public override int ContentLength
+			{
+				get
+				{
+					return (int)_stream.Length;
+				}
+			}
+
+			/// <summary>
+			/// Tipo do conteúdo.
+			/// </summary>
+			public override string ContentType
+			{
+				get
+				{
+					return _contentType;
+				}
+			}
+
+			/// <summary>
+			/// Nome do arquivo.
+			/// </summary>
+			public override string FileName
+			{
+				get
+				{
+					return _filename;
+				}
+			}
+
+			/// <summary>
+			/// Stream de entrada.
+			/// </summary>
+			public override System.IO.Stream InputStream
+			{
+				get
+				{
+					return this._stream;
+				}
+			}
+
+			/// <summary>
+			/// Construtor padrão.
+			/// </summary>
+			/// <param name="filename"></param>
+			/// <param name="contentType"></param>
+			/// <param name="stream"></param>
+			public HttpPostedFile(string filename, string contentType, System.IO.Stream stream)
+			{
+				_filename = filename;
+				_contentType = contentType;
+				_stream = stream;
+			}
+
+			/// <summary>
+			/// Salva os dados no arquivo.
+			/// </summary>
+			/// <param name="filename">Nome do arquivo onde será salvo.</param>
+			public override void SaveAs(string filename)
+			{
+				var s = new System.IO.FileStream(filename, System.IO.FileMode.Create);
+				try
+				{
+					var read = 0;
+					var buffer = new byte[1024];
+					_stream.Position = 0;
+					while ((read = _stream.Read(buffer, 0, buffer.Length)) > 0)
+						s.Write(buffer, 0, read);
+					s.Flush();
+				}
+				finally
+				{
+					s.Close();
+				}
+			}
+		}
+
+		/// <summary>
+		/// Implementação dos valores da requisição invalidados.
+		/// </summary>
+		class UnvalidatedRequestValues : System.Web.UnvalidatedRequestValuesBase
+		{
+			private HttpRequest _request;
+
+			public UnvalidatedRequestValues(HttpRequest request)
+			{
+				_request = request;
+			}
+
+			public override NameValueCollection Form
+			{
+				get
+				{
+					return _request.Form;
+				}
+			}
+
+			public override NameValueCollection QueryString
+			{
+				get
+				{
+					return _request.QueryString;
+				}
+			}
+		}
+	}
+}

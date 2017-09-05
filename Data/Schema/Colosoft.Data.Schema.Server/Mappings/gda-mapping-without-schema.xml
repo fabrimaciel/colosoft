@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<gda-mapping namespace="Colosoft.Data.Schema.Server" assembly="Colosoft.Data.Schema.Server" xmlns="urn:gda-mapping-1.0">
+  <class name="TypeMetadata" table="TypeMetadata">
+    <property name="TypeCode" column="TypeMetadataId" parameterType="IdentityKey" />
+    <property name="TableSqlName" column="TableName" />
+    <property name="TableSchema" />
+    <property name="TableCatalog" />
+    <property name="Name" column="TypeName" />
+    <property name="Namespace" column="TypeNamespace" />
+    <property name="Assembly" column="TypeAssembly" />
+    <property name="IsCache" />
+    <property name="IsVersioned" />
+  </class>
+  <class name="PropertyMetadata" table="PropertyMetadata">
+    <property name="PropertyCode" column="PropertyMetadataId" parameterType="IdentityKey"/>
+    <property name="Name" column="PropertyName"/>
+    <property name="ColumnName"/>
+    <property name="PropertyType" />
+    <property name="ForeignKeyTypeCode" column="PropertyMetadataForeignId"/>
+    <property name="TypeCode" column="TypeMetadataId"/>
+    <property name="Direction"/>
+    <property name="ParameterType"/>
+    <property name="IsForeignKey"/>
+    <property name="IsCacheIndexed" />
+    <property name="IsVolatile" />
+  </class>
+</gda-mapping>

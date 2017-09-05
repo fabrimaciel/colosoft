@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema targetNamespace="http://colosoft.com.br/2013/webservices/securitycore"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:tns="http://colosoft.com.br/2013/webservices/securitycore"
+           elementFormDefault="qualified">
+
+  <xs:simpleType name="TokenPingResultStatus">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Success"/>
+      <xs:enumeration value="Error"/>
+      <xs:enumeration value="InvalidToken"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="PingMessage">
+    <xs:sequence>
+      <xs:element name="DispatcherId" type="xs:int" minOccurs="0" nillable="true"/>
+      <xs:element name="SenderName" type="xs:string" minOccurs="0" nillable="true"/>
+      <xs:element name="Title" type="xs:string" minOccurs="0" nillable="true"/>
+      <xs:element name="Body" type="xs:string" minOccurs="0" nillable="true"/>
+      <xs:element name="Link" type="xs:string" minOccurs="0" nillable="true"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:element name="PingMessage" type="tns:PingMessage" nillable="true"/>
+
+  <xs:complexType name="ArrayOfPingMessage">
+    <xs:sequence>
+      <xs:element name="PingMessage" type="tns:PingMessage" nillable="true" maxOccurs="unbounded" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:element name="ArrayOfPingMessage" type="tns:ArrayOfPingMessage" nillable="true" />
+
+  <xs:complexType name="TokenPingResult">
+    <xs:sequence>
+      <xs:element name="Message" type="xs:string" minOccurs="0" nillable="true" />
+      <xs:element name="ServerTime" type="xs:string" minOccurs="0" nillable="true" />
+      <xs:element name="Status" type="tns:TokenPingResultStatus" minOccurs="0" nillable="true" />
+      <xs:element name="Notifications" type="tns:ArrayOfPingMessage" nillable="true" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:element name="TokenPingResult" type="tns:TokenPingResult" nillable="true" />
+
+</xs:schema>

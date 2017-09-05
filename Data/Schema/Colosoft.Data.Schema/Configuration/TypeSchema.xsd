@@ -1,0 +1,142 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema targetNamespace="http://colosoft.com.br/2013/data/schema"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:tns="http://colosoft.com.br/2013/data/schema"
+           elementFormDefault="qualified">
+
+  <xs:simpleType name="ParameterType">
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="Field">
+        <xs:annotation>
+          <xs:documentation>Idetifica um campo normal.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Key" />
+      <xs:enumeration value="IdentityKey" />
+    </xs:restriction>
+  </xs:simpleType>
+  
+  <xs:simpleType name="Direction">
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="Output">
+        <xs:annotation>
+          <xs:documentation>
+            Identifica que o valor deverá apenas ser enviando para a base de dados.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Input">
+        <xs:annotation>
+          <xs:documentation>
+            Identifica que o valor deverá apenas ser recuperado da base de dados.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="InputOutput">
+        <xs:annotation>
+          <xs:documentation>
+            Identifica que o valor poderá ser enviado ou recuperado da base de dados.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="OutputOnlyInsert">
+        <xs:annotation>
+          <xs:documentation>
+            O parametro é inserido apenas pelo comando insert, mas ele também pode ser considerado como um Input.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="OnlyInsert">
+        <xs:annotation>
+          <xs:documentation>
+            O parametro é inserido apenas pelo comando insert
+          </xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="InputOptionalOutput">
+        <xs:annotation>
+          <xs:documentation>
+            O parametro busca o valor se ele existir no resultado, e ele se comportar da mesma forma que o parametro Output.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="InputOptional">
+        <xs:annotation>
+          <xs:documentation>
+            O parametro busca o valor se ele existir no resultado.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="InputOptionalOutputOnlyInsert">
+        <xs:annotation>
+          <xs:documentation>
+            O parametro busca o valor se ele existir no resultado, e ele se comportar da mesma forma que o
+            parametro Output que é inserido apenas pelo comando insert.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  
+  <xs:complexType name="ForeignKeyInfo">
+    <xs:attribute name="typeName" type="xs:string" use="required" />
+    <xs:attribute name="namespace" type="xs:string" use="optional" />
+    <xs:attribute name="assembly" type="xs:string" use="optional" />
+    <xs:attribute name="property" type="xs:string" use="required" />
+  </xs:complexType>
+  
+  <xs:complexType name="PropertyMetadata">
+    <xs:sequence>
+      <xs:element name="ForeignKey" type="tns:ForeignKeyInfo" maxOccurs="1" minOccurs="0" />
+    </xs:sequence>
+    <xs:attribute name="name" type="xs:string" use="required" />
+    <xs:attribute name="column" type="xs:string" use="optional" />
+    <xs:attribute name="type" type="xs:string" use="optional" />
+    <xs:attribute name="isCacheIndexed" type="xs:boolean" use="optional" />
+    <xs:attribute name="direction" type="tns:Direction" use="optional" />
+    <xs:attribute name="parameterType" type="tns:ParameterType" use="optional" />
+    <xs:attribute name="isVolatile" type="xs:boolean" use="optional" />
+  </xs:complexType>
+  
+  <xs:complexType name="ArrayOfPropertyMetadata">
+    <xs:sequence>
+      <xs:element name="Property" type="tns:PropertyMetadata" minOccurs="1" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="ReferenceTypeMetadata">
+    <xs:attribute name="name" type="xs:string" use="required" />
+    <xs:attribute name="namespace" type="xs:string" use="optional" />
+    <xs:attribute name="assembly" type="xs:string" use="optional" />
+  </xs:complexType>
+
+  <xs:complexType name="ArrayOfReferenceTypeMetadata">
+    <xs:sequence>
+      <xs:element name="ReferenceTypeMetadata" type="tns:ReferenceTypeMetadata" minOccurs="1" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  
+  <xs:complexType name="TypeMetadata">
+    <xs:sequence>
+      <xs:element name="Properties" type="tns:ArrayOfPropertyMetadata" minOccurs="1" maxOccurs="1" />
+      <xs:element name="BaseTypes" type="tns:ArrayOfReferenceTypeMetadata" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+    <xs:attribute name="name" type="xs:string" use="required" />
+    <xs:attribute name="namespace" type="xs:string" use="optional" />
+    <xs:attribute name="assembly" type="xs:string" use="optional" />
+    <xs:attribute name="isCache" type="xs:boolean" use="optional" />
+    <xs:attribute name="isVersioned" type="xs:boolean" use="optional" />
+    <xs:attribute name="schema" type="xs:string" use="optional" />
+  </xs:complexType>
+  
+  <xs:complexType name="TypeSchema">
+    <xs:sequence>
+      <xs:element name="TypeMetadata" type="tns:TypeMetadata" minOccurs="1" maxOccurs="unbounded" />
+    </xs:sequence>
+    <xs:attribute name="namespace" type="xs:string" use="optional" />
+    <xs:attribute name="assembly" type="xs:string" use="optional" />
+    <xs:attribute name="schema" type="xs:string" use="optional" />
+  </xs:complexType>
+  
+  <xs:element name="TypeSchema" type="tns:TypeSchema" />
+</xs:schema>

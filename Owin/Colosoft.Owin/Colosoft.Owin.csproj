@@ -1,0 +1,202 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3402D755-1E2F-46D9-9D55-87A559AD57D1}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Colosoft.Owin</RootNamespace>
+    <AssemblyName>Colosoft.Owin</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\bin\Server\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>0</WarningLevel>
+    <DocumentationFile>..\..\bin\Server\Colosoft.Owin.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>0</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>Key.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Colosoft.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=d3b3c440aed9b980, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\bin\Client\Colosoft.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Colosoft.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=019fcb5f415e5b13, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\bin\Client\Colosoft.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.SignalR.Core">
+      <HintPath>..\..\Libraries\General\SignalR\Microsoft.AspNet.SignalR.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin">
+      <HintPath>..\..\Libraries\General\Katana\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Cors">
+      <HintPath>..\..\Libraries\General\Katana\Microsoft.Owin.Cors.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.HttpListener">
+      <HintPath>..\..\Libraries\General\Katana\Microsoft.Owin.Host.HttpListener.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb">
+      <HintPath>..\..\Libraries\General\Katana\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Hosting">
+      <HintPath>..\..\Libraries\General\Katana\Microsoft.Owin.Hosting.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security">
+      <HintPath>..\..\Libraries\General\Katana\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Libraries\General\CommonServiceLocation\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Libraries\General\Katana\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\..\Libraries\General\Katana\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin.Loader">
+      <HintPath>..\..\Libraries\General\Katana\Owin.Loader.dll</HintPath>
+    </Reference>
+    <Reference Include="RazorEngine">
+      <HintPath>..\..\Libraries\General\RazorEngine\RazorEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Libraries\General\AspNet\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=4.0.0.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Libraries\General\AspNet\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Libraries\General\AspNet\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Libraries\General\AspNet\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Libraries\General\AspNet\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="AreaHelpers.cs" />
+    <Compile Include="CustomDynamicViewBag.cs" />
+    <Compile Include="IRazorBaseTemplate.cs" />
+    <Compile Include="ITemplateCacheSupport.cs" />
+    <Compile Include="RazorActivator.cs" />
+    <Compile Include="RazorBaseTemplate.cs" />
+    <Compile Include="RazorPartialView.cs" />
+    <Compile Include="RazorTemplateManager.cs" />
+    <Compile Include="RazorView.cs" />
+    <Compile Include="RazorViewEngine.cs" />
+    <Compile Include="BuildManagerWrapper.cs" />
+    <Compile Include="AuthenticationConfig.cs" />
+    <Compile Include="ControllerFactory.cs" />
+    <Compile Include="ControllerTypeCache.cs" />
+    <Compile Include="HttpClient.cs" />
+    <Compile Include="HttpContext.cs" />
+    <Compile Include="HttpContextItemsValueStorage.cs" />
+    <Compile Include="HttpExtensions.cs" />
+    <Compile Include="HttpMultiPartItem.cs" />
+    <Compile Include="HttpMultiPartRequestParser.cs" />
+    <Compile Include="HttpReadBuffer.cs" />
+    <Compile Include="HttpRequest.cs" />
+    <Compile Include="HttpRequestParser.cs" />
+    <Compile Include="HttpResponse.cs" />
+    <Compile Include="HttpResponseWriter.cs" />
+    <Compile Include="HttpSessionValueStorage.cs" />
+    <Compile Include="HttpUnknownRequestParser.cs" />
+    <Compile Include="HttpUrlEncodedRequestParser.cs" />
+    <Compile Include="HttpUtil.cs" />
+    <Compile Include="HttpWorkerRequestWrapper.cs" />
+    <Compile Include="IBuildManager.cs" />
+    <Compile Include="HttpRequestMiddleware.cs" />
+    <Compile Include="TypeCacheSerializer.cs" />
+    <Compile Include="TypeCacheUtil.cs" />
+    <Compile Include="OwinConstants.cs" />
+    <Compile Include="SimpleApplicationHost.cs" />
+    <Compile Include="SimpleConfigMapPathFactory.cs" />
+    <Compile Include="IHttpApplication.cs" />
+    <Compile Include="IHttpModule.cs" />
+    <Compile Include="RequestFactory.cs" />
+    <Compile Include="RequestHandler.cs" />
+    <Compile Include="RequestHandlerBase.cs" />
+    <Compile Include="Route.cs" />
+    <Compile Include="CookielessHelperClass.cs" />
+    <Compile Include="FormsAuthenticationEventArgs.cs" />
+    <Compile Include="FormsAuthenticationModule.cs" />
+    <Compile Include="StringUtil.cs" />
+    <Compile Include="UrlPath.cs" />
+    <Compile Include="ViewDataContainer.cs" />
+    <Compile Include="AppDomainVirtualFileProvider.cs" />
+    <Compile Include="DirectoryVirtualFileProvider.cs" />
+    <Compile Include="InternalSecurityPermissions.cs" />
+    <Compile Include="JsonNetValueProviderFactory.cs" />
+    <Compile Include="DependencyResolver.cs" />
+    <Compile Include="ExceptionLoggingPipelineModule.cs" />
+    <Compile Include="CustomVirtualDirectory.cs" />
+    <Compile Include="VirtualFileProviderContainer.cs" />
+    <Compile Include="HubDescriptorProvider.cs" />
+    <Compile Include="FileUtil.cs" />
+    <Compile Include="SimpleBitVector32.cs" />
+    <Compile Include="VirtualPath.cs" />
+    <Compile Include="WebAppplication.cs" />
+    <Compile Include="IPhysicalFileInfo.cs" />
+    <Compile Include="EnumExtensions.cs" />
+    <Compile Include="FlagEnumJsonConverter.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Key.snk" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Server\Http\" />
+    <Folder Include="Server\Infrastructure\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

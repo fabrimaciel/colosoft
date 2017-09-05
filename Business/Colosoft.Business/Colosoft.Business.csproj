@@ -1,0 +1,382 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{5CF8134F-28C2-4A6D-96C0-7FCB1614064F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Colosoft.Business</RootNamespace>
+    <AssemblyName>Colosoft.Business</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>false</DebugSymbols>
+    <DebugType>none</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\bin\Client\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>0</WarningLevel>
+    <DocumentationFile>..\..\bin\Client\Colosoft.Business.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>0</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>Key.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Colosoft.Core">
+      <HintPath>..\..\bin\Client\Colosoft.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Colosoft.Data">
+      <HintPath>..\..\bin\Client\Colosoft.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Colosoft.Query">
+      <HintPath>..\..\bin\Client\Colosoft.Query.dll</HintPath>
+    </Reference>
+    <Reference Include="Colosoft.Validation">
+      <HintPath>..\..\bin\Client\Colosoft.Validation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation">
+      <HintPath>..\..\Libraries\General\CommonServiceLocation\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Linq.Dynamics">
+      <HintPath>..\..\Libraries\General\System.Linq.Dynamics\System.Linq.Dynamics.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BaseEntityList.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BusinessEntityDescriptor.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BusinessEntityPropertyState.cs" />
+    <Compile Include="BusinessEntityType.cs" />
+    <Compile Include="BusinessEntityTypeLoader.cs" />
+    <Compile Include="BusinessEntityTypeManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BusinessEntityTypeVersion.cs" />
+    <Compile Include="BusinessEntityTypeVersionProperty.cs" />
+    <Compile Include="BusinessException.cs" />
+    <Compile Include="BusinessExtensions.cs" />
+    <Compile Include="BusinessNamespace.cs" />
+    <Compile Include="BusinessQueryResultChangedObserver.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BusinessValidationManager.cs" />
+    <Compile Include="ConditionalLoader.cs" />
+    <Compile Include="CreateEntityDescriptorArgs.cs" />
+    <Compile Include="DeleteResult.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entity.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EntityChildEnumerable.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EntityChildrenList.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EntityComparer.cs" />
+    <Compile Include="EntityDescriptorQueryResultBindStrategy.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EntityDescriptorQueryResultBindStrategySession.cs" />
+    <Compile Include="EntityDescriptorQueryResultChangedObserver.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EntityDynamicChild.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EntityDynamicChildEntry.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EntityDynamicChildEntryOfEntity.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EntityDynamicChildOfEntity.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EntityEqualityComparer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EntityFromLinkCreatorArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EntityInfoQuery.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EntityLinksList.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EntityListDebugView.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EntityLoader.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EntityLoaderAttribute.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EntityLoaderChildContainer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EntityLoaderChildInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EntityLoaderChildInfoGeneric.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EntityLoaderConditional.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EntityLoaderCreatorArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EntityLoaderDynamicChildInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EntityLoaderDynamicChildInfo2.cs" />
+    <Compile Include="EntityLoaderException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EntityLoaderLazyArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EntityLoaderLinkInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EntityLoaderLinkInfoGeneric.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EntityLoaderOfModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EntityLoaderReference.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EntityLoaderReferenceContainer.cs" />
+    <Compile Include="EntityLoaderReferenceGeneric.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EntityManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EntityManagerExtentions.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EntityOfModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EntityPointerSelectionList.cs" />
+    <Compile Include="EntitySelectionList.cs" />
+    <Compile Include="EntityTypeManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EntityXmlSerializer.cs" />
+    <Compile Include="EntityDeletedEvent.cs" />
+    <Compile Include="EntityDeletingEvent.cs" />
+    <Compile Include="EntityDeletingWithPersistenceSessionEvent.cs" />
+    <Compile Include="EntityEventArgs.cs" />
+    <Compile Include="EntityEventManager.cs" />
+    <Compile Include="EntityEventSubscriptionMetadataAttribute.cs" />
+    <Compile Include="EntityEventType.cs" />
+    <Compile Include="EntityInitializedEvent.cs" />
+    <Compile Include="EntityPersistingEvent.cs" />
+    <Compile Include="EntityPropertyChangedEvent.cs" />
+    <Compile Include="EntityPropertyChangingEvent.cs" />
+    <Compile Include="EntitySavedEvent.cs" />
+    <Compile Include="EntitySavingEvent.cs" />
+    <Compile Include="EntityValidatedEvent.cs" />
+    <Compile Include="EntityValidatingEvent.cs" />
+    <Compile Include="IEntityDeletedEventSubscription.cs" />
+    <Compile Include="IEntityDeletingEventSubscription.cs" />
+    <Compile Include="IEntityDeletingWithPersistenceSessionEventSubscription.cs" />
+    <Compile Include="IEntityEventArgs.cs" />
+    <Compile Include="IEntityEventManager.cs" />
+    <Compile Include="IEntityInitializedEventSubscription.cs" />
+    <Compile Include="IEntityPersistingEventSubscription.cs" />
+    <Compile Include="IEntityPropertyChangedEventSubscription.cs" />
+    <Compile Include="IEntityPropertyChangingEventSubscription.cs" />
+    <Compile Include="IEntitySavedEventSubscription.cs" />
+    <Compile Include="IEntitySavingEventSubscription.cs" />
+    <Compile Include="IEntityValidatedEventSubscription.cs" />
+    <Compile Include="IEntityValidatingEventSubscription.cs" />
+    <Compile Include="NotifyCollectionChangingEventHandler.cs" />
+    <Compile Include="RegisterEntityEventException.cs" />
+    <Compile Include="ExtensionDouble.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FilterOption.cs" />
+    <Compile Include="FluentEntityLoader.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="GetEntitiesEnumerable.cs" />
+    <Compile Include="GetEntityDescriptorsEnumerable.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="GetFullEntitiesEnumerable.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="GetLazyEntitiesEnumerable.cs" />
+    <Compile Include="GlobalSuppressions.cs" />
+    <Compile Include="IBindableEntityDescriptor.cs" />
+    <Compile Include="IBusinessEntityTypeLoader.cs" />
+    <Compile Include="IConnectedEntity.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IEntity.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IEntityAccessor.cs" />
+    <Compile Include="IEntityActionActivity.cs" />
+    <Compile Include="IEntityChildrenList.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IEntityDescriptorCreator.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IEntityDynamicChildTypesProvider.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IEntityFlow.cs" />
+    <Compile Include="IEntityInstanceRegister.cs" />
+    <Compile Include="IEntityLink.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IEntityLinksList.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IEntityList.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IEntityLoader.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IEntityLoaderChildInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IEntityLoaderLinksContainer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IEntityLoaderOfModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IEntityManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IEntityObserver.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IEntityPersistence.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IEntityRecordObserver.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IEntitySavePersistenceSessionObserver.cs" />
+    <Compile Include="IEntityTypeManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ILoadableEntity.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="INotificationContainer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="InstanceState.cs" />
+    <Compile Include="InstanceStateManager.cs" />
+    <Compile Include="InvalidStateble.cs" />
+    <Compile Include="IOperationResult.cs" />
+    <Compile Include="IPersistence.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IPrint.cs" />
+    <Compile Include="IPrintChild.cs" />
+    <Compile Include="IProxyListItem.cs" />
+    <Compile Include="ISaveOperationsContainer.cs" />
+    <Compile Include="ISimpleTraceableEntity.cs" />
+    <Compile Include="ITraceableEntity.cs" />
+    <Compile Include="ITraceableEntityProfileInfo.cs" />
+    <Compile Include="LinkCreatorArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LoaderNotFoundException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LoadOptions.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ObserverControl.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="OperationResult.cs" />
+    <Compile Include="PrepareNestedQueriesResult.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="PropertyUIConfiguration.cs" />
+    <Compile Include="ProxyListItemBase.cs" />
+    <Compile Include="QueryableEntityVirtualListLoader.cs" />
+    <Compile Include="QueryableVirtualList.cs" />
+    <Compile Include="QueryableVirtualListLoader.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="QueryResultEnumerable.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SaveOperationResult.cs" />
+    <Compile Include="SaveResult.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SimpleTraceableEntityOfModel.cs" />
+    <Compile Include="SingleEntityQueryResultChangedObserver.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TraceableEntityHelper.cs" />
+    <Compile Include="TraceableEntityOfModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Key.snk" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

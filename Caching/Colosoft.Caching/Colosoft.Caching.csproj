@@ -1,0 +1,369 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A582C1F3-82FB-4B28-9117-41643F86D32E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Colosoft.Caching</RootNamespace>
+    <AssemblyName>Colosoft.Caching</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>false</DebugSymbols>
+    <DebugType>none</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\bin\Client\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>0</WarningLevel>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
+    <DocumentationFile>..\..\bin\Client\Colosoft.Caching.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>0</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>Key.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Practices.ServiceLocation">
+      <HintPath>..\..\Libraries\Desktop\CommonServiceLocation\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Colosoft.Core">
+      <HintPath>..\..\..\..\bin\Client\Colosoft.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Colosoft.Data">
+      <HintPath>..\..\bin\Client\Colosoft.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Colosoft.Data.Schema, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b511b2e53e183e40, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\bin\Client\Colosoft.Data.Schema.dll</HintPath>
+    </Reference>
+    <Reference Include="Colosoft.Query">
+      <HintPath>..\..\bin\Client\Colosoft.Query.dll</HintPath>
+    </Reference>
+    <Reference Include="Colosoft.Text">
+      <HintPath>..\..\bin\Client\Colosoft.Text.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AggregateCacheObserver.cs" />
+    <Compile Include="AsyncCallbackInfo.cs" />
+    <Compile Include="CacheAttribute.cs" />
+    <Compile Include="CacheIndexAttribute.cs" />
+    <Compile Include="CacheDataSource.cs" />
+    <Compile Include="CacheErrorEventArgs.cs" />
+    <Compile Include="CacheInsertEntryErrorHandler.cs" />
+    <Compile Include="CacheItemRecord.cs" />
+    <Compile Include="CacheNull.cs" />
+    <Compile Include="CachePersistenceContext.cs" />
+    <Compile Include="CacheQueryTranslator.cs" />
+    <Compile Include="ICacheObserver.cs" />
+    <Compile Include="ICacheProvider.cs" />
+    <Compile Include="CachePersistenceExecuter.cs" />
+    <Compile Include="CachePersistenceSession.cs" />
+    <Compile Include="CacheSourceContext.cs" />
+    <Compile Include="CacheQueryParser.cs" />
+    <Compile Include="Attrib.cs" />
+    <Compile Include="AttributeListUnion.cs" />
+    <Compile Include="CacheLoader.cs" />
+    <Compile Include="Class.cs" />
+    <Compile Include="Cleanup.cs" />
+    <Compile Include="CompactClass.cs" />
+    <Compile Include="CompactSerialization.cs" />
+    <Compile Include="Compression.cs" />
+    <Compile Include="ConfigConverter.cs" />
+    <Compile Include="DataSharing.cs" />
+    <Compile Include="EvictionPolicy.cs" />
+    <Compile Include="Log.cs" />
+    <Compile Include="NotificationRecipient.cs" />
+    <Compile Include="Notifications.cs" />
+    <Compile Include="PerfCounters.cs" />
+    <Compile Include="PortableAttribute.cs" />
+    <Compile Include="PortableClass.cs" />
+    <Compile Include="ProviderAssembly.cs" />
+    <Compile Include="QueryIndex.cs" />
+    <Compile Include="Storage.cs" />
+    <Compile Include="Type.cs" />
+    <Compile Include="GroupEnumerationPointer.cs" />
+    <Compile Include="OperationNotSupportedException.cs" />
+    <Compile Include="Cache.cs" />
+    <Compile Include="CacheBase.cs" />
+    <Compile Include="AsyncLocalNotifyAdd.cs" />
+    <Compile Include="AsyncLocalNotifyCacheClear.cs" />
+    <Compile Include="AsyncLocalNotifyCustomEvent.cs" />
+    <Compile Include="AsyncLocalNotifyRemoval.cs" />
+    <Compile Include="AsyncLocalNotifyRemoveCallback.cs" />
+    <Compile Include="AsyncLocalNotifyUpdate.cs" />
+    <Compile Include="AsyncLocalNotifyUpdateCallback.cs" />
+    <Compile Include="CacheCallbacks.cs" />
+    <Compile Include="CacheEntry.cs" />
+    <Compile Include="CacheEnumerator.cs" />
+    <Compile Include="CacheFactory.cs" />
+    <Compile Include="CacheInfo.cs" />
+    <Compile Include="CacheInsResultWithEntry.cs" />
+    <Compile Include="CacheItemBase.cs" />
+    <Compile Include="CacheSyncWrapper.cs" />
+    <Compile Include="CachingHeader.cs" />
+    <Compile Include="CallbackEntry.cs" />
+    <Compile Include="CallbackInfo.cs" />
+    <Compile Include="CompactCacheEntry.cs" />
+    <Compile Include="CompressedValueEntry.cs" />
+    <Compile Include="BackingSource.cs" />
+    <Compile Include="CacheConfig.cs" />
+    <Compile Include="ConfigHelper.cs" />
+    <Compile Include="ConfigReader.cs" />
+    <Compile Include="ConfigurationAttributeAttribute.cs" />
+    <Compile Include="ConfigurationAttributeBase.cs" />
+    <Compile Include="ConfigurationRootAttribute.cs" />
+    <Compile Include="ConfigurationSectionAttribute.cs" />
+    <Compile Include="Parameter.cs" />
+    <Compile Include="PropsConfigReader.cs" />
+    <Compile Include="Provider.cs" />
+    <Compile Include="Readthru.cs" />
+    <Compile Include="Writethru.cs" />
+    <Compile Include="AggregateEnumerator.cs" />
+    <Compile Include="DatasourceMgr.cs" />
+    <Compile Include="EnumerationDataChunk.cs" />
+    <Compile Include="EnumerationIndex.cs" />
+    <Compile Include="EnumerationPointer.cs" />
+    <Compile Include="GroupIndexManager.cs" />
+    <Compile Include="IEnumerationProvider.cs" />
+    <Compile Include="IReadThruProvider.cs" />
+    <Compile Include="IWriteThruProvider.cs" />
+    <Compile Include="ReadThruProviderManager.cs" />
+    <Compile Include="RedBlack.cs" />
+    <Compile Include="RedBlackEnumerator.cs" />
+    <Compile Include="RedBlackException.cs" />
+    <Compile Include="RedBlackNode.cs" />
+    <Compile Include="SRTree.cs" />
+    <Compile Include="SRTreeEnumerator.cs" />
+    <Compile Include="WriteBehindAsyncProcessor.cs" />
+    <Compile Include="WriteThruProviderManager.cs" />
+    <Compile Include="Delegates.cs" />
+    <Compile Include="CacheDependency.cs" />
+    <Compile Include="CacheItemPriority.cs" />
+    <Compile Include="CacheRuntimeContext.cs" />
+    <Compile Include="CachingUtils.cs" />
+    <Compile Include="GroupInfo.cs" />
+    <Compile Include="CacheException.cs" />
+    <Compile Include="ConfigurationException.cs" />
+    <Compile Include="LockingException.cs" />
+    <Compile Include="OperationFailedException.cs" />
+    <Compile Include="StateTransferException.cs" />
+    <Compile Include="StreamAlreadyLockedException.cs" />
+    <Compile Include="StreamException.cs" />
+    <Compile Include="StreamNotFoundException.cs" />
+    <Compile Include="StreamNotFoundLockException.cs" />
+    <Compile Include="AggregateExpirationHint.cs" />
+    <Compile Include="DependencyHelper.cs" />
+    <Compile Include="DependencyHint.cs" />
+    <Compile Include="ExpirationHint.cs" />
+    <Compile Include="ExpirationManager.cs" />
+    <Compile Include="ExtensibleDependency.cs" />
+    <Compile Include="FileDependency.cs" />
+    <Compile Include="FixedExpiration.cs" />
+    <Compile Include="FixedIdleExpiration.cs" />
+    <Compile Include="IdleExpiration.cs" />
+    <Compile Include="IExpirationEventSink.cs" />
+    <Compile Include="KeyDependecy.cs" />
+    <Compile Include="LockExpiration.cs" />
+    <Compile Include="GlobalSuppressions.cs" />
+    <Compile Include="ICache.cs" />
+    <Compile Include="ICacheEventsListener.cs" />
+    <Compile Include="ICacheItemRecord.cs" />
+    <Compile Include="ICacheLoader.cs" />
+    <Compile Include="ISizable.cs" />
+    <Compile Include="CacheLoaderUtil.cs" />
+    <Compile Include="CacheStartupLoader.cs" />
+    <Compile Include="InsertedCacheEntryEventArgs.cs" />
+    <Compile Include="InsertingCacheEntryEventArgs.cs" />
+    <Compile Include="LoadCacheTask.cs" />
+    <Compile Include="LoadNextErrorEventArgs.cs" />
+    <Compile Include="ProcessCacheEntryErrorEventArgs.cs" />
+    <Compile Include="IndexedLocalCache.cs" />
+    <Compile Include="IndexedOverflowCache.cs" />
+    <Compile Include="LocalCache.cs" />
+    <Compile Include="LocalCacheBase.cs" />
+    <Compile Include="LocalCacheImpl.cs" />
+    <Compile Include="OverflowCache.cs" />
+    <Compile Include="LockAccessType.cs" />
+    <Compile Include="LockManager.cs" />
+    <Compile Include="LockOptions.cs" />
+    <Compile Include="MetaInformation.cs" />
+    <Compile Include="MiscUtil.cs" />
+    <Compile Include="OperationContext.cs" />
+    <Compile Include="CounterHint.cs" />
+    <Compile Include="EvictionHint.cs" />
+    <Compile Include="EvictionIndex.cs" />
+    <Compile Include="EvictionIndexEntry.cs" />
+    <Compile Include="EvictionPolicyFactory.cs" />
+    <Compile Include="IEvictionPolicy.cs" />
+    <Compile Include="LFUEvictionPolicy.cs" />
+    <Compile Include="LRUEvictionPolicy.cs" />
+    <Compile Include="PriorityEvictionHint.cs" />
+    <Compile Include="PriorityEvictionPolicy.cs" />
+    <Compile Include="TimestampHint.cs" />
+    <Compile Include="Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="ProviderCacheItem.cs" />
+    <Compile Include="ActiveQueryAnalyzer.cs" />
+    <Compile Include="ActiveQueryEvaluationIndex.cs" />
+    <Compile Include="AggregateFunctionType.cs" />
+    <Compile Include="AttributeIndex.cs" />
+    <Compile Include="AverageResult.cs" />
+    <Compile Include="ComparisonType.cs" />
+    <Compile Include="CQCallbackInfo.cs" />
+    <Compile Include="CQLParser.cs" />
+    <Compile Include="AggregateFunctionPredicate.cs" />
+    <Compile Include="AlwaysFalsePredicate.cs" />
+    <Compile Include="AlwaysTruePredicate.cs" />
+    <Compile Include="AveragePredicate.cs" />
+    <Compile Include="BitwiseFunction.cs" />
+    <Compile Include="CompositeFunction.cs" />
+    <Compile Include="ConstantValue.cs" />
+    <Compile Include="CountPredicate.cs" />
+    <Compile Include="DateTimeConstantValue.cs" />
+    <Compile Include="DoubleConstantValue.cs" />
+    <Compile Include="ExpressionBuilder.cs" />
+    <Compile Include="FalseValue.cs" />
+    <Compile Include="FunctorEqualsFunctorPredicate.cs" />
+    <Compile Include="FunctorEqualsGeneratorPredicate.cs" />
+    <Compile Include="FunctorGreaterFunctorPredicate.cs" />
+    <Compile Include="FunctorGreaterGeneratorPredicate.cs" />
+    <Compile Include="FunctorLesserFunctorPredicate.cs" />
+    <Compile Include="FunctorLesserGeneratorPredicate.cs" />
+    <Compile Include="FunctorLikePatternPredicate.cs" />
+    <Compile Include="IBinaryPredicate.cs" />
+    <Compile Include="IdentityFunction.cs" />
+    <Compile Include="IFunctor.cs" />
+    <Compile Include="IGenerator.cs" />
+    <Compile Include="IMemberFunction.cs" />
+    <Compile Include="IntegerConstantValue.cs" />
+    <Compile Include="IPredicate.cs" />
+    <Compile Include="IsInListPredicate.cs" />
+    <Compile Include="IsNullPredicate.cs" />
+    <Compile Include="IsOfTypePredicate.cs" />
+    <Compile Include="LogicalAndPredicate.cs" />
+    <Compile Include="MaxPredicate.cs" />
+    <Compile Include="MemberFunction.cs" />
+    <Compile Include="MinPredicate.cs" />
+    <Compile Include="NullValue.cs" />
+    <Compile Include="Parameter1.cs" />
+    <Compile Include="Predicate.cs" />
+    <Compile Include="QueryResultComparer.cs" />
+    <Compile Include="RuntimeValue.cs" />
+    <Compile Include="StringConstantValue.cs" />
+    <Compile Include="SumPredicate.cs" />
+    <Compile Include="TrueValue.cs" />
+    <Compile Include="HashStore.cs" />
+    <Compile Include="IIndexStore.cs" />
+    <Compile Include="IQueryIndex.cs" />
+    <Compile Include="IQueryOperationsObserver.cs" />
+    <Compile Include="MultipleKeysQueryResultSet.cs" />
+    <Compile Include="NamedTagIndexManager.cs" />
+    <Compile Include="PredicateHolder.cs" />
+    <Compile Include="QueryChangeType.cs" />
+    <Compile Include="QueryContext.cs" />
+    <Compile Include="QueryIdentifier.cs" />
+    <Compile Include="QueryIndexManager.cs" />
+    <Compile Include="QueryResultSet.cs" />
+    <Compile Include="QueryType.cs" />
+    <Compile Include="RBStore.cs" />
+    <Compile Include="RuleConstants.cs" />
+    <Compile Include="TagIndexManager.cs" />
+    <Compile Include="TypeIndex.cs" />
+    <Compile Include="VirtualQueryIndex.cs" />
+    <Compile Include="QueryResultSetRecordEnumerator.cs" />
+    <Compile Include="ServiceConfiguration.cs" />
+    <Compile Include="SystemMemoryTask.cs" />
+    <Compile Include="CacheStorageFactory.cs" />
+    <Compile Include="ClrHeapStorageProvider.cs" />
+    <Compile Include="FileSystemStorageProvider.cs" />
+    <Compile Include="ICacheStorage.cs" />
+    <Compile Include="InMemoryStorageProvider.cs" />
+    <Compile Include="SysUtil.cs" />
+    <Compile Include="SafeNativeMethods.cs" />
+    <Compile Include="IPersistentCacheStorage.cs" />
+    <Compile Include="MmfStorageProvider.cs" />
+    <Compile Include="MemArea.cs" />
+    <Compile Include="MmfFile.cs" />
+    <Compile Include="MmfFileView.cs" />
+    <Compile Include="MmfObjectPtr.cs" />
+    <Compile Include="MmfStorage.cs" />
+    <Compile Include="View.cs" />
+    <Compile Include="ViewManager.cs" />
+    <Compile Include="ViewRef.cs" />
+    <Compile Include="StorageProviderBase.cs" />
+    <Compile Include="StorageProviderSyncWrapper.cs" />
+    <Compile Include="StoreItem.cs" />
+    <Compile Include="FileSystemStorage.cs" />
+    <Compile Include="LazyStoreEnumerator.cs" />
+    <Compile Include="CacheSyncDependency.cs" />
+    <Compile Include="CacheSyncManager.cs" />
+    <Compile Include="ISyncCache.cs" />
+    <Compile Include="ISyncCacheEventsListener.cs" />
+    <Compile Include="TagComparisonType.cs" />
+    <Compile Include="AsyncAdd.cs" />
+    <Compile Include="AsyncClear.cs" />
+    <Compile Include="AsyncInsert.cs" />
+    <Compile Include="AsyncOpResult.cs" />
+    <Compile Include="AsyncRemove.cs" />
+    <Compile Include="TypeInfoMap.cs" />
+    <Compile Include="UserBinaryObject.cs" />
+    <Compile Include="CacheHelper.cs" />
+    <Compile Include="ConvHelper.cs" />
+    <Compile Include="ParserHelper.cs" />
+    <Compile Include="SerializationUtil.cs" />
+    <Compile Include="WildcardEnabledRegex.cs" />
+    <Compile Include="ExtensibleDependency1.cs" />
+    <Compile Include="FileDependency1.cs" />
+    <Compile Include="KeyDependency.cs" />
+    <Compile Include="NamedTagsDictionary.cs" />
+    <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="ResourcePool.cs" />
+    <Compile Include="Tag.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\cql.cgt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Key.snk" />
+    <None Include="Resources\cql.grm" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

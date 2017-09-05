@@ -1,0 +1,200 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{793D9E77-0808-4958-AF60-2175A9E9545D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Colosoft.Text.Jep</RootNamespace>
+    <AssemblyName>Colosoft.Text.Jep</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>false</DebugSymbols>
+    <DebugType>none</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\bin\Client\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>0</WarningLevel>
+    <DocumentationFile>..\..\bin\Client\Colosoft.Text.Jep.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>0</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>Key.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ComponentSet.cs" />
+    <Compile Include="ConfigurableParserInstance.cs" />
+    <Compile Include="IGrammarParser.cs" />
+    <Compile Include="ITokenFilter.cs" />
+    <Compile Include="Lookahead2Enumerator!1.cs" />
+    <Compile Include="ArrayAccessGrammarMatcher.cs" />
+    <Compile Include="CommentTokenMatcher.cs" />
+    <Compile Include="FunctionGrammarMatcher.cs" />
+    <Compile Include="HexNumberTokenMatcher.cs" />
+    <Compile Include="IdentifierTokenMatcher.cs" />
+    <Compile Include="IGrammarMatcher.cs" />
+    <Compile Include="ITokenBuilder.cs" />
+    <Compile Include="ITokenMatcher.cs" />
+    <Compile Include="ListGrammarMatcher.cs" />
+    <Compile Include="ListOrBracketGrammarMatcher.cs" />
+    <Compile Include="MultiLineMatcher.cs" />
+    <Compile Include="NumberTokenMatcher.cs" />
+    <Compile Include="OperatorTokenMatcher.cs" />
+    <Compile Include="RegExpTokenMatcher.cs" />
+    <Compile Include="RoundBracketGrammarMatcher.cs" />
+    <Compile Include="StringTokenMatcher.cs" />
+    <Compile Include="StringTokenMatcher2.cs" />
+    <Compile Include="SymbolTokenMatcher.cs" />
+    <Compile Include="TerminatorTokenMatcher.cs" />
+    <Compile Include="UpperCaseOperatorTokenMatcher.cs" />
+    <Compile Include="WhiteSpaceTokenMatcher.cs" />
+    <Compile Include="ShuntingYard.cs" />
+    <Compile Include="StandardConfigurableParser.cs" />
+    <Compile Include="TernaryOperator.cs" />
+    <Compile Include="Tokenizer.cs" />
+    <Compile Include="CommentToken.cs" />
+    <Compile Include="FunctionToken.cs" />
+    <Compile Include="IdentifierToken.cs" />
+    <Compile Include="MultiLineToken.cs" />
+    <Compile Include="NumberToken.cs" />
+    <Compile Include="OperatorToken.cs" />
+    <Compile Include="StringToken.cs" />
+    <Compile Include="SymbolToken.cs" />
+    <Compile Include="TerminatorToken.cs" />
+    <Compile Include="Token.cs" />
+    <Compile Include="WhiteSpaceToken.cs" />
+    <Compile Include="WhiteSpaceCommentFilter.cs" />
+    <Compile Include="ExtendedEnumerator!1.cs" />
+    <Compile Include="IExtendedEnumerator!1.cs" />
+    <Compile Include="EvaluationException.cs" />
+    <Compile Include="Abs.cs" />
+    <Compile Include="Add.cs" />
+    <Compile Include="ArcCosine.cs" />
+    <Compile Include="ArcCosineH.cs" />
+    <Compile Include="ArcSine.cs" />
+    <Compile Include="ArcSineH.cs" />
+    <Compile Include="ArcTangent.cs" />
+    <Compile Include="ArcTangent2.cs" />
+    <Compile Include="ArcTanH.cs" />
+    <Compile Include="Arg.cs" />
+    <Compile Include="Assign.cs" />
+    <Compile Include="Average.cs" />
+    <Compile Include="Binomial.cs" />
+    <Compile Include="Ceil.cs" />
+    <Compile Include="Comparative.cs" />
+    <Compile Include="ComplexPFMC.cs" />
+    <Compile Include="Conjugate.cs" />
+    <Compile Include="Cosine.cs" />
+    <Compile Include="CosineH.cs" />
+    <Compile Include="Cross.cs" />
+    <Compile Include="Divide.cs" />
+    <Compile Include="Dot.cs" />
+    <Compile Include="Ele.cs" />
+    <Compile Include="Exp.cs" />
+    <Compile Include="Floor.cs" />
+    <Compile Include="ICallbackEvaluation.cs" />
+    <Compile Include="If.cs" />
+    <Compile Include="ILValue.cs" />
+    <Compile Include="Imaginary.cs" />
+    <Compile Include="LazyLogical.cs" />
+    <Compile Include="List.cs" />
+    <Compile Include="Logarithm.cs" />
+    <Compile Include="LogBase2.cs" />
+    <Compile Include="Logical.cs" />
+    <Compile Include="MinMax.cs" />
+    <Compile Include="Modulus.cs" />
+    <Compile Include="Multiply.cs" />
+    <Compile Include="NaturalLogarithm.cs" />
+    <Compile Include="Not.cs" />
+    <Compile Include="Polar.cs" />
+    <Compile Include="PostfixMathCommand.cs" />
+    <Compile Include="Power.cs" />
+    <Compile Include="Rand.cs" />
+    <Compile Include="Real.cs" />
+    <Compile Include="Round.cs" />
+    <Compile Include="Sine.cs" />
+    <Compile Include="SineH.cs" />
+    <Compile Include="SquareRoot.cs" />
+    <Compile Include="Str.cs" />
+    <Compile Include="StrictNaturalLogarithm.cs" />
+    <Compile Include="Subtract.cs" />
+    <Compile Include="Sum.cs" />
+    <Compile Include="Tangent.cs" />
+    <Compile Include="TanH.cs" />
+    <Compile Include="UMinus.cs" />
+    <Compile Include="FunctionTable.cs" />
+    <Compile Include="IEvaluator.cs" />
+    <Compile Include="IJepComponent.cs" />
+    <Compile Include="INumberFactory.cs" />
+    <Compile Include="IParser.cs" />
+    <Compile Include="IParserVisitor.cs" />
+    <Compile Include="IPostfixMathCommand.cs" />
+    <Compile Include="JepException.cs" />
+    <Compile Include="JepInstance.cs" />
+    <Compile Include="NodeFactory.cs" />
+    <Compile Include="Operator.cs" />
+    <Compile Include="OperatorTable.cs" />
+    <Compile Include="ParseException.cs" />
+    <Compile Include="ASTConstant.cs" />
+    <Compile Include="ASTFunNode.cs" />
+    <Compile Include="ASTOpNode.cs" />
+    <Compile Include="ASTVarNode.cs" />
+    <Compile Include="INode.cs" />
+    <Compile Include="ParseException1.cs" />
+    <Compile Include="SimpleNode.cs" />
+    <Compile Include="PrintVisitor.cs" />
+    <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="IRealBinaryFunction.cs" />
+    <Compile Include="IRealNaryFunction.cs" />
+    <Compile Include="IRealNullaryFunction.cs" />
+    <Compile Include="IRealUnaryFunction.cs" />
+    <Compile Include="RealEvaluator.cs" />
+    <Compile Include="DoubleNumberFactory.cs" />
+    <Compile Include="StandardComponents.cs" />
+    <Compile Include="StandardEvaluator.cs" />
+    <Compile Include="StandardFunctionTable.cs" />
+    <Compile Include="StandardOperatorTable.cs" />
+    <Compile Include="StandardVariableTable.cs" />
+    <Compile Include="Complex.cs" />
+    <Compile Include="IJepNumber.cs" />
+    <Compile Include="JepDouble.cs" />
+    <Compile Include="Variable.cs" />
+    <Compile Include="VariableFactory.cs" />
+    <Compile Include="VariableTable.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Key.snk" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

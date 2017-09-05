@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema targetNamespace="http://colosoft.com.br/2013/webservices/security/rolepermission"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:tns="http://colosoft.com.br/2013/webservices/security/rolepermission"
+           elementFormDefault="qualified">
+  <xs:complexType name="PermissionSet">
+    <xs:sequence>
+      <xs:any></xs:any>
+    </xs:sequence>
+    <xs:anyAttribute></xs:anyAttribute>
+  </xs:complexType>
+
+  <xs:element name="PermissionSet" type="tns:PermissionSet" nillable="true"></xs:element>
+
+  <xs:complexType name="RolePermissionSet">
+    <xs:sequence>
+      <xs:element name="Permissions" type="tns:PermissionSet" nillable="true" minOccurs="0" maxOccurs="1"></xs:element>
+    </xs:sequence>
+    <xs:attribute name="Role" type="xs:string" use="required"></xs:attribute>
+  </xs:complexType>
+
+  <xs:element name="RolePermissionSet" type="tns:RolePermissionSet" nillable="true"></xs:element>
+
+  <xs:complexType name="ArrayOfRolePermissionSet">
+    <xs:sequence>
+      <xs:element name="RolePermissionSet" type="tns:RolePermissionSet" nillable="true" maxOccurs="unbounded" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:element name="ArrayOfRolePermissionSet" type="tns:ArrayOfRolePermissionSet" nillable="true" />
+
+  <xs:complexType name="ProfileRoleSet">
+    <xs:sequence>
+      <xs:element name="RolePermissionSets" type="tns:ArrayOfRolePermissionSet" nillable="true" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+    <xs:attribute name="Name" type="xs:string" use="required" />
+  </xs:complexType>
+
+  <xs:element name="ProfileRoleSet" type="tns:ProfileRoleSet" nillable="true"></xs:element>
+
+  <xs:complexType name="ProfileProperty">
+    <xs:sequence>
+      <xs:any />
+    </xs:sequence>
+    <xs:attribute name="DefinitionUid" type="xs:int" use="required" />
+    <xs:attribute name="Name" type="xs:string" use="required" />
+    <xs:attribute name="Description" type="xs:string" use="required" />
+    <xs:attribute name="Type" type="xs:string" use="required" />
+  </xs:complexType>
+
+  <xs:element name="ProfileProperty" type="tns:ProfileProperty" nillable="true" />
+
+  <xs:complexType name="ProfilePropertyDefinition">
+    <xs:attribute name="Uid" type="xs:int" use="required" />
+    <xs:attribute name="Name" type="xs:string" use="required" />
+    <xs:attribute name="Description" type="xs:string" use="required" />
+    <xs:attribute name="Type" type="xs:string" use="required" />
+  </xs:complexType>
+
+  <xs:element name="ProfilePropertyDefinition" type="tns:ProfilePropertyDefinition" nillable="true" />
+
+  <xs:complexType name="ArrayOfProfileProperty">
+    <xs:sequence>
+      <xs:element name="ProfileProperty" type="tns:ProfileProperty" nillable="true" maxOccurs="unbounded" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:element name="ArrayOfProfileProperty" type="tns:ArrayOfProfileProperty" nillable="true" />
+
+</xs:schema>

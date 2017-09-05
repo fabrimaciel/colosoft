@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema targetNamespace="http://Colosoft.com.br/2012/webservices/data/caching"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:tns="http://Colosoft.com.br/2012/webservices/data/caching"
+           elementFormDefault="qualified">
+
+  <xs:complexType name="DataEntryVersion">
+    <xs:attribute name="Type" type="xs:string" use="required" />
+    <xs:attribute name="Version" type="xs:dateTime" use="required" />
+  </xs:complexType>
+
+  <xs:element name="DataEntryVersion" type="tns:DataEntryVersion" nillable="true" />
+
+</xs:schema>

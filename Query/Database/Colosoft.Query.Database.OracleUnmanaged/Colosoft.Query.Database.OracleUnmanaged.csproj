@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{96EAD14E-79FC-42DD-AE24-4970CA23732C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Colosoft.Query.Database.Oracle</RootNamespace>
+    <AssemblyName>Colosoft.Query.Database.OracleUnmanaged</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>false</DebugSymbols>
+    <DebugType>none</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\bin\Server\x64\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;UNMANAGED</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>0</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+    <DocumentationFile>..\..\..\bin\Server\x64\Colosoft.Query.Database.OracleUnmanaged.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>0</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>Key.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Colosoft.Core">
+      <HintPath>..\..\..\bin\Client\Colosoft.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Colosoft.Data">
+      <HintPath>..\..\..\bin\Client\Colosoft.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Colosoft.Data.Schema">
+      <HintPath>..\..\..\bin\Client\Colosoft.Data.Schema.dll</HintPath>
+    </Reference>
+    <Reference Include="Colosoft.Query">
+      <HintPath>..\..\..\bin\Client\Colosoft.Query.dll</HintPath>
+    </Reference>
+    <Reference Include="GDA">
+      <HintPath>..\..\..\Libraries\General\GDA\GDA.dll</HintPath>
+    </Reference>
+    <Reference Include="GDA.Provider.OracleUnmanaged">
+      <HintPath>..\..\..\Libraries\General\GDA\Providers\Oracle\x64\GDA.Provider.OracleUnmanaged.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation">
+      <HintPath>..\..\..\Libraries\General\CommonServiceLocation\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="Oracle.DataAccess">
+      <HintPath>..\..\..\Libraries\General\Oracle\ODAC121024Xcopy_x64\odp.net4\odp.net\bin\4\Oracle.DataAccess.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\Colosoft.Query.Database.Oracle\OracleGenericSqlQueryDataSource.cs">
+      <Link>OracleGenericSqlQueryDataSource.cs</Link>
+    </Compile>
+    <Compile Include="..\Colosoft.Query.Database.Oracle\OracleQueryParser.cs">
+      <Link>OracleQueryParser.cs</Link>
+    </Compile>
+    <Compile Include="..\Colosoft.Query.Database.Oracle\OracleQueryTranslator.cs">
+      <Link>OracleQueryTranslator.cs</Link>
+    </Compile>
+    <Compile Include="..\Colosoft.Query.Database.Oracle\OracleServerData.cs">
+      <Link>OracleServerData.cs</Link>
+    </Compile>
+    <Compile Include="..\Colosoft.Query.Database.Oracle\OracleTakeParametersParser.cs">
+      <Link>OracleTakeParametersParser.cs</Link>
+    </Compile>
+    <Compile Include="..\Colosoft.Query.Database.Oracle\OracleTimeStampTZExtensions.cs">
+      <Link>OracleTimeStampTZExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\Colosoft.Query.Database.Oracle\Properties\Resources.Designer.cs">
+      <Link>Resources.Designer.cs</Link>
+    </Compile>
+    <Compile Include="AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Colosoft.Query.Database.Generic\Colosoft.Query.Database.Generic.csproj">
+      <Project>{67b002f8-b76b-4dae-8d05-a8c9cfb351c2}</Project>
+      <Name>Colosoft.Query.Database.Generic</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Colosoft.Query.Database\Colosoft.Query.Database.csproj">
+      <Project>{d565a2de-e95f-4781-b91b-040854d2d608}</Project>
+      <Name>Colosoft.Query.Database</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="..\Colosoft.Query.Database.Oracle\Properties\Resources.resx">
+      <Link>Resources.resx</Link>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Key.snk" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

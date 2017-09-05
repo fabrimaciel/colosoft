@@ -1,0 +1,250 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6B0B930D-B504-47FE-BDF7-E903EA83DB2F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Colosoft.Web.Mvc</RootNamespace>
+    <AssemblyName>Colosoft.Web.Mvc</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>false</DebugSymbols>
+    <DebugType>none</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\bin\Server\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>0</WarningLevel>
+    <DocumentationFile>..\..\bin\Server\Colosoft.Web.Mvc.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>0</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>Key.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Colosoft.Business">
+      <HintPath>..\..\bin\Client\Colosoft.Business.dll</HintPath>
+    </Reference>
+    <Reference Include="Colosoft.Core">
+      <HintPath>..\..\bin\Client\Colosoft.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Colosoft.Data">
+      <HintPath>..\..\bin\Client\Colosoft.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Colosoft.Query">
+      <HintPath>..\..\bin\Client\Colosoft.Query.dll</HintPath>
+    </Reference>
+    <Reference Include="Colosoft.Text">
+      <HintPath>..\..\bin\Client\Colosoft.Text.dll</HintPath>
+    </Reference>
+    <Reference Include="Colosoft.Validation">
+      <HintPath>..\..\bin\Client\Colosoft.Validation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Libraries\General\CommonServiceLocation\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Mvc, Version=4.0.0.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Libraries\General\AspNetWebStack5\Microsoft.AspNet.Mvc.5.1.2\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AggregateDescriptor.cs" />
+    <Compile Include="AggregateFunction.cs" />
+    <Compile Include="AverageFunction.cs" />
+    <Compile Include="ClientHandlerDescriptor.cs" />
+    <Compile Include="CompositeFilterDescriptor.cs" />
+    <Compile Include="CountFunction.cs" />
+    <Compile Include="CustomModelBinder.cs" />
+    <Compile Include="DateTimeModelBinder.cs" />
+    <Compile Include="DictionaryModelBinder.cs" />
+    <Compile Include="EntityModelBinder.cs" />
+    <Compile Include="EntityCollectionModelBinder.cs" />
+    <Compile Include="EntityModelBinderBase.cs" />
+    <Compile Include="EntityModelBinderOfEntity.cs" />
+    <Compile Include="EntityBinderAttribute.cs" />
+    <Compile Include="EntityModelBinderProvider.cs" />
+    <Compile Include="EntityModelMetadataProvider.cs" />
+    <Compile Include="EnumerableAggregateFunction.cs" />
+    <Compile Include="EnumerableSelectorAggregateFunction.cs" />
+    <Compile Include="EnumModelBinder.cs" />
+    <Compile Include="ExpressionBuilder.cs" />
+    <Compile Include="CollectionExtensions.cs" />
+    <Compile Include="DataTableWrapperExtensions.cs" />
+    <Compile Include="DictionaryExtensions.cs" />
+    <Compile Include="EnumerableExtensions.cs" />
+    <Compile Include="ExpressionExtensions.cs" />
+    <Compile Include="FilterTokenExtensions.cs" />
+    <Compile Include="ModelStateExtensions.cs" />
+    <Compile Include="ObjectExtensions.cs" />
+    <Compile Include="QueryableExtensions.cs" />
+    <Compile Include="QueryProviderExtensions.cs" />
+    <Compile Include="StringExtensions.cs" />
+    <Compile Include="TreeDataSourceExtensions.cs" />
+    <Compile Include="TypeExtensions.cs" />
+    <Compile Include="FilterDescriptor.cs" />
+    <Compile Include="FilterDescriptorBase.cs" />
+    <Compile Include="GroupDescriptor.cs" />
+    <Compile Include="IDescriptor.cs" />
+    <Compile Include="IFilterDescriptor.cs" />
+    <Compile Include="AggregateResult.cs" />
+    <Compile Include="AggregateResultCollection.cs" />
+    <Compile Include="DataTableWrapper.cs" />
+    <Compile Include="DefaultJavaScriptSerializer.cs" />
+    <Compile Include="EnumerableAggregateFunctionBase.cs" />
+    <Compile Include="FilterDescriptorFactory.cs" />
+    <Compile Include="Group.cs" />
+    <Compile Include="IGroup.cs" />
+    <Compile Include="IJavaScriptInitializer.cs" />
+    <Compile Include="IJavaScriptSerializer.cs" />
+    <Compile Include="AggregateFunctionCollection.cs" />
+    <Compile Include="AndNode.cs" />
+    <Compile Include="BindingHelper.cs" />
+    <Compile Include="BooleanNode.cs" />
+    <Compile Include="ClassFactory.cs" />
+    <Compile Include="ComparisonNode.cs" />
+    <Compile Include="DateTimeNode.cs" />
+    <Compile Include="DynamicClass.cs" />
+    <Compile Include="DynamicProperty.cs" />
+    <Compile Include="EnumerableAggregateFunctionBase1.cs" />
+    <Compile Include="ExpressionConstants.cs" />
+    <Compile Include="AggregateFunctionExpressionBuilderBase.cs" />
+    <Compile Include="AggregateFunctionsGroup.cs" />
+    <Compile Include="CustomTypeDescriptorExtensions.cs" />
+    <Compile Include="CustomTypeDescriptorPropertyAccessExpressionBuilder.cs" />
+    <Compile Include="DataRowFieldAccessExpressionBuilder.cs" />
+    <Compile Include="DynamicPropertyAccessExpressionBuilder.cs" />
+    <Compile Include="EnumerableAggregateFunctionExpressionBuilder.cs" />
+    <Compile Include="EnumerableSelectorAggregateFunctionExpressionBuilder.cs" />
+    <Compile Include="ExpressionBuilderBase.cs" />
+    <Compile Include="ExpressionBuilderFactory.cs" />
+    <Compile Include="ExpressionBuilderOptions.cs" />
+    <Compile Include="ExpressionFactory.cs" />
+    <Compile Include="FilterDescriptionExpressionBuilder.cs" />
+    <Compile Include="FilterDescriptorCollectionExpressionBuilder.cs" />
+    <Compile Include="FilterDescriptorExpressionBuilder.cs" />
+    <Compile Include="FilterExpressionBuilder.cs" />
+    <Compile Include="FilterOperatorExtensions.cs" />
+    <Compile Include="GroupDescriptorCollectionExpressionBuilder.cs" />
+    <Compile Include="GroupDescriptorExpressionBuilder.cs" />
+    <Compile Include="GroupDescriptorExpressionBuilderBase.cs" />
+    <Compile Include="IMemberAccessToken.cs" />
+    <Compile Include="IndexerToken.cs" />
+    <Compile Include="MemberAccessExpressionBuilderBase.cs" />
+    <Compile Include="MemberAccessTokenExtensions.cs" />
+    <Compile Include="MemberAccessTokenizer.cs" />
+    <Compile Include="PropertyAccessExpressionBuilder.cs" />
+    <Compile Include="PropertyToken.cs" />
+    <Compile Include="QueryableAggregatesExpressionBuilder.cs" />
+    <Compile Include="Unbox.cs" />
+    <Compile Include="XmlNodeChildElementAccessExpressionBuilder.cs" />
+    <Compile Include="XmlNodeExtensions.cs" />
+    <Compile Include="FilterCompositionLogicalOperator.cs" />
+    <Compile Include="FilterDescription.cs" />
+    <Compile Include="FilterDescriptorCollection.cs" />
+    <Compile Include="FilterDescriptorExtensions.cs" />
+    <Compile Include="FilterLexer.cs" />
+    <Compile Include="FilterNodeVisitor.cs" />
+    <Compile Include="FilterParser.cs" />
+    <Compile Include="FilterParserException.cs" />
+    <Compile Include="FilterToken.cs" />
+    <Compile Include="FunctionNode.cs" />
+    <Compile Include="IFilterNode.cs" />
+    <Compile Include="IFilterNodeVisitor.cs" />
+    <Compile Include="ILogicalNode.cs" />
+    <Compile Include="IOperatorNode.cs" />
+    <Compile Include="IValueNode.cs" />
+    <Compile Include="NumberNode.cs" />
+    <Compile Include="OrNode.cs" />
+    <Compile Include="PredicateFilterDescription.cs" />
+    <Compile Include="PropertyNode.cs" />
+    <Compile Include="SortDescriptorCollectionExpressionBuilder.cs" />
+    <Compile Include="StringNode.cs" />
+    <Compile Include="JavaScriptInitializer.cs" />
+    <Compile Include="Signature.cs" />
+    <Compile Include="JsonDateTimeModelBinder.cs" />
+    <Compile Include="JsonObject.cs" />
+    <Compile Include="JsonObjectExtensions.cs" />
+    <Compile Include="JsonOperationResult.cs" />
+    <Compile Include="MaxFunction.cs" />
+    <Compile Include="MinFunction.cs" />
+    <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="SingleModelBinder.cs" />
+    <Compile Include="SortDescriptor.cs" />
+    <Compile Include="SumFunction.cs" />
+    <Compile Include="TimeSpanModelBinder.cs" />
+    <Compile Include="TypeHelpers.cs" />
+    <Compile Include="DataSourceRequest.cs" />
+    <Compile Include="DataSourceRequestAttribute.cs" />
+    <Compile Include="DataSourceRequestModelBinder.cs" />
+    <Compile Include="DataSourceResult.cs" />
+    <Compile Include="EnumBuilder.cs" />
+    <Compile Include="EnumComponent.cs" />
+    <Compile Include="WidgetFactory.cs" />
+    <Compile Include="HtmlAttributesContainerExtensions.cs" />
+    <Compile Include="GridDescriptorSerializer.cs" />
+    <Compile Include="GridUrlParameters.cs" />
+    <Compile Include="HtmlHelperExtension.cs" />
+    <Compile Include="IHtmlAttributesContainer.cs" />
+    <Compile Include="IScriptableComponent.cs" />
+    <Compile Include="IWidget.cs" />
+    <Compile Include="TreeDataSourceResult.cs" />
+    <Compile Include="WidgetBase.cs" />
+    <Compile Include="WidgetBuilderBase.cs" />
+    <Compile Include="WidgetExtensions.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Key.snk" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Colosoft.Web\Colosoft.Web.csproj">
+      <Project>{423cee64-cdd3-4694-9321-8e42d6ea78b3}</Project>
+      <Name>Colosoft.Web</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

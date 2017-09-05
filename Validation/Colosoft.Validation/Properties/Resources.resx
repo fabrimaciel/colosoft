@@ -1,0 +1,193 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Compiler_CommandGroupBuilderManager_FailOnGetLocalBuilder" xml:space="preserve">
+    <value>Não foi possível recupera o BUILDER local.</value>
+  </data>
+  <data name="Compiler_CommandGroupBuilderManager_FailOnGetRemoteBuilder" xml:space="preserve">
+    <value>Não foi possível recupera o BUILDER remoto.</value>
+  </data>
+  <data name="Compiler_CommandGroupBuilder_FailOnGetCommandGroupsFromRepository" xml:space="preserve">
+    <value>Não foi possível carregar o código-fonte dos grupos de comando do sistema.</value>
+  </data>
+  <data name="Error_CommandGroup_NotExists" xml:space="preserve">
+    <value>Grupo de comandos {0} não existe para o tipo {1}</value>
+  </data>
+  <data name="Error_ExclusiveValidatioTypeDuplicatedInList" xml:space="preserve">
+    <value>Validação de tipo exclisivo duplicada na lista</value>
+    <comment>Erro disparado quando se tenta adicionar uma validação de tipo exclusivo duplicada na lista</comment>
+  </data>
+  <data name="Error_OnLoadAssembly" xml:space="preserve">
+    <value>Error({1}) on Load Assembly of type '{0}'.</value>
+  </data>
+  <data name="GeneralValidationManager_CreateValidatorToValidationError" xml:space="preserve">
+    <value>An error ocurred when create validator to validation '{0}'.
+Details: '{1}'</value>
+  </data>
+  <data name="GeneralValidationManager_LoadValidationTypeError" xml:space="preserve">
+    <value>An error ocurred when load validation type '{0}'. 
+Details: '{1}'</value>
+  </data>
+  <data name="GeneralValidationManager_TypeFullNameNotFound" xml:space="preserve">
+    <value>Type FullName not found for validation '{0}'.</value>
+  </data>
+  <data name="GeneralValidationManager_ValidationTypeAssemblyNotFound" xml:space="preserve">
+    <value>The assembly '{0}' from validation type '{1}' not found.</value>
+  </data>
+  <data name="GeneralValidationManager_ValidationTypeGetTypeError" xml:space="preserve">
+    <value>An error ocurred when get type '{0}' from validation type '{1}'.
+Details: '{2}'</value>
+  </data>
+  <data name="ValidationConfiguration_FailOnGetCommandGroup" xml:space="preserve">
+    <value>Não foi possível recupera o binário do grupo de comando '{0}'.</value>
+  </data>
+  <data name="ValidationManager_PropertyNotFound" xml:space="preserve">
+    <value>Propriedade não foi encontrada</value>
+  </data>
+  <data name="ValidatorCreator_FailOnConvertParameterValue" xml:space="preserve">
+    <value>Não foi possível converter o valor '{0}' do parametro '{1}'.</value>
+  </data>
+  <data name="ValidatorCreator_FailOnCreateValidator" xml:space="preserve">
+    <value>Não foi possível criar o validador '{0}'.</value>
+  </data>
+  <data name="ValidatorsHelper_Unamed" xml:space="preserve">
+    <value>sem nome</value>
+  </data>
+  <data name="Validators_CheckDigitsValidator_MessageTemplate" xml:space="preserve">
+    <value>O campo '{0}' : '{1}' possui dígitos inválidos.</value>
+  </data>
+  <data name="Validators_LengthValidator_MessageTemplate" xml:space="preserve">
+    <value>O campo '{0}' : '{1}' está com o tamanho inválido.</value>
+  </data>
+  <data name="Validators_NecessaryValidator_MessageTemplate" xml:space="preserve">
+    <value>O campo '{0}' : '{1}' é necessária.</value>
+  </data>
+  <data name="Validators_NotNullValidator_MessageTemplate" xml:space="preserve">
+    <value>O campo '{0}' : '{1}' não pode ficar vazio.</value>
+  </data>
+  <data name="Validators_RangeValidator_MessageTemplate" xml:space="preserve">
+    <value>O campo '{0}' : '{1}' está com  valor fora da faixa permitida.</value>
+  </data>
+  <data name="Validators_StringLengthValidation_MessageTemplate" xml:space="preserve">
+    <value>O campo '{0}' : '{1}' estão com o tamanho inválido.</value>
+  </data>
+  <data name="Validators_ValidCharsValidator_MessageTemplate" xml:space="preserve">
+    <value>O campo '{0}' : '{1}' está com caracteres inválidos.</value>
+  </data>
+</root>

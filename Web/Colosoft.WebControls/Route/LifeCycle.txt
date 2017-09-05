@@ -1,0 +1,27 @@
+﻿The current ASP.NET 3.5 synchronous pipeline events are listed in the order that they occur as follows: 
+1. BeginRequest 
+2. AuthenticateRequest 
+3. PostAuthenticateRequest 
+4. AuthorizeRequest 
+5. PostAuthorizeRequest 
+6. ResolveRequestCache 
+7. PostResolveRequestCache 
+8. MapRequestHandler 
+9. PostMapRequestHandler 
+10. AcquireRequestState 
+11. PostAcquireRequestState 
+12. PreRequestHandlerExecute 
+At this stage, the selected handler executes the current request. The most familiar handler is the 
+Page handler. 
+13. PostRequestHandlerExecute 
+14. ReleaseRequestState 
+15. PostReleaseRequestState 
+16. UpdateRequestCache 
+17. PostUpdateRequestCache 
+18. LogRequest 
+19. PostLogRequest 
+20. EndRequest 
+ASP.NET 3.5 adds three new stages to the unified integrated request-processing pipeline. These events are only used when the integrated mode is configured: 
+1. MapRequestHandler : At this stage a handler is selected based on the content file type extension that is requested. Either a native module such as the StaticFileModule handler or a managed module such as PageHandlerFactory can be selected 
+2. LogRequest: Fires just after the PostUpdateRequestCache event. Even if an error occurs in the request processing, this even still fires. Both native and managed modules can subscribe to this event. 
+3. PostLogRequest: This event fires just after LogRequest event fires.

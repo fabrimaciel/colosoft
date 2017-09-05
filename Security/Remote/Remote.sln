@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30501.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Colosoft.Security.Remote.Server", "Colosoft.Security.Remote.Server\Colosoft.Security.Remote.Server.csproj", "{505D5079-A740-4C22-9488-04425DBB9401}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Colosoft.Security.Remote.Client", "Colosoft.Security.Remote.Client\Colosoft.Security.Remote.Client.csproj", "{B1667242-696E-4FC4-8B70-F241716C9790}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{505D5079-A740-4C22-9488-04425DBB9401}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{505D5079-A740-4C22-9488-04425DBB9401}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{505D5079-A740-4C22-9488-04425DBB9401}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{505D5079-A740-4C22-9488-04425DBB9401}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B1667242-696E-4FC4-8B70-F241716C9790}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B1667242-696E-4FC4-8B70-F241716C9790}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B1667242-696E-4FC4-8B70-F241716C9790}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B1667242-696E-4FC4-8B70-F241716C9790}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

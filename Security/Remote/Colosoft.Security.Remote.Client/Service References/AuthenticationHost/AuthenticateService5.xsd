@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Colosoft.Net" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Colosoft.Net" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="ServiceAddress" nillable="true">
+    <xs:complexType>
+      <xs:annotation>
+        <xs:appinfo>
+          <ActualType Name="ServiceAddress" Namespace="http://schemas.datacontract.org/2004/07/Colosoft.Net" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+        </xs:appinfo>
+      </xs:annotation>
+      <xs:sequence>
+        <xs:element name="Configuration">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Parameters">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Param">
+                      <xs:complexType>
+                        <xs:attribute name="name" type="xs:string" use="required" />
+                        <xs:attribute name="value" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="Children">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:any minOccurs="0" maxOccurs="unbounded" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute name="name" type="xs:string" use="required" />
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute name="name" type="xs:string" use="required" />
+      <xs:attribute name="address" type="xs:string" use="required" />
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7B85E183-E13F-42C3-8BF8-104A58EE049A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Colosoft.Text</RootNamespace>
+    <AssemblyName>Colosoft.Text</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>false</DebugSymbols>
+    <DebugType>none</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\bin\Client\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>0</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <DocumentationFile>..\..\bin\Client\Colosoft.Text.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>0</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>Key.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Colosoft.Core">
+      <HintPath>..\..\bin\Client\Colosoft.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ContainerChars.cs" />
+    <Compile Include="DefaultLexerConfiguration.cs" />
+    <Compile Include="Expression.cs" />
+    <Compile Include="ExpressionContainer.cs" />
+    <Compile Include="ExpressionLine.cs" />
+    <Compile Include="ILexerConfiguration.cs" />
+    <Compile Include="ITokenParser.cs" />
+    <Compile Include="Lexer.cs" />
+    <Compile Include="LexerException.cs" />
+    <Compile Include="LexerResult.cs" />
+    <Compile Include="SpecialContainerExpression.cs" />
+    <Compile Include="TabExpression.cs" />
+    <Compile Include="TokenID.cs" />
+    <Compile Include="FAEdge.cs" />
+    <Compile Include="FAState.cs" />
+    <Compile Include="GoldParser.cs" />
+    <Compile Include="GrammarReader.cs" />
+    <Compile Include="IVisitor.cs" />
+    <Compile Include="LookAheadReader.cs" />
+    <Compile Include="LRAction.cs" />
+    <Compile Include="LRActionTable.cs" />
+    <Compile Include="ParserException.cs" />
+    <Compile Include="Reduction.cs" />
+    <Compile Include="Rule.cs" />
+    <Compile Include="Symbol.cs" />
+    <Compile Include="Token.cs" />
+    <Compile Include="TokenStack.cs" />
+    <Compile Include="AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Key.snk" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

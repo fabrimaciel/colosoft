@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Colosoft.SearchEngine.Element">
+    <Position X="7.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAgBAAEAAAAAAAAIAAAAQgAAAAAAA=</HashCode>
+      <FileName>Element.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Colosoft.SearchEngine.Channel">
+    <Position X="5.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAQAAAAAGAAAAAAAAAAQAAAAAAAQ=</HashCode>
+      <FileName>Channel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="Colosoft.SearchEngine.IDataRepository">
+    <Position X="7.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAQAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAIAAA=</HashCode>
+      <FileName>IDataRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Colosoft.SearchEngine.IRepositoryLoader">
+    <Position X="10.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAQAAAAAAAAAAAgAgAAABABAAAAAAAAAAAAA=</HashCode>
+      <FileName>IRepositoryLoader.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Tahoma" Size="8.25" />
+</ClassDiagram>

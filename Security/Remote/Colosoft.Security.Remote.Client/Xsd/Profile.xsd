@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema targetNamespace="http://Colosoft.com.br/2011/webservices/remote/profile"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:tns="http://Colosoft.com.br/2011/webservices/remote/profile"
+           xmlns:security="http://Colosoft.com.br/2011/webservices/security/rolepermission"
+           elementFormDefault="qualified">
+  
+  <xs:complexType name="AuthenticationSource">
+    <xs:sequence>
+      <xs:element name="FullName" type="xs:string" nillable="true" />
+      <xs:element name="Uid" type="xs:string" nillable="true" />
+      <xs:element name="IsActive" type="xs:boolean" nillable="true" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:simpleType name="ProfileSearchMode">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="All" />
+      <xs:enumeration value="Source" />
+      <xs:enumeration value="Self" />
+      <xs:enumeration value="Agency" />
+    </xs:restriction>    
+  </xs:simpleType>
+  
+  <xs:element name="AuthenticationSource" type="tns:AuthenticationSource" nillable="true"></xs:element>
+
+  <xs:complexType name="DateTimeOffset">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" nillable="false" name="DateTime" type="xs:dateTime" />
+      <xs:element minOccurs="1" maxOccurs="1" nillable="false" name="OffsetMinutes" type="xs:short" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DateTimeOffset" nillable="false" type="tns:DateTimeOffset" />
+  
+  <xs:complexType name="ProfileInfo">
+    <xs:sequence>
+      <xs:element minOccurs="1" name="ProfileId" nillable="false" type="xs:int" />
+      <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FullName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="1" name="SearchMode" nillable="false" type="tns:ProfileSearchMode" />
+      <xs:element minOccurs="1" name="LastActivityDate" nillable="false" maxOccurs="1" type="tns:DateTimeOffset" />
+      <xs:element minOccurs="1" name="LastUpdatedDate" nillable="false" maxOccurs="1" type="tns:DateTimeOffset" />
+      <xs:element minOccurs="0" name="Source" nillable="true" type="tns:AuthenticationSource" />
+      <xs:element minOccurs="1" name="IsAnonymous" type="xs:boolean" maxOccurs="1" nillable="false" />
+      <xs:element minOccurs="0" name="MarkGroupId" type="xs:int" nillable="true" />
+      <xs:element minOccurs="0" name="SellerTreeId" type="xs:int" nillable="true" />
+      <xs:element minOccurs="0" name="IntermediateId" type="xs:int" nillable="true" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:element name="ProfileInfo" type="tns:ProfileInfo" nillable="true" />
+
+  <xs:complexType name="ArrayOfProfileInfo">
+    <xs:sequence>
+      <xs:element name="ProfileInfo" type="tns:ProfileInfo" nillable="true" maxOccurs="unbounded" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:element name="ArrayOfProfileInfo" type="tns:ArrayOfProfileInfo" nillable="true" />
+
+  <xs:complexType name="Profile">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DefaultValueGroupId" type="xs:int" />
+      <xs:element minOccurs="0" name="FullName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GroupRoleId" type="xs:int" />
+      <xs:element minOccurs="0" name="IsAnonymous" type="xs:boolean" />
+      <xs:element minOccurs="1" name="SearchModel" nillable="false" type="tns:ProfileSearchMode" />
+      <xs:element minOccurs="0" name="LastActivityDate" type="tns:DateTimeOffset" />
+      <xs:element minOccurs="0" name="LastUpdatedDate" type="tns:DateTimeOffset" />
+      <xs:element minOccurs="0" name="ProfileId" type="xs:int" />
+      <xs:element minOccurs="0" name="Properties" nillable="true" type="security:ArrayOfProfileProperty" />
+      <xs:element minOccurs="0" name="RoleSet" nillable="true" type="security:ProfileRoleSet" />
+      <xs:element minOccurs="0" name="Source" nillable="true" type="tns:AuthenticationSource" />
+      <xs:element minOccurs="0" name="SourceId" type="xs:int" />
+      <xs:element minOccurs="0" name="UserId" type="xs:int" />
+      <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MarkGroupId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="SellerTreeId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="IntermediateId" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Profile" nillable="true" type="tns:Profile" />
+  
+</xs:schema>

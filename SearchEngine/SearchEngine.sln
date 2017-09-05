@@ -1,0 +1,57 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Colosoft.SearchEngine", "Colosoft.SearchEngine\Colosoft.SearchEngine.csproj", "{87178B60-8D92-4380-9186-541310ADB7CB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Implementations", "Implementations", "{302B9D38-BBE2-4B79-A648-0063CB3F79F8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Colosoft.SearchEngine.Default", "Implementations\Colosoft.SearchEngine.Default\Colosoft.SearchEngine.Default.csproj", "{079F7F83-136B-48E9-BEE4-F380C9DE53BB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Colosoft.SearchEngine.Lucene", "Implementations\Colosoft.SearchEngine.Lucene\Colosoft.SearchEngine.Lucene.csproj", "{8EACB3E5-304D-41E0-8A94-2A7F24A9C71B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{0F773F4A-0402-4D97-81EE-6E7C9F36D594}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Colosoft.SearchEngine.Services", "Services\Colosoft.SearchEngine.Services\Colosoft.SearchEngine.Services.csproj", "{E87EFB06-B233-4E2B-8B40-2278DE899B15}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{87178B60-8D92-4380-9186-541310ADB7CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{87178B60-8D92-4380-9186-541310ADB7CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{87178B60-8D92-4380-9186-541310ADB7CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{87178B60-8D92-4380-9186-541310ADB7CB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{079F7F83-136B-48E9-BEE4-F380C9DE53BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{079F7F83-136B-48E9-BEE4-F380C9DE53BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{079F7F83-136B-48E9-BEE4-F380C9DE53BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{079F7F83-136B-48E9-BEE4-F380C9DE53BB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8EACB3E5-304D-41E0-8A94-2A7F24A9C71B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8EACB3E5-304D-41E0-8A94-2A7F24A9C71B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8EACB3E5-304D-41E0-8A94-2A7F24A9C71B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8EACB3E5-304D-41E0-8A94-2A7F24A9C71B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E87EFB06-B233-4E2B-8B40-2278DE899B15}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E87EFB06-B233-4E2B-8B40-2278DE899B15}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E87EFB06-B233-4E2B-8B40-2278DE899B15}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E87EFB06-B233-4E2B-8B40-2278DE899B15}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6765F899-EC13-4A93-9C7B-C410DAAD1E1B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6765F899-EC13-4A93-9C7B-C410DAAD1E1B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6765F899-EC13-4A93-9C7B-C410DAAD1E1B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6765F899-EC13-4A93-9C7B-C410DAAD1E1B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{34C4A56B-823D-4B94-938A-B1F8AED25A72}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{34C4A56B-823D-4B94-938A-B1F8AED25A72}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{34C4A56B-823D-4B94-938A-B1F8AED25A72}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{34C4A56B-823D-4B94-938A-B1F8AED25A72}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{079F7F83-136B-48E9-BEE4-F380C9DE53BB} = {302B9D38-BBE2-4B79-A648-0063CB3F79F8}
+		{8EACB3E5-304D-41E0-8A94-2A7F24A9C71B} = {302B9D38-BBE2-4B79-A648-0063CB3F79F8}
+		{E87EFB06-B233-4E2B-8B40-2278DE899B15} = {0F773F4A-0402-4D97-81EE-6E7C9F36D594}
+		{6765F899-EC13-4A93-9C7B-C410DAAD1E1B} = {BB307DE9-558B-448B-A1EC-4868E705C133}
+		{34C4A56B-823D-4B94-938A-B1F8AED25A72} = {BB307DE9-558B-448B-A1EC-4868E705C133}
+	EndGlobalSection
+EndGlobal

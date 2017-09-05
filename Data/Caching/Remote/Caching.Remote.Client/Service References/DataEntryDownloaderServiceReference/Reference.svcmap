@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="08c93687-0bad-46b6-be9f-6b406baee34f" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>true</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:31148/DataEntryDownloaderService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="DataEntryDownloaderService.disco" MetadataType="Disco" ID="b21036cc-357a-49d2-84ef-bfcdb77b6887" SourceId="1" SourceUrl="http://localhost:31148/DataEntryDownloaderService.svc?disco" />
+    <MetadataFile FileName="DataEntryDownloaderService.wsdl" MetadataType="Wsdl" ID="1b5fee65-c613-4fbf-9168-9659d84681a3" SourceId="1" SourceUrl="http://localhost:31148/DataEntryDownloaderService.svc?wsdl" />
+    <MetadataFile FileName="DataEntryDownloaderService.xsd" MetadataType="Schema" ID="3426e665-0e62-4e73-9e73-f083bcea7b60" SourceId="1" SourceUrl="http://localhost:31148/DataEntryDownloaderService.svc?xsd=xsd1" />
+    <MetadataFile FileName="DataEntryDownloaderService1.xsd" MetadataType="Schema" ID="8f938a6f-d92c-406b-b771-dabdc416d013" SourceId="1" SourceUrl="http://localhost:31148/DataEntryDownloaderService.svc?xsd=xsd0" />
+    <MetadataFile FileName="DataEntryDownloaderService2.xsd" MetadataType="Schema" ID="5fa7a8ad-b385-46bc-b4b9-9d46217fe2c0" SourceId="1" SourceUrl="http://localhost:31148/DataEntryDownloaderService.svc?xsd=xsd3" />
+    <MetadataFile FileName="DataEntryDownloaderService3.xsd" MetadataType="Schema" ID="e63310ab-bd0b-4a09-9274-04dd906358b5" SourceId="1" SourceUrl="http://localhost:31148/DataEntryDownloaderService.svc?xsd=xsd2" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

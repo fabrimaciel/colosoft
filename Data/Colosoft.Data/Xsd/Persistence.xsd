@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema targetNamespace="http://colosoft.com.br/2013/webservices/data"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:tns="http://colosoft.com.br/2013/webservices/data"
+           xmlns:query="http://colosoft.com.br/2013/webservices/query"
+           elementFormDefault="qualified">
+  <xs:complexType name="PersistenceParameter">
+    <xs:sequence>
+      <xs:any />
+    </xs:sequence>
+    <xs:attribute name="Name" type="xs:string" use="required" />
+    <xs:attribute name="Type" type="xs:string" use="required" />
+    <xs:attribute name="Direction" type="xs:int" use="required" />
+    <xs:attribute name="Size" type="xs:int" use="required" />
+  </xs:complexType>
+
+  <xs:element name="PersistenceParameter" type="tns:PersistenceParameter"  nillable="true" />
+
+  <xs:complexType name="PropertyReference">
+    <xs:attribute name="PropertyName" type="xs:string" use="required" />
+  </xs:complexType>
+
+  <xs:element name="PropertyReference" type="tns:PropertyReference" nillable="true" />
+  
+  
+  <xs:complexType name="NewUidReference">
+    <xs:attribute name="Uid" type="xs:int" use="required" />
+  </xs:complexType>
+
+  <xs:element name="NewUidReference" type="tns:NewUidReference" nillable="true" />
+
+  <xs:complexType name="Expression">
+    <xs:sequence>
+      <xs:any />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="ExpressionParameter">
+    <xs:sequence>
+      <xs:element name="Parameters" type="tns:ArrayOfPersistenceParameter" nillable="true" minOccurs="1" maxOccurs="1" />
+      <xs:element name="Expression" type="tns:Expression" nillable="true" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:element name="ExpressionParameter" type="tns:ExpressionParameter" nillable="true" />
+
+  <xs:complexType name="ArrayOfPersistenceParameter">
+    <xs:sequence>
+      <xs:element name="Parameter" type="tns:PersistenceParameter" nillable="true" maxOccurs="unbounded" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:element name="ArrayOfPersistenceParameter" type="tns:ArrayOfPersistenceParameter" nillable="true" />
+
+  <xs:simpleType name="PersistenceActionType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Insert"/>
+      <xs:enumeration value="Update"/>
+      <xs:enumeration value="Delete"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="PersistenceAction">
+    <xs:sequence>
+      <xs:element name="Parameters" type="tns:ArrayOfPersistenceParameter" nillable="true" minOccurs="1" maxOccurs="1" />
+      <xs:element name="Conditional" type="query:ConditionalContainer" nillable="true" minOccurs="1" maxOccurs="1" />
+      <xs:element name="AlternativeActions" type="tns:ArrayOfPersistenceAction" nillable="true" minOccurs="1" maxOccurs="1" />
+      <xs:element name="BeforeActions" type="tns:ArrayOfPersistenceAction" nillable="true" minOccurs="1" maxOccurs="1" />
+      <xs:element name="AfterActions" type="tns:ArrayOfPersistenceAction" nillable="true" minOccurs="1" maxOccurs="1" />
+      <xs:element name="StoredProcedureName" type="query:StoredProcedureName" minOccurs="1" maxOccurs="1" nillable="true" />
+      <xs:element name="Query" type="query:QueryInfo" minOccurs="1" maxOccurs="1" nillable="true" />
+    </xs:sequence>
+    <xs:attribute name="ActionId" type="xs:int" use="required" />
+    <xs:attribute name="Type" type="tns:PersistenceActionType" use="required" />
+    <xs:attribute name="EntityFullName" type="xs:string" use="required" />
+    <!--<xs:attribute name="StoredProcedureProvider" type="xs:string" />-->
+    <xs:attribute name="ProviderName" type="xs:string" />
+    <xs:attribute name="RowVersion" type="xs:string" />
+    <xs:attribute name="CommandTimeout" type="xs:int" />
+  </xs:complexType>
+
+  <xs:element name="PersistenceAction" type="tns:PersistenceAction" />
+
+  <xs:complexType name="ArrayOfPersistenceAction">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PersistenceAction" nillable="true" type="tns:PersistenceAction"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:element name="ArrayOfPersistenceAction" nillable="true" type="tns:ArrayOfPersistenceAction"/>
+
+  <xs:complexType name="PersistenceActionResult">
+    <xs:sequence>
+      <xs:element name="FailureMessage" type="xs:string" nillable="true" minOccurs="1" maxOccurs="1" />
+      <xs:element name="Parameters" type="tns:ArrayOfPersistenceParameter" nillable="true" minOccurs="1" maxOccurs="1" />
+      <xs:element name="AlternativeActions" type="tns:ArrayOfPersistenceActionResult" nillable="true" minOccurs="1" maxOccurs="1" />
+      <xs:element name="BeforeActions" type="tns:ArrayOfPersistenceActionResult" nillable="true" minOccurs="1" maxOccurs="1" />
+      <xs:element name="AfterActions" type="tns:ArrayOfPersistenceActionResult" nillable="true" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+    <xs:attribute name="ActionId" type="xs:int" use="required" />
+    <xs:attribute name="Success" type="xs:boolean" use="required" />
+    <xs:attribute name="AffectedRows" type="xs:int" use="required" />
+    <xs:attribute name="RowVersion" type="xs:long" use="required" />
+  </xs:complexType>
+
+  <xs:element name="PersistenceActionResult" type="tns:PersistenceActionResult" />
+
+  <xs:complexType name="ArrayOfPersistenceActionResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PersistenceActionResult" nillable="true" type="tns:PersistenceActionResult"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:element name="ArrayOfPersistenceActionResult" nillable="true" type="tns:ArrayOfPersistenceActionResult"/>
+
+</xs:schema>

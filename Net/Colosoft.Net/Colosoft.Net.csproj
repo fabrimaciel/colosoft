@@ -1,0 +1,219 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F8E5463A-8663-435D-B1F6-CCA4EF4CE149}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Colosoft.Net</RootNamespace>
+    <AssemblyName>Colosoft.Net</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>false</DebugSymbols>
+    <DebugType>none</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\bin\Client\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;BEFORE_NET45</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>0</WarningLevel>
+    <DocumentationFile>..\..\bin\Client\Colosoft.Net.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>0</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>Key.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Colosoft.Core">
+      <HintPath>..\..\bin\Client\Colosoft.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation">
+      <HintPath>..\..\Libraries\General\CommonServiceLocation\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.IdentityModel" />
+    <Reference Include="System.IdentityModel.Selectors" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DoCompressExtension.cs" />
+    <Compile Include="GZipBehavior.cs" />
+    <Compile Include="GzipBehaviorExtensionElement.cs" />
+    <Compile Include="GZipInspector.cs" />
+    <Compile Include="GZipMessageEncoderFactory.cs" />
+    <Compile Include="GZipMessageEncodingBindingElement.cs" />
+    <Compile Include="GZipMessageEncodingBindingElementImporter.cs" />
+    <Compile Include="GZipMessageEncodingElement.cs" />
+    <Compile Include="JsonBehavior.cs" />
+    <Compile Include="JsonClientFormatter.cs" />
+    <Compile Include="JsonDispatchFormatter.cs" />
+    <Compile Include="JsonErrorBodyWriter.cs" />
+    <Compile Include="JsonFaultBehavior.cs" />
+    <Compile Include="JsonFaultBehaviorElement.cs" />
+    <Compile Include="JsonFaultHandler.cs" />
+    <Compile Include="BinaryRawBodyWriter.cs" />
+    <Compile Include="ConfigServiceElement.cs" />
+    <Compile Include="DateFormatStyle.cs" />
+    <Compile Include="DateParseStyle.cs" />
+    <Compile Include="ResolverType.cs" />
+    <Compile Include="SerializerSettings.cs" />
+    <Compile Include="ServiceType.cs" />
+    <Compile Include="ServiceTypeCollection.cs" />
+    <Compile Include="ServiceTypeRegister.cs" />
+    <Compile Include="AssemblyUnresolvedException.cs" />
+    <Compile Include="ConfigServiceException.cs" />
+    <Compile Include="NullMessageFormatterException.cs" />
+    <Compile Include="ResolverTypeException.cs" />
+    <Compile Include="ServiceOperationException.cs" />
+    <Compile Include="TypeUnresolvedException.cs" />
+    <Compile Include="ClientJsonMessageFormatter.cs" />
+    <Compile Include="DispatchJsonMessageFormatter.cs" />
+    <Compile Include="IClientJsonMessageFormatter.cs" />
+    <Compile Include="IDispatchJsonMessageFormatter.cs" />
+    <Compile Include="IMessageFormatter.cs" />
+    <Compile Include="MessageFormatter.cs" />
+    <Compile Include="IOperationInfo.cs" />
+    <Compile Include="IServiceRegister.cs" />
+    <Compile Include="IWebHttpJsonBehavior.cs" />
+    <Compile Include="OperationInfo.cs" />
+    <Compile Include="OperationInfoType.cs" />
+    <Compile Include="OperationParameter.cs" />
+    <Compile Include="OperationResult.cs" />
+    <Compile Include="OperationTypeBinder.cs" />
+    <Compile Include="RawContentMapper.cs" />
+    <Compile Include="ServiceOperation.cs" />
+    <Compile Include="WebHttpJsonBehavior.cs" />
+    <Compile Include="WebHttpJsonResolverBehavior.cs" />
+    <Compile Include="HttpWebRequestExtensions.cs" />
+    <Compile Include="PlatformHelper.cs" />
+    <Compile Include="ServicePointExtensions.cs" />
+    <Compile Include="WebAsyncResultExtensions.cs" />
+    <Compile Include="WebConnectionExtensions.cs" />
+    <Compile Include="CommunicationHelpers.cs" />
+    <Compile Include="WebConnectionGroupExtensions.cs" />
+    <Compile Include="XmlTimeSpan.cs" />
+    <Compile Include="CustomHeaderMessageInspector.cs" />
+    <Compile Include="Constants.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CorsConstants.cs" />
+    <Compile Include="EnableCorsAttribute.cs" />
+    <Compile Include="CorsEnabledMessageInspector.cs" />
+    <Compile Include="EnableCorsEndpointBehavior.cs" />
+    <Compile Include="PreflightOperationBehavior.cs" />
+    <Compile Include="PreflightOperationInvoker.cs" />
+    <Compile Include="DefaultCommunicationTimeouts.cs" />
+    <Compile Include="DiagnosticsBehavior.cs" />
+    <Compile Include="DiagnosticsElement.cs" />
+    <Compile Include="ErrorHandler.cs" />
+    <Compile Include="NameValue.cs" />
+    <Compile Include="RemoteExceptionHelper.cs" />
+    <Compile Include="DownloaderContentInfo.cs" />
+    <Compile Include="ServiceConfigurationException.cs" />
+    <Compile Include="IServiceAddressProvider.cs" />
+    <Compile Include="IServiceClientsLoader.cs" />
+    <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="InvalidSecurityTokenException.cs" />
+    <Compile Include="SecurityTokenBehavior.cs" />
+    <Compile Include="SecurityTokenElement.cs" />
+    <Compile Include="SecurityTokenHttpRequest.cs" />
+    <Compile Include="SecurityTokenMessageInspector.cs" />
+    <Compile Include="NetDataContractFormat.cs" />
+    <Compile Include="NetDataContractSerializerOperationBehavior.cs" />
+    <Compile Include="ServiceAddress.cs" />
+    <Compile Include="ServiceAddressNode.cs" />
+    <Compile Include="ServiceAddressParameter.cs" />
+    <Compile Include="ServiceAddressParameterCollection.cs" />
+    <Compile Include="ServiceClientsManager.cs" />
+    <Compile Include="ServiceHostBaseHelper.cs" />
+    <Compile Include="EnableCrossOriginResourceSharingBehavior.cs" />
+    <Compile Include="HttpBindingBase.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ServiceHostingEnvironment.cs" />
+    <Compile Include="VirtualPathExtension.cs" />
+    <Compile Include="ChannelBase.cs" />
+    <Compile Include="ChannelFactoryBase.cs" />
+    <Compile Include="ChannelListenerBase.cs" />
+    <Compile Include="ChannelManagerBase.cs" />
+    <Compile Include="HttpChannelFactory.cs" />
+    <Compile Include="HttpCookieContainerBindingElement.cs" />
+    <Compile Include="HttpRequestChannel.cs" />
+    <Compile Include="HttpTransportBindingElement.cs" />
+    <Compile Include="HttpChannelListener.cs" />
+    <Compile Include="HttpChannelListenerEntry.cs" />
+    <Compile Include="HttpContextInfo.cs" />
+    <Compile Include="HttpListenerManager.cs" />
+    <Compile Include="HttpListenerManagerTable.cs" />
+    <Compile Include="HttpReplyChannel.cs" />
+    <Compile Include="HttpRequestContext.cs" />
+    <Compile Include="IHttpCookieContainerManager.cs" />
+    <Compile Include="PolicyImportHelper.cs" />
+    <Compile Include="ReplyChannelBase.cs" />
+    <Compile Include="RequestChannelBase.cs" />
+    <Compile Include="SvcHttpHandler.cs" />
+    <Compile Include="TextMessageEncoder.cs" />
+    <Compile Include="TransportChannelFactoryBase.cs" />
+    <Compile Include="WebSocketTransportSettings.cs" />
+    <Compile Include="ConfigUtil.cs" />
+    <Compile Include="WSHttpBinding.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSHttpBindingBase.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSHttpSecurity.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ServiceProxy.cs" />
+    <Compile Include="ServicesConfiguration.cs" />
+    <Compile Include="ServicesConfigurationActionEventArgs.cs" />
+    <Compile Include="WCFServiceClientsLoader.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Key.snk" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

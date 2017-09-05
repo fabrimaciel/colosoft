@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.40629.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Colosoft.Query.Database", "Colosoft.Query.Database\Colosoft.Query.Database.csproj", "{D565A2DE-E95F-4781-B91B-040854D2D608}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Colosoft.Query.Database.Generic", "Colosoft.Query.Database.Generic\Colosoft.Query.Database.Generic.csproj", "{67B002F8-B76B-4DAE-8D05-A8C9CFB351C2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Colosoft.Query.Database.MySql", "Colosoft.Query.Database.MySql\Colosoft.Query.Database.MySql.csproj", "{715D606D-38A2-4316-BCAF-0A66D4643C2F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Colosoft.Query.Database.Oracle", "Colosoft.Query.Database.Oracle\Colosoft.Query.Database.Oracle.csproj", "{9658390B-EFD0-4EED-B816-4135634C809A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Colosoft.Query.Database.OracleUnmanaged", "Colosoft.Query.Database.OracleUnmanaged\Colosoft.Query.Database.OracleUnmanaged.csproj", "{96EAD14E-79FC-42DD-AE24-4970CA23732C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Colosoft.Query.Database.DevartOracle", "Colosoft.Query.Database.DevartOracle\Colosoft.Query.Database.DevartOracle.csproj", "{B7F73595-64AE-4C85-A56A-44F92F10A392}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D565A2DE-E95F-4781-B91B-040854D2D608}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D565A2DE-E95F-4781-B91B-040854D2D608}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D565A2DE-E95F-4781-B91B-040854D2D608}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D565A2DE-E95F-4781-B91B-040854D2D608}.Release|Any CPU.Build.0 = Release|Any CPU
+		{67B002F8-B76B-4DAE-8D05-A8C9CFB351C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{67B002F8-B76B-4DAE-8D05-A8C9CFB351C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{67B002F8-B76B-4DAE-8D05-A8C9CFB351C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{67B002F8-B76B-4DAE-8D05-A8C9CFB351C2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{715D606D-38A2-4316-BCAF-0A66D4643C2F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{715D606D-38A2-4316-BCAF-0A66D4643C2F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{715D606D-38A2-4316-BCAF-0A66D4643C2F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{715D606D-38A2-4316-BCAF-0A66D4643C2F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9658390B-EFD0-4EED-B816-4135634C809A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9658390B-EFD0-4EED-B816-4135634C809A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9658390B-EFD0-4EED-B816-4135634C809A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9658390B-EFD0-4EED-B816-4135634C809A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{96EAD14E-79FC-42DD-AE24-4970CA23732C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{96EAD14E-79FC-42DD-AE24-4970CA23732C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{96EAD14E-79FC-42DD-AE24-4970CA23732C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{96EAD14E-79FC-42DD-AE24-4970CA23732C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B7F73595-64AE-4C85-A56A-44F92F10A392}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B7F73595-64AE-4C85-A56A-44F92F10A392}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B7F73595-64AE-4C85-A56A-44F92F10A392}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B7F73595-64AE-4C85-A56A-44F92F10A392}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = Database.vsmdi
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{1602A05E-FF4C-41D8-B83C-0277826FCCFF}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Colosoft.Data.Schema</RootNamespace>
+    <AssemblyName>Colosoft.Data.Schema</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>false</DebugSymbols>
+    <DebugType>none</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\bin\Client\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>0</WarningLevel>
+    <DocumentationFile>..\..\..\bin\Client\Colosoft.Data.Schema.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>0</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>Key.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Colosoft.Core">
+      <HintPath>..\..\..\bin\Client\Colosoft.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Colosoft.Data">
+      <HintPath>..\..\..\bin\Client\Colosoft.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Colosoft.Query">
+      <HintPath>..\..\..\bin\Client\Colosoft.Query.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Libraries\General\CommonServiceLocation\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AggregateTypeMetadata.cs" />
+    <Compile Include="AggregateTypeSchema.cs" />
+    <Compile Include="BaseColumnMetadata.cs" />
+    <Compile Include="BaseDataBaseSchema.cs" />
+    <Compile Include="BaseForeignKeyMetadata.cs" />
+    <Compile Include="BaseIndexMetadata.cs" />
+    <Compile Include="BaseTableName.cs" />
+    <Compile Include="CacheAttribute.cs" />
+    <Compile Include="DirectionParameter.cs" />
+    <Compile Include="IColumnMetadata.cs" />
+    <Compile Include="IDataBaseSchema.cs" />
+    <Compile Include="IForeignKeyMetadata.cs" />
+    <Compile Include="IIndexMetadata.cs" />
+    <Compile Include="IPropertyMetadata.cs" />
+    <Compile Include="ITableMetadata.cs" />
+    <Compile Include="ITypeMetadata.cs" />
+    <Compile Include="ITypeSchema.cs" />
+    <Compile Include="ITypeSchemaInitializer.cs" />
+    <Compile Include="ITypeSchemaProvider.cs" />
+    <Compile Include="ITypeSchemaUpdateInfoGetter.cs" />
+    <Compile Include="ReferenceTypeMetadata.cs" />
+    <Compile Include="ForeignKeyInfo.cs" />
+    <Compile Include="Namespaces.cs" />
+    <Compile Include="PropertyMetadata.cs" />
+    <Compile Include="TypeMetadata.cs" />
+    <Compile Include="TypeSchema.cs" />
+    <Compile Include="PersistenceActionResultProcessor.cs" />
+    <Compile Include="PersistenceExecuterResultProcessorWrapper.cs" />
+    <Compile Include="PersistenceParameterType.cs" />
+    <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="PropertyMetadataEqualityComparer.cs" />
+    <Compile Include="RecordKeyFactory.cs" />
+    <Compile Include="SchemaPersistenceSession.cs" />
+    <Compile Include="SchemaPersistenceSessionValidator.cs" />
+    <Compile Include="SchemaProjectionSearcher.cs" />
+    <Compile Include="TableName.cs" />
+    <Compile Include="TypeSchemaExtensions.cs" />
+    <Compile Include="TypeSchemaInitializerException.cs" />
+    <Compile Include="TypeSchemaUpdate.cs" />
+    <Compile Include="TypeSchemaUpdateInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Configuration\TypeSchema.xsd">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <None Include="Key.snk" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Configuration\TypeSchemaSample.xml">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,509 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema targetNamespace="http://colosoft.com.br/2011/webservices/query"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:tns="http://colosoft.com.br/2011/webservices/query"
+           elementFormDefault="qualified">
+
+  <xs:complexType name="Field">
+    <xs:sequence>
+      <xs:element name="Name" type="xs:string" minOccurs="0" nillable="true" />
+      <xs:element name="Type" type="xs:string" minOccurs="0" nillable="true" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:element name="Field" type="tns:Field"  nillable="true" />
+
+  <xs:complexType name="ArrayOfField">
+    <xs:sequence>
+      <xs:element name="Field" type="tns:Field" nillable="true" maxOccurs="unbounded" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:element name="ArrayOfField" type="tns:ArrayOfField" nillable="true" />
+
+  <xs:complexType name="RecordDescriptor">
+    <xs:sequence>
+      <xs:element name="Fields" type="tns:ArrayOfField" minOccurs="0" nillable="true" />
+    </xs:sequence>
+    <xs:attribute name="Name" type="xs:string" use="optional" />
+    <xs:attribute name="Locale" type="xs:string" use="optional" />
+  </xs:complexType>
+
+  <xs:element name="RecordDescriptor" type="tns:RecordDescriptor" nillable="true" />
+
+  <xs:complexType name="ConditionalTerm">
+    
+  </xs:complexType>
+
+  <xs:element name="ConditionalTerm" type="tns:ConditionalTerm" nillable="true" />
+
+  <xs:complexType name="Constant">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ConditionalTerm">
+        <xs:sequence>
+          <xs:any namespace="##local" processContents="lax" minOccurs="1" maxOccurs="unbounded" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:element name="Constant" type="tns:Constant" nillable="true" />
+
+  <xs:complexType name="Column">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ConditionalTerm">
+        <xs:sequence>
+          <xs:element name="Name" type="xs:string" minOccurs="0" nillable="true" />
+          <xs:element name="Owner" type="xs:string" minOccurs="0" nillable="true" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:element name="Column" type="tns:Column" nillable="true" />
+
+  <xs:complexType name="StoredProcedureName">
+      <xs:sequence>
+        <xs:element name="Name" type="xs:string" minOccurs="0" nillable="true" />
+        <xs:element name="Schema" type="xs:string" minOccurs="0" nillable="true" />
+      </xs:sequence>
+  </xs:complexType>
+
+  <xs:element name="StoredProcedureName" type="tns:StoredProcedureName" nillable="true" />
+
+  <xs:complexType name="Operator">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ConditionalTerm">
+        <xs:sequence>
+          <xs:any namespace="##local" processContents="lax" minOccurs="1" maxOccurs="unbounded" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:element name="Operator" type="tns:Operator" nillable="true" />
+
+  <xs:complexType name="Variable">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ConditionalTerm">
+        <xs:sequence>
+          <xs:element name="Name" type="xs:string" minOccurs="0" nillable="true" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:element name="Variable" type="tns:Variable" nillable="true" />
+  
+  <xs:complexType name="Conditional">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ConditionalTerm">
+        <xs:sequence>
+          <xs:element name="Left" type="tns:ConditionalTerm" minOccurs="0" nillable="true" />
+          <xs:element name="Operator" type="tns:ConditionalTerm" minOccurs="0" nillable="false" />
+          <xs:element name="Right" type="tns:ConditionalTerm" minOccurs="0" nillable="true" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="MinusTerm">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ConditionalTerm">
+        <xs:sequence>
+          <xs:element name="Term" type="tns:ConditionalTerm" minOccurs="0" nillable="true" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  
+  <xs:simpleType name="LogicalOperator">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="And"/>
+      <xs:enumeration value="Or"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="MathematicalOperator">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Subtraction"/>
+      <xs:enumeration value="Addition"/>
+      <xs:enumeration value="Division"/>
+      <xs:enumeration value="Multiplication"/>
+      <xs:enumeration value="Exponentiation"/>
+      <xs:enumeration value="Module"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:element type="tns:ArrayOfMathematicalOperator" nillable="true" name="ArrayOfMathematicalOperator"/>
+  <xs:complexType name="ArrayOfMathematicalOperator">
+    <xs:sequence>
+      <xs:element name="MathematicalOperator" type="tns:MathematicalOperator" nillable="false" maxOccurs="unbounded" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="Formula">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ConditionalTerm">
+        <xs:sequence>
+          <xs:element name="Parts" type="tns:ArrayOfConditional" minOccurs="0" maxOccurs="1" />
+          <xs:element name="Operators" type="tns:ArrayOfMathematicalOperator" minOccurs="0" maxOccurs="1" nillable="false" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  
+  <xs:element type="tns:ArrayOfConditional" nillable="true" name="ArrayOfConditional"/>
+  <xs:complexType name="ArrayOfConditional">
+    <xs:sequence>
+      <xs:element type="tns:ConditionalTerm" nillable="true" name="ConditionalTerm" maxOccurs="unbounded" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:element type="tns:ArrayOfLogicalOperator" nillable="true" name="ArrayOfLogicalOperator"/>
+  <xs:complexType name="ArrayOfLogicalOperator">
+    <xs:sequence>
+      <xs:element name="LogicalOperator" type="tns:LogicalOperator" nillable="false" maxOccurs="unbounded" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="QueryParameterValue">
+    <xs:sequence>
+      <xs:any namespace="##local" processContents="lax" minOccurs="1" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  
+  <xs:complexType name="QueryParameter">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute name="Name" type="xs:string" use="required" />
+        <xs:attribute name="Type" type="xs:string" use="optional" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="ArrayOfQueryParameter">
+    <xs:sequence>
+      <xs:element name="QueryParameter" type="tns:QueryParameter" nillable="true" maxOccurs="unbounded" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  
+  <xs:complexType name="ConditionalContainer">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ConditionalTerm">
+        <xs:sequence>
+          <xs:element name="Conditionals" type="tns:ArrayOfConditional" minOccurs="0" maxOccurs="1" />
+          <xs:element name="LogicalOperators" type="tns:ArrayOfLogicalOperator" minOccurs="0" maxOccurs="1" nillable="false" />
+          <xs:element name="Parameters" type="tns:ArrayOfQueryParameter" minOccurs="1"  maxOccurs="1" nillable="true"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:element name="ConditionalContainer" type="tns:ConditionalContainer" nillable="true" />
+
+  <xs:complexType name="ValuesArray">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ConditionalTerm">
+        <xs:sequence>
+          <xs:element name="Values" type="tns:ArrayOfConditional" minOccurs="0" maxOccurs="1" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:element name="ValuesArray" type="tns:ValuesArray" nillable="true" />
+  
+  <xs:complexType name="Record">
+    <xs:sequence>
+      <xs:any namespace="##local" processContents="lax" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Record" type="tns:Record" nillable="true" />
+
+  <xs:complexType name="ArrayOfRecord">
+    <xs:sequence>
+      <xs:element name="Record" type="tns:Record" minOccurs="0" maxOccurs="unbounded" nillable="true" />
+    </xs:sequence>
+  </xs:complexType>
+  
+  <xs:complexType name="QueryResult">
+    <xs:sequence>
+      <xs:element name="Descriptor" type="tns:RecordDescriptor" nillable="true" minOccurs="0" maxOccurs="1" />
+      <xs:element name="Records" type="tns:ArrayOfRecord" minOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  
+  <xs:element name="QueryResult" type="tns:QueryResult" nillable="true" />
+  
+  <xs:complexType name="QueryResultParameters">
+    <xs:sequence>
+      <xs:element name="QueryResult" type="tns:QueryResult"  minOccurs="0" maxOccurs="1" nillable="true"/>
+      <xs:element name="Parameters" type="tns:ArrayOfQueryParameter" minOccurs="1"  maxOccurs="1" nillable="true" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:element name="QueryResultParameters" type="tns:QueryResultParameters" nillable="true" />
+
+  <xs:complexType name="EntityInfo">
+    <xs:attribute name="FullName" type="xs:string" use="required" />
+    <xs:attribute name="Alias" type="xs:string" use="optional" />
+  </xs:complexType>
+
+  <xs:complexType name="ReferenceParameter">
+    <xs:attribute name="ColumnName" type="xs:string" use="required" />
+  </xs:complexType>
+
+  <xs:element name="ReferenceParameter" type="tns:ReferenceParameter" nillable="true" />
+
+  <xs:complexType name="ReferenceParameterValue">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute name="ColumnName" type="xs:string" use="required" />
+        <xs:attribute name="Type" type="xs:string" use="optional" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:element name="ReferenceParameterValue" type="tns:ReferenceParameterValue" nillable="true" />
+
+  <xs:simpleType name="ProjectEntryType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Column"/>
+      <xs:enumeration value="Function"/>
+      <xs:enumeration value="Constant"/>
+      <xs:enumeration value="Text"/>
+      <xs:enumeration value="Variable"/>
+    </xs:restriction>
+  </xs:simpleType>
+  
+  <xs:complexType name="ProjectionEntry">
+    <xs:sequence>
+      <xs:any namespace="##local" processContents="lax" minOccurs="1" maxOccurs="unbounded" />
+    </xs:sequence>
+    <xs:attribute name="Alias" type="xs:string" use="optional" />
+  </xs:complexType>
+
+  <xs:complexType name="Projection">
+    <xs:sequence>
+      <xs:element name="ProjectionEntry" type="tns:ProjectionEntry" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="UnionInfo">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:QueryInfo">
+        <xs:attribute name="All" type="xs:boolean" use="required" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:element name="UnionInfo" type="tns:UnionInfo" nillable="true" />
+
+  <xs:complexType name="UnionInfoCollection">
+    <xs:sequence>
+      <xs:element name="Union" type="tns:UnionInfo" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:element name="UnionInfoCollection" type="tns:UnionInfoCollection" nillable="true" />
+
+  <xs:complexType name="Union">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Queryable">
+        <xs:attribute name="All" type="xs:boolean" use="required" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:element name="Union" type="tns:Union" nillable="true" />
+
+  <xs:complexType name="UnionCollection">
+    <xs:sequence>
+      <xs:element name="Union" type="tns:Union" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:element name="UnionCollection" type="tns:UnionCollection" nillable="true" />
+
+  <xs:complexType name="CaseWhenConditional">
+    <xs:sequence>
+      <xs:element name="Expression" type="tns:ConditionalTerm" minOccurs="0" nillable="true" />
+      <xs:element name="ResultExpression" type="tns:ConditionalTerm" minOccurs="0" nillable="true" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="ArrayOfCaseWhenConditional">
+    <xs:sequence>
+      <xs:element name="CaseWhenConditional" type="tns:CaseWhenConditional" minOccurs="0" maxOccurs="unbounded" nillable="true" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="CaseConditional">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ConditionalTerm">
+        <xs:sequence>
+          <xs:element name="InputExpression" type="tns:ConditionalTerm" minOccurs="0" nillable="true" />
+          <xs:element name="WhenExpressions" type="tns:ArrayOfCaseWhenConditional" minOccurs="1" nillable="true" />
+          <xs:element name="ElseResultExpression" type="tns:ConditionalTerm" minOccurs="0" nillable="true" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="SortEntry">
+    <xs:sequence>
+      <xs:any namespace="##local" processContents="lax" minOccurs="1" maxOccurs="unbounded" />
+    </xs:sequence>
+    <xs:attribute name="Reverse" type="xs:string" use="required" />
+  </xs:complexType>
+
+  <xs:complexType name="Sort">
+    <xs:sequence>
+      <xs:element name="SortEntry" type="tns:SortEntry" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:simpleType name="GroupByEntryType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Column"/>
+      <xs:enumeration value="Function"/>
+    </xs:restriction>
+  </xs:simpleType>
+  
+  <xs:complexType name="GroupByEntry">
+    <xs:sequence>
+      <xs:element name="GroupByEntry" type="tns:GroupByEntry" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+    <xs:attribute name="Type" type="tns:GroupByEntryType" use="optional" />
+    <xs:attribute name="Name" type="xs:string" use="required" />
+    <xs:attribute name="Owner" type="xs:string" use="optional" />
+  </xs:complexType>
+
+  <xs:complexType name="GroupBy">
+    <xs:sequence>
+      <xs:element name="GroupByEntry" type="tns:GroupByEntry" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  
+  <xs:simpleType name="JoinType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Inner"/>
+      <xs:enumeration value="Left"/>
+      <xs:enumeration value="Right"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="JoinInfo">
+    <xs:sequence>
+      <xs:element name="Conditional" type="tns:ConditionalContainer" nillable="true" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+    <xs:attribute name="Left" type="xs:string" use="required" />
+    <xs:attribute name="Right" type="xs:string" use="required" />
+    <xs:attribute name="Type" type="tns:JoinType" use="required" />
+  </xs:complexType>
+
+  <xs:complexType name="ArrayOfJoinInfo">
+    <xs:sequence>
+      <xs:element name="JoinInfo" type="tns:JoinInfo" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="ArrayOfEntityInfo">
+    <xs:sequence>
+      <xs:element name="EntityInfo" type="tns:EntityInfo" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="TakeParameters">
+    <xs:attribute name="Take" type="xs:int" use="required" />
+    <xs:attribute name="Skip" type="xs:int" use="required" />
+  </xs:complexType>
+
+  <xs:complexType name="RequiredField">
+    <xs:attribute name="Name" type="xs:string" use="required" />
+    <xs:attribute name="Index" type="xs:int" use="required" />
+  </xs:complexType>
+  
+  <xs:complexType name="ArrayOfRequiredField">
+    <xs:sequence>
+      <xs:element name="Field" type="tns:RequiredField" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  
+  <xs:complexType name="QueryExecutePredicate">
+    <xs:sequence>
+      <xs:element name="Expression" type="xs:string" nillable="true" minOccurs="1" maxOccurs="1" />
+      <xs:element name="Parameters" type="tns:ArrayOfQueryParameter" minOccurs="1"  maxOccurs="1" nillable="true"/>
+      <xs:element name="RequiredFields" type="tns:ArrayOfRequiredField" minOccurs="1"  maxOccurs="1" nillable="true"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="ArrayOfQueryable">
+    <xs:sequence>
+      <xs:element name="Queryable" type="tns:Queryable" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  
+  <xs:complexType name="Queryable">
+    <xs:sequence>
+      <xs:element name="Entity" type="tns:EntityInfo" minOccurs="1" maxOccurs="1" nillable="true" />
+      <xs:element name="Projection" type="tns:Projection" minOccurs="1" maxOccurs="1" nillable="true" />
+      <xs:element name="ExecutePredicate" type="tns:QueryExecutePredicate" minOccurs="0" maxOccurs="1" nillable="true" />
+      <xs:element name="Where" type="tns:ConditionalContainer" minOccurs="1" maxOccurs="1" nillable="true" />
+      <xs:element name="Sort" type="tns:Sort" minOccurs="1" maxOccurs="1" nillable="true" />
+      <xs:element name="GroupBy" type="tns:GroupBy" minOccurs="1" maxOccurs="1" nillable="true" />
+      <xs:element name="Having" type="tns:ConditionalContainer" minOccurs="1" maxOccurs="1" nillable="true" />
+      <xs:element name="TakeParameters" type="tns:TakeParameters" minOccurs="1" maxOccurs="1" nillable="true" />
+      <xs:element name="Joins" type="tns:ArrayOfJoinInfo" minOccurs="1" maxOccurs="1" nillable="true" />
+      <xs:element name="JoinsEntities" type="tns:ArrayOfEntityInfo" minOccurs="1" maxOccurs="1" nillable="true" />
+      <xs:element name="NestedQueries" type="tns:ArrayOfQueryable" minOccurs="1" maxOccurs="1" nillable="true" />
+      <xs:element name="Parameters" type="tns:ArrayOfQueryParameter" minOccurs="1"  maxOccurs="1" nillable="true"/>
+    </xs:sequence>
+    <xs:attribute name="IsolationLevel" type="xs:string" />
+    <xs:attribute name="CommandTimeout" type="xs:int" />
+    <xs:attribute name="ProviderName" type="xs:string" />
+    <xs:attribute name="IgnoreTypeSchema" type="xs:boolean" />
+  </xs:complexType>
+  
+  <xs:simpleType name="QueryMethod">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Select"/>
+      <xs:enumeration value="Count"/>
+      <xs:enumeration value="Sum"/>
+      <xs:enumeration value="Max"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="NestedQueryInfos">
+    <xs:sequence>
+      <xs:element name="QueryInfo" type="tns:QueryInfo" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="QueryInfo">
+    <xs:sequence>
+      <xs:element name="Projection" type="tns:Projection" minOccurs="1" maxOccurs="1" nillable="true" />
+      <xs:element name="ExecutePredicate" type="tns:QueryExecutePredicate" minOccurs="0" maxOccurs="1" nillable="true" />
+      <xs:element name="Entities" type="tns:ArrayOfEntityInfo" minOccurs="1" maxOccurs="1" nillable="true" />
+      <xs:element name="Joins" type="tns:ArrayOfJoinInfo" minOccurs="1" maxOccurs="1" nillable="true" />
+      <xs:element name="Where" type="tns:ConditionalContainer" minOccurs="1" maxOccurs="1" nillable="true" />
+      <xs:element name="Sort" type="tns:Sort" minOccurs="1" maxOccurs="1" nillable="true" />
+      <xs:element name="GroupBy" type="tns:GroupBy" minOccurs="1" maxOccurs="1" nillable="true" />
+      <xs:element name="Having" type="tns:ConditionalContainer" minOccurs="1" maxOccurs="1" nillable="true" />
+      <xs:element name="TakeParameters" type="tns:TakeParameters" minOccurs="1" maxOccurs="1" nillable="true" />
+      <xs:element name="NestedQueries" type="tns:NestedQueryInfos" minOccurs="1" maxOccurs="1" nillable="true" />
+      <xs:element name="Parameters" type="tns:ArrayOfQueryParameter" minOccurs="1"  maxOccurs="1" nillable="true"/>
+      <xs:element name="StoredProcedureName" type="tns:StoredProcedureName" minOccurs="1" maxOccurs="1" nillable="true" />
+    </xs:sequence>
+    <xs:attribute name="Id" type="xs:int" />
+    <xs:attribute name="Method" type="tns:QueryMethod" default="Select" />
+    <xs:attribute name="StoredProcedureProvider" type="xs:string" />
+    <xs:attribute name="IgnoreRegisterUserInfo" type="xs:boolean" />
+    <xs:attribute name="IsolationLevel" type="xs:string" />
+    <xs:attribute name="CommandTimeout" type="xs:int" />
+    <xs:attribute name="ProviderName" type="xs:string" />
+    <xs:attribute name="IgnoreTypeSchema" type="xs:boolean" />
+  </xs:complexType>
+  
+</xs:schema>

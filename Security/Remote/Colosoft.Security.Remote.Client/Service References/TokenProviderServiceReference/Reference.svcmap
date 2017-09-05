@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="4fb465a8-8a42-433e-97ec-7056628549d3" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>true</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:3911/TokenProviderService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="TokenProviderService.xsd" MetadataType="Schema" ID="5704c8ea-c694-46a1-bdb5-50cc88e40e57" SourceId="1" SourceUrl="http://localhost:3911/TokenProviderService.svc?xsd=xsd1" />
+    <MetadataFile FileName="TokenProviderService.disco" MetadataType="Disco" ID="972327fa-eabb-4491-8f4e-a77d3ee87cf5" SourceId="1" SourceUrl="http://localhost:3911/TokenProviderService.svc?disco" />
+    <MetadataFile FileName="TokenProviderService.wsdl" MetadataType="Wsdl" ID="5751bece-cf86-4cfd-af9b-c9f709244356" SourceId="1" SourceUrl="http://localhost:3911/TokenProviderService.svc?wsdl" />
+    <MetadataFile FileName="TokenProviderService1.xsd" MetadataType="Schema" ID="d231f8b3-b99c-4b57-9087-f2f60d731f7d" SourceId="1" SourceUrl="http://localhost:3911/TokenProviderService.svc?xsd=xsd0" />
+    <MetadataFile FileName="TokenProviderService2.xsd" MetadataType="Schema" ID="cb160b51-a439-4153-b69d-7456b2538af6" SourceId="1" SourceUrl="http://localhost:3911/TokenProviderService.svc?xsd=xsd2" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

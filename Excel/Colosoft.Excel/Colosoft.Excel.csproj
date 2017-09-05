@@ -1,0 +1,263 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3C5626B0-CD0C-4D83-BEEC-85EE00AB87E8}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Colosoft.Excel</RootNamespace>
+    <AssemblyName>Colosoft.Excel</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>false</DebugSymbols>
+    <DebugType>none</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\bin\Client\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>0</WarningLevel>
+    <DocumentationFile>bin\Debug\Colosoft.Excel.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>0</WarningLevel>
+    <DocumentationFile>
+    </DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>Key.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Cell.cs" />
+    <Compile Include="CellCollection.cs" />
+    <Compile Include="Bin2Hex.cs" />
+    <Compile Include="FileIO.cs" />
+    <Compile Include="Pair.cs" />
+    <Compile Include="StreamHelper.cs" />
+    <Compile Include="ColorPalette.cs" />
+    <Compile Include="CompoundDocument.cs" />
+    <Compile Include="CompoundFileHeader.cs" />
+    <Compile Include="DirectoryEntry.cs" />
+    <Compile Include="Endianness.cs" />
+    <Compile Include="EntryType.cs" />
+    <Compile Include="FileHeader.cs" />
+    <Compile Include="NodeColor.cs" />
+    <Compile Include="SID.cs" />
+    <Compile Include="CachedCsvReader.cs" />
+    <Compile Include="CachedCsvReader.CsvBindingList.cs" />
+    <Compile Include="CachedCsvReader.CsvPropertyDescriptor.cs" />
+    <Compile Include="CachedCsvReader.CsvRecordComparer.cs" />
+    <Compile Include="CsvReader.cs" />
+    <Compile Include="CsvReader.DataReaderValidations.cs" />
+    <Compile Include="CsvReader.RecordEnumerator.cs" />
+    <Compile Include="ParseErrorEventArgs.cs" />
+    <Compile Include="MalformedCsvException.cs" />
+    <Compile Include="MissingFieldCsvException.cs" />
+    <Compile Include="MissingFieldAction.cs" />
+    <Compile Include="ParseErrorAction.cs" />
+    <Compile Include="ExceptionMessage.Designer.cs" />
+    <Compile Include="ErrorCode.cs" />
+    <Compile Include="EscherRecordType.cs" />
+    <Compile Include="PropertyIDs.cs" />
+    <Compile Include="RecordType.cs" />
+    <Compile Include="SheetType.cs" />
+    <Compile Include="StreamType.cs" />
+    <Compile Include="SubRecordType.cs" />
+    <Compile Include="EscherRecord.cs" />
+    <Compile Include="EscherRecord1.cs" />
+    <Compile Include="MsofbtAlignRule.cs" />
+    <Compile Include="MsofbtAnchor.cs" />
+    <Compile Include="MsofbtArcRule.cs" />
+    <Compile Include="MsofbtBlip.cs" />
+    <Compile Include="MsofbtBlipBitmapDIB.cs" />
+    <Compile Include="MsofbtBlipBitmapJPEG.cs" />
+    <Compile Include="MsofbtBlipBitmapPNG.cs" />
+    <Compile Include="MsofbtBlipBitmapPS.cs" />
+    <Compile Include="MsofbtBlipEnd.cs" />
+    <Compile Include="MsofbtBlipStart.cs" />
+    <Compile Include="MsofbtBSE.cs" />
+    <Compile Include="MsofbtBstoreContainer.cs" />
+    <Compile Include="MsofbtCalloutRule.cs" />
+    <Compile Include="MsofbtChildAnchor.cs" />
+    <Compile Include="MsofbtClientAnchor.cs" />
+    <Compile Include="MsofbtClientData.cs" />
+    <Compile Include="MsofbtClientRule.cs" />
+    <Compile Include="MsofbtClientTextbox.cs" />
+    <Compile Include="MsofbtCLSID.cs" />
+    <Compile Include="MsofbtColorMRU.cs" />
+    <Compile Include="MsofbtColorScheme.cs" />
+    <Compile Include="MsofbtConnectorRule.cs" />
+    <Compile Include="MsofbtContainer.cs" />
+    <Compile Include="MsofbtDeletedPspl.cs" />
+    <Compile Include="MsofbtDg.cs" />
+    <Compile Include="MsofbtDgContainer.cs" />
+    <Compile Include="MsofbtDgg.cs" />
+    <Compile Include="MsofbtDggContainer.cs" />
+    <Compile Include="MsofbtOleObject.cs" />
+    <Compile Include="MsofbtOPT.cs" />
+    <Compile Include="MsofbtRegroupItems.cs" />
+    <Compile Include="MsofbtSelection.cs" />
+    <Compile Include="MsofbtSolverContainer.cs" />
+    <Compile Include="MsofbtSp.cs" />
+    <Compile Include="MsofbtSpContainer.cs" />
+    <Compile Include="MsofbtSpgr.cs" />
+    <Compile Include="MsofbtSpgrContainer.cs" />
+    <Compile Include="MsofbtSplitMenuColors.cs" />
+    <Compile Include="MsofbtTextbox.cs" />
+    <Compile Include="Cell1.cs" />
+    <Compile Include="CellCollection1.cs" />
+    <Compile Include="Column.cs" />
+    <Compile Include="DocumentProperties.cs" />
+    <Compile Include="Enums.cs" />
+    <Compile Include="Encryption.cs" />
+    <Compile Include="File.cs" />
+    <Compile Include="GlobalSuppressions.cs" />
+    <Compile Include="Object.cs" />
+    <Compile Include="Settings.cs" />
+    <Compile Include="System.Runtime.CompilerServices.cs" />
+    <Compile Include="Formula.cs" />
+    <Compile Include="FormulaHelper.cs" />
+    <Compile Include="FormulaParser.cs" />
+    <Compile Include="GlobalSuppressions1.cs" />
+    <Compile Include="IStyle.cs" />
+    <Compile Include="NamedRange.cs" />
+    <Compile Include="PrintOptions.cs" />
+    <Compile Include="Range.cs" />
+    <Compile Include="Row.cs" />
+    <Compile Include="Styles.cs" />
+    <Compile Include="Workbook1.cs" />
+    <Compile Include="Workbook.DatasetExport.cs" />
+    <Compile Include="Workbook.Import.cs" />
+    <Compile Include="Worksheet1.cs" />
+    <Compile Include="Worksheet.Import.cs" />
+    <Compile Include="XmlStyle.cs" />
+    <Compile Include="ExportExcel.cs" />
+    <Compile Include="BOOLERR.cs" />
+    <Compile Include="FORMULA1.cs" />
+    <Compile Include="MSOCONTAINER.cs" />
+    <Compile Include="MsofbtBSE1.cs" />
+    <Compile Include="MsofbtContainer1.cs" />
+    <Compile Include="MsofbtDgg1.cs" />
+    <Compile Include="MsofbtDggContainer1.cs" />
+    <Compile Include="MsofbtOPT1.cs" />
+    <Compile Include="MULRK.cs" />
+    <Compile Include="OBJ.cs" />
+    <Compile Include="PALETTE.cs" />
+    <Compile Include="SST.cs" />
+    <Compile Include="XF.cs" />
+    <Compile Include="Picture.cs" />
+    <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="Record.cs" />
+    <Compile Include="ARRAY.cs" />
+    <Compile Include="BACKUP.cs" />
+    <Compile Include="BITMAP.cs" />
+    <Compile Include="BLANK.cs" />
+    <Compile Include="BOF.cs" />
+    <Compile Include="BOOKBOOL.cs" />
+    <Compile Include="BOOLERR1.cs" />
+    <Compile Include="BOTTOMMARGIN.cs" />
+    <Compile Include="BOUNDSHEET.cs" />
+    <Compile Include="CALCCOUNT.cs" />
+    <Compile Include="CALCMODE.cs" />
+    <Compile Include="CODEPAGE.cs" />
+    <Compile Include="CONTINUE.cs" />
+    <Compile Include="DATEMODE.cs" />
+    <Compile Include="DIMENSIONS.cs" />
+    <Compile Include="LABELSST.cs" />
+    <Compile Include="MSOCONTAINER1.cs" />
+    <Compile Include="MSODRAWING.cs" />
+    <Compile Include="MSODRAWINGGROUP.cs" />
+    <Compile Include="MSODRAWINGSELECTION.cs" />
+    <Compile Include="MULBLANK.cs" />
+    <Compile Include="MULRK1.cs" />
+    <Compile Include="NUMBER.cs" />
+    <Compile Include="OBJ1.cs" />
+    <Compile Include="PALETTE1.cs" />
+    <Compile Include="Record1.cs" />
+    <Compile Include="RK.cs" />
+    <Compile Include="ROW1.cs" />
+    <Compile Include="RSTRING.cs" />
+    <Compile Include="SST1.cs" />
+    <Compile Include="STRING.cs" />
+    <Compile Include="XF1.cs" />
+    <Compile Include="ShapeProperty.cs" />
+    <Compile Include="SubRecord.cs" />
+    <Compile Include="CommonObjectData.cs" />
+    <Compile Include="End.cs" />
+    <Compile Include="GroupMarker.cs" />
+    <Compile Include="SubRecord1.cs" />
+    <Compile Include="Workbook.cs" />
+    <Compile Include="Worksheet.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="MetaData\EscherRecordTypes.txt" />
+    <Content Include="MetaData\Excel.xml" />
+    <Content Include="MetaData\Record Identifier.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Csv\Resources\ExceptionMessage.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Key.snk" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

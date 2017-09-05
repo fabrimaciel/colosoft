@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{2B7AE08D-99F7-412B-A3A8-AC16E1F78498}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Colosoft.Mef</RootNamespace>
+    <AssemblyName>Colosoft.Mef</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>false</DebugSymbols>
+    <DebugType>none</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\bin\Client\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>0</WarningLevel>
+    <DocumentationFile>..\..\bin\Client\Colosoft.Mef.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>0</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>Key.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Colosoft.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=d3b3c440aed9b980, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\bin\Client\Colosoft.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="MefContrib">
+      <HintPath>..\..\Libraries\General\MefContrib\MefContrib.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Mef.CommonServiceLocator">
+      <HintPath>..\..\Libraries\General\CommonServiceLocation\Microsoft.Mef.CommonServiceLocator.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Libraries\General\CommonServiceLocation\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ActivatedInstanceException.cs" />
+    <Compile Include="AssemblyFromExportNotFoundEventArgs.cs" />
+    <Compile Include="AssemblyRepositoryCatalog.cs" />
+    <Compile Include="AssemblyRepositoryCatalogConflict.cs" />
+    <Compile Include="AssemblyRepositoryCatalogException.cs" />
+    <Compile Include="AssemblyRepositoryCatalogRegister.cs" />
+    <Compile Include="ComposableConstructor.cs" />
+    <Compile Include="ComposableField.cs" />
+    <Compile Include="ComposableMember.cs" />
+    <Compile Include="ComposableMemberParameterException.cs" />
+    <Compile Include="ComposableMethod.cs" />
+    <Compile Include="ComposableParameter.cs" />
+    <Compile Include="ComposableProperty.cs" />
+    <Compile Include="ComposableType.cs" />
+    <Compile Include="CompositionServices.cs" />
+    <Compile Include="ConfigurableTypeCatalog.cs" />
+    <Compile Include="ConfigurableTypeCollection.cs" />
+    <Compile Include="ConfigurableTypeElement.cs" />
+    <Compile Include="ConfigurableTypeSection.cs" />
+    <Compile Include="DefaultCatalog.cs" />
+    <Compile Include="DefaultServiceRegister.cs" />
+    <Compile Include="DefinitionCatalog.cs" />
+    <Compile Include="ExportDescription.cs" />
+    <Compile Include="ExportProviderExtensions.cs" />
+    <Compile Include="FailOnLoadAssemblyArgs.cs" />
+    <Compile Include="FailOnLoadPackagesArgs.cs" />
+    <Compile Include="FailOnLoadTypeEventArgs.cs" />
+    <Compile Include="IAssemblyContainer.cs" />
+    <Compile Include="IAssemblyRepositoryCatalogObserver.cs" />
+    <Compile Include="IExportConfigurator.cs" />
+    <Compile Include="ImportDescription.cs" />
+    <Compile Include="ImportingConstructorDescription.cs" />
+    <Compile Include="InstanceCatalog.cs" />
+    <Compile Include="InstanceComposablePart.cs" />
+    <Compile Include="InstanceComposablePartDefinition.cs" />
+    <Compile Include="LoggerAssemblyRepositoryCatalogObserver.cs" />
+    <Compile Include="MefBootstrapper.cs" />
+    <Compile Include="MemberInfoExtensions.cs" />
+    <Compile Include="PartConventionBuilder.cs" />
+    <Compile Include="PartDescription.cs" />
+    <Compile Include="PreConfigureException.cs" />
+    <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="ProviderComposablePart.cs" />
+    <Compile Include="ProviderComposablePartDefinition.cs" />
+    <Compile Include="ProviderExportDefinition.cs" />
+    <Compile Include="ProviderImportDefinition.cs" />
+    <Compile Include="ProviderParameterImportDefinition.cs" />
+    <Compile Include="ProviderParameterImportDefinitionContainer.cs" />
+    <Compile Include="ServiceLocatorAdapter.cs" />
+    <Compile Include="StringComparers.cs" />
+    <Compile Include="TecMSDefaultCatalog.cs" />
+    <Compile Include="TypeExtensions.cs" />
+    <Compile Include="TypeInstance.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Key.snk" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

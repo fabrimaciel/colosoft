@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ProfileProviderService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="WSHttpBinding_IProfileProviderService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:3911/ProfileProviderService.svc?xsd=xsd2" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:3911/ProfileProviderService.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:3911/ProfileProviderService.svc?xsd=xsd4" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://localhost:3911/ProfileProviderService.svc?xsd=xsd0" namespace="http://Colosoft.com.br/2011/webservices/security/rolepermission" />
+      <xsd:import schemaLocation="http://localhost:3911/ProfileProviderService.svc?xsd=xsd1" namespace="http://Colosoft.com.br/2011/webservices/remote/profile" />
+      <xsd:import schemaLocation="http://localhost:3911/ProfileProviderService.svc?xsd=xsd6" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IProfileProviderService_DeleteProfiles_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteProfiles" />
+  </wsdl:message>
+  <wsdl:message name="IProfileProviderService_DeleteProfiles_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteProfilesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProfileProviderService_DeleteProfilesByProfileInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteProfilesByProfileInfo" />
+  </wsdl:message>
+  <wsdl:message name="IProfileProviderService_DeleteProfilesByProfileInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteProfilesByProfileInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProfileProviderService_FindProfilesByUserName_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindProfilesByUserName" />
+  </wsdl:message>
+  <wsdl:message name="IProfileProviderService_FindProfilesByUserName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindProfilesByUserNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProfileProviderService_GetUserProfiles_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserProfiles" />
+  </wsdl:message>
+  <wsdl:message name="IProfileProviderService_GetUserProfiles_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserProfilesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProfileProviderService_GetProfile_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProfile" />
+  </wsdl:message>
+  <wsdl:message name="IProfileProviderService_GetProfile_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProfileResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProfileProviderService_GetSource_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSource" />
+  </wsdl:message>
+  <wsdl:message name="IProfileProviderService_GetSource_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSourceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProfileProviderService_SetProfilePropertyValue_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetProfilePropertyValue" />
+  </wsdl:message>
+  <wsdl:message name="IProfileProviderService_SetProfilePropertyValue_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetProfilePropertyValueResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IProfileProviderService">
+    <wsdl:operation name="DeleteProfiles">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProfileProviderService/DeleteProfiles" message="tns:IProfileProviderService_DeleteProfiles_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProfileProviderService/DeleteProfilesResponse" message="tns:IProfileProviderService_DeleteProfiles_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteProfilesByProfileInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProfileProviderService/DeleteProfilesByProfileInfo" message="tns:IProfileProviderService_DeleteProfilesByProfileInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProfileProviderService/DeleteProfilesByProfileInfoResponse" message="tns:IProfileProviderService_DeleteProfilesByProfileInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindProfilesByUserName">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProfileProviderService/FindProfilesByUserName" message="tns:IProfileProviderService_FindProfilesByUserName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProfileProviderService/FindProfilesByUserNameResponse" message="tns:IProfileProviderService_FindProfilesByUserName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserProfiles">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProfileProviderService/GetUserProfiles" message="tns:IProfileProviderService_GetUserProfiles_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProfileProviderService/GetUserProfilesResponse" message="tns:IProfileProviderService_GetUserProfiles_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProfile">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProfileProviderService/GetProfile" message="tns:IProfileProviderService_GetProfile_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProfileProviderService/GetProfileResponse" message="tns:IProfileProviderService_GetProfile_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSource">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProfileProviderService/GetSource" message="tns:IProfileProviderService_GetSource_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProfileProviderService/GetSourceResponse" message="tns:IProfileProviderService_GetSource_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetProfilePropertyValue">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProfileProviderService/SetProfilePropertyValue" message="tns:IProfileProviderService_SetProfilePropertyValue_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProfileProviderService/SetProfilePropertyValueResponse" message="tns:IProfileProviderService_SetProfilePropertyValue_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WSHttpBinding_IProfileProviderService" type="tns:IProfileProviderService">
+    <wsp:PolicyReference URI="#WSHttpBinding_IProfileProviderService_policy" />
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="DeleteProfiles">
+      <soap12:operation soapAction="http://tempuri.org/IProfileProviderService/DeleteProfiles" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteProfilesByProfileInfo">
+      <soap12:operation soapAction="http://tempuri.org/IProfileProviderService/DeleteProfilesByProfileInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindProfilesByUserName">
+      <soap12:operation soapAction="http://tempuri.org/IProfileProviderService/FindProfilesByUserName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserProfiles">
+      <soap12:operation soapAction="http://tempuri.org/IProfileProviderService/GetUserProfiles" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProfile">
+      <soap12:operation soapAction="http://tempuri.org/IProfileProviderService/GetProfile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSource">
+      <soap12:operation soapAction="http://tempuri.org/IProfileProviderService/GetSource" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetProfilePropertyValue">
+      <soap12:operation soapAction="http://tempuri.org/IProfileProviderService/SetProfilePropertyValue" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ProfileProviderService">
+    <wsdl:port name="WSHttpBinding_IProfileProviderService" binding="tns:WSHttpBinding_IProfileProviderService">
+      <soap12:address location="http://localhost:3911/ProfileProviderService.svc" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>http://localhost:3911/ProfileProviderService.svc</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

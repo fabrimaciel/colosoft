@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{525D3BB3-4105-4F61-B4AE-BBF392C110EA}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Colosoft.Data</RootNamespace>
+    <AssemblyName>Colosoft.Data</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>false</DebugSymbols>
+    <DebugType>none</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\bin\Client\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>0</WarningLevel>
+    <DocumentationFile>..\..\bin\Client\Colosoft.Data.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>0</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>Key.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Colosoft.Core">
+      <HintPath>..\..\bin\Client\Colosoft.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Colosoft.Query">
+      <HintPath>..\..\bin\Client\Colosoft.Query.dll</HintPath>
+    </Reference>
+    <Reference Include="Colosoft.Text">
+      <HintPath>..\..\bin\Client\Colosoft.Text.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation">
+      <HintPath>..\..\Libraries\General\CommonServiceLocation\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AggregatePersistenceSession.cs" />
+    <Compile Include="BaseModel.cs" />
+    <Compile Include="BaseSimpleTraceableModel.cs" />
+    <Compile Include="BaseTraceableModel.cs" />
+    <Compile Include="BaseVersionedModel.cs" />
+    <Compile Include="DirectionPropertiesName.cs" />
+    <Compile Include="DynamicPersistenceExecuter.cs" />
+    <Compile Include="ExecuteActionsResult.cs" />
+    <Compile Include="ExecutionType.cs" />
+    <Compile Include="ExpressionParameter.cs" />
+    <Compile Include="IDeletableModel.cs" />
+    <Compile Include="IDeleteActionResult.cs" />
+    <Compile Include="IModel.cs" />
+    <Compile Include="IPersistenceActionContainer.cs" />
+    <Compile Include="IPersistenceContext.cs" />
+    <Compile Include="IPersistenceExecuter.cs" />
+    <Compile Include="IPersistenceExecuterProvider.cs" />
+    <Compile Include="IPersistenceSession.cs" />
+    <Compile Include="IPersistenceSessionObserver.cs" />
+    <Compile Include="IPersistenceSessionValidator.cs" />
+    <Compile Include="IPersistenceTransactionExecuter.cs" />
+    <Compile Include="IPrimaryKeyRepository.cs" />
+    <Compile Include="ISimpleTraceableModel.cs" />
+    <Compile Include="ITraceableModel.cs" />
+    <Compile Include="IVersionedModel.cs" />
+    <Compile Include="MetadataInfo.cs" />
+    <Compile Include="Namespaces.cs" />
+    <Compile Include="NewUidReference.cs" />
+    <Compile Include="PersistenceAction.cs" />
+    <Compile Include="PersistenceActionResult.cs" />
+    <Compile Include="PersistenceExecuterResultException.cs" />
+    <Compile Include="PersistenceParameter.cs" />
+    <Compile Include="PersistenceParameterCollection.cs" />
+    <Compile Include="PersistenceSession.cs" />
+    <Compile Include="PersistenceSessionExecutedEventArgs.cs" />
+    <Compile Include="PersistenceStoredProcedure.cs" />
+    <Compile Include="PosCommandPrimaryKeyRepository.cs" />
+    <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="PropertyInfo.cs" />
+    <Compile Include="PropertyReference.cs" />
+    <Compile Include="TraceableEntityDescriptor.cs" />
+    <Compile Include="DbCommandWrapper.cs" />
+    <Compile Include="DbConnectionWrapper.cs" />
+    <Compile Include="DbTransactionWrapper.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Key.snk" />
+    <EmbeddedResource Include="Xsd\Persistence.xsd">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

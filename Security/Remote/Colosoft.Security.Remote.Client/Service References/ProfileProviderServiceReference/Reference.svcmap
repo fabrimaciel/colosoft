@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="f05d3f14-6821-4945-a406-03d8d324e53e" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>true</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:3911/ProfileProviderService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ProfileProviderService.xsd" MetadataType="Schema" ID="3fc74337-75ea-40b3-b24b-fa3fb4e8ee87" SourceId="1" SourceUrl="http://localhost:3911/ProfileProviderService.svc?xsd=xsd2" />
+    <MetadataFile FileName="ProfileProviderService1.xsd" MetadataType="Schema" ID="1bc401c4-3677-4fc7-90f1-6f156c48443b" SourceId="1" SourceUrl="http://localhost:3911/ProfileProviderService.svc?xsd=xsd3" />
+    <MetadataFile FileName="ProfileProviderService2.xsd" MetadataType="Schema" ID="337c0ba5-4dda-4d13-8ded-6b4c6800cb37" SourceId="1" SourceUrl="http://localhost:3911/ProfileProviderService.svc?xsd=xsd4" />
+    <MetadataFile FileName="ProfileProviderService4.xsd" MetadataType="Schema" ID="93fdcbb9-dd3c-4bcd-9b8c-ead4d6c703f9" SourceId="1" SourceUrl="http://localhost:3911/ProfileProviderService.svc?xsd=xsd6" />
+    <MetadataFile FileName="ProfileProviderService.disco" MetadataType="Disco" ID="27d7bda4-9912-44d9-b4c0-805f198cf2da" SourceId="1" SourceUrl="http://localhost:3911/ProfileProviderService.svc?disco" />
+    <MetadataFile FileName="ProfileProviderService.wsdl" MetadataType="Wsdl" ID="48199b60-a5a2-4c14-b60b-20560c52ad1b" SourceId="1" SourceUrl="http://localhost:3911/ProfileProviderService.svc?wsdl" />
+    <MetadataFile FileName="ProfileProviderService5.xsd" MetadataType="Schema" ID="5760239a-0189-414c-a1f0-d099d2931dd3" SourceId="1" SourceUrl="http://localhost:3911/ProfileProviderService.svc?xsd=xsd0" />
+    <MetadataFile FileName="ProfileProviderService6.xsd" MetadataType="Schema" ID="24be24ae-7edb-421e-9e80-cdffc8c10e36" SourceId="1" SourceUrl="http://localhost:3911/ProfileProviderService.svc?xsd=xsd1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
