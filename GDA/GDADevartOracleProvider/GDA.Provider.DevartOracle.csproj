@@ -53,13 +53,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="OracleAnalyzer.cs">
+    <Compile Include="..\GDAOracleProvider\OracleAnalyzer.cs">
       <Link>OracleAnalyzer.cs</Link>
     </Compile>
-    <Compile Include="OracleProvider.cs">
+    <Compile Include="..\GDAOracleProvider\OracleProvider.cs">
       <Link>OracleProvider.cs</Link>
     </Compile>
-    <Compile Include="OracleProviderConfiguration.cs">
+    <Compile Include="..\GDAOracleProvider\OracleProviderConfiguration.cs">
       <Link>OracleProviderConfiguration.cs</Link>
     </Compile>
     <Compile Include="AssemblyInfo.cs" />

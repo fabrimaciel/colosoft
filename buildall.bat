@@ -40,6 +40,7 @@ call buildproject.cmd ".\Security\Remote\Remote.sln"
 call buildproject.cmd ".\Kendo\Kendo.sln"
 call buildproject.cmd ".\Net\Net.Remote.sln"
 call buildproject.cmd ".\Excel\Excel.sln"
+call buildproject.cmd ".\GDA\GDA.Provider.Oracle.sln"
 
 call buildproject.cmd ".\Query\Database\Query.Database.sln"
 call buildproject.cmd ".\Data\Database\Database.sln"
